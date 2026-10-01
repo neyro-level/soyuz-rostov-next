@@ -1,0 +1,71 @@
+limit_req_zone $binary_remote_addr zone=client_login:10m rate=5r/m;
+limit_req_zone $binary_remote_addr zone=client_leads:10m rate=10r/m;
+limit_req_zone $binary_remote_addr zone=client_internal:10m rate=30r/m;
+
+server {
+    listen 443 ssl http2;
+    server_name __CLIENT_DOMAIN__;
+
+    client_max_body_size 20m;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    # Replace from project indexing policy: public => comment/empty; noindex => add_header X-Robots-Tag "noindex, nofollow" always;
+    __INDEXING_X_ROBOTS_TAG__
+
+    ssl_certificate __TLS_CERTIFICATE_PATH__;
+    ssl_certificate_key __TLS_PRIVATE_KEY_PATH__;
+
+    location = /admin/login {
+        limit_req zone=client_login burst=3 nodelay;
+        proxy_pass http://127.0.0.1:3000;
+        include proxy_params;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location = /api/public/leads {
+        limit_req zone=client_leads burst=10 nodelay;
+        proxy_pass http://127.0.0.1:3000;
+        include proxy_params;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location ^~ /api/system/ {
+        limit_req zone=client_internal burst=5 nodelay;
+        allow __ADMIN_OR_RUNTIME_CIDR__;
+        deny all;
+        proxy_pass http://127.0.0.1:3000;
+        include proxy_params;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location /admin {
+        # Replace with the approved public-hardened or IP/VPN access policy.
+        __ADMIN_ACCESS_POLICY__
+        proxy_pass http://127.0.0.1:3000;
+        include proxy_params;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        include proxy_params;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+}

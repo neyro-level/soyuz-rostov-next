@@ -1,0 +1,13 @@
+{
+	"schemaVersion": 2,
+	"contractVersion": "0.1.0",
+	"state": "draft",
+	"algorithm": "sha256-normalized-lf",
+	"files": [
+		{
+			"path": "packages/contracts/src/journal/index.ts",
+			"sha256": "c2de06d078f868b5c34715187aa5c2dd07d060e0da88b680c0a4f4affe538ed2"
+		}
+	],
+	"aggregateSha256": "ee17cc4428578d8f9d608541572e7cb4a7faa58f321b63db1de3f1c4e8124937"
+}

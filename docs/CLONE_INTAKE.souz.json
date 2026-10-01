@@ -1,0 +1,232 @@
+{
+	"schemaVersion": 1,
+	"approvedDefaults": "REALTY_BASE_CLIENT_V1",
+	"project": {
+		"id": "SOUZ-ROSTOV",
+		"packageName": "souz-rostov-realty",
+		"brandName": "Союз застройщиков",
+		"defaultDescription": "Недвижимость Ростова-на-Дону и Ростовской области",
+		"domain": "souz-rostov.example",
+		"preset": "MIXED",
+		"geoMode": "SINGLE_GEO",
+		"primaryGeo": "rostov-na-donu",
+		"productionIndexing": "noindex"
+	},
+	"region": {
+		"slug": "rostovskaya-oblast",
+		"name": "Ростовская область",
+		"genitive": "Ростовской области",
+		"locative": "Ростовской области",
+		"shortName": "Ростовская область"
+	},
+	"cities": [
+		{
+			"slug": "rostov-na-donu",
+			"title": "Ростов-на-Дону",
+			"published": true,
+			"hubStatus": "ACTIVE",
+			"morphologyApproved": true,
+			"morphology": {
+				"nominative": "Ростов-на-Дону",
+				"genitive": "Ростова-на-Дону",
+				"prepositional": "Ростове-на-Дону",
+				"preposition": "в"
+			},
+			"districts": [
+				{
+					"slug": "leninskiy",
+					"name": "Ленинский",
+					"type": "admin_district",
+					"locative": "Ленинском",
+					"adjLocative": "Ленинском",
+					"adjGenitive": "Ленинского",
+					"preposition": "в",
+					"synonyms": [],
+					"parent": null
+				},
+				{
+					"slug": "voroshilovskiy",
+					"name": "Ворошиловский",
+					"type": "admin_district",
+					"locative": "Ворошиловском",
+					"adjLocative": "Ворошиловском",
+					"adjGenitive": "Ворошиловского",
+					"preposition": "в",
+					"synonyms": [],
+					"parent": null
+				},
+				{
+					"slug": "severnyy",
+					"name": "Северный",
+					"type": "microdistrict",
+					"locative": "Северном",
+					"preposition": "на",
+					"synonyms": [],
+					"parent": null
+				},
+				{
+					"slug": "tsentr",
+					"name": "Центр",
+					"type": "microdistrict",
+					"locative": "Центре",
+					"preposition": "в",
+					"synonyms": [],
+					"parent": null
+				}
+			]
+		},
+		{
+			"slug": "bataysk",
+			"title": "Батайск",
+			"published": true,
+			"hubStatus": "PREPARED_OFF",
+			"agglomerationOf": "rostov-na-donu",
+			"morphologyApproved": true,
+			"morphology": {
+				"nominative": "Батайск",
+				"genitive": "Батайска",
+				"prepositional": "Батайске",
+				"preposition": "в"
+			},
+			"districts": []
+		},
+		{
+			"slug": "aksay",
+			"title": "Аксай",
+			"published": true,
+			"hubStatus": "PREPARED_OFF",
+			"agglomerationOf": "rostov-na-donu",
+			"morphologyApproved": true,
+			"morphology": {
+				"nominative": "Аксай",
+				"genitive": "Аксая",
+				"prepositional": "Аксае",
+				"preposition": "в"
+			},
+			"districts": []
+		}
+	],
+	"surfaces": {
+		"global": {
+			"ACTIVE": ["kvartiry", "novostroyki"],
+			"NOINDEX_AUTO": [],
+			"PREPARED_OFF": [
+				"doma",
+				"uchastki",
+				"kommercheskaya-nedvizhimost",
+				"kottedzhnye-poselki"
+			],
+			"OUT": ["komnaty", "garazhi", "arenda"]
+		},
+		"byCity": {
+			"rostov-na-donu": {
+				"ACTIVE": ["kvartiry", "novostroyki"],
+				"NOINDEX_AUTO": [],
+				"PREPARED_OFF": [
+					"doma",
+					"uchastki",
+					"kommercheskaya-nedvizhimost",
+					"kottedzhnye-poselki"
+				],
+				"OUT": ["komnaty", "garazhi", "arenda"]
+			},
+			"bataysk": {
+				"ACTIVE": [],
+				"NOINDEX_AUTO": [],
+				"PREPARED_OFF": [
+					"kvartiry",
+					"doma",
+					"uchastki",
+					"kommercheskaya-nedvizhimost",
+					"novostroyki",
+					"kottedzhnye-poselki"
+				],
+				"OUT": ["komnaty", "garazhi", "arenda"]
+			},
+			"aksay": {
+				"ACTIVE": [],
+				"NOINDEX_AUTO": [],
+				"PREPARED_OFF": [
+					"kvartiry",
+					"doma",
+					"uchastki",
+					"kommercheskaya-nedvizhimost",
+					"novostroyki",
+					"kottedzhnye-poselki"
+				],
+				"OUT": ["komnaty", "garazhi", "arenda"]
+			}
+		},
+		"developers": {
+			"root": "ACTIVE",
+			"byCity": {
+				"rostov-na-donu": "ACTIVE",
+				"bataysk": "PREPARED_OFF",
+				"aksay": "PREPARED_OFF"
+			}
+		}
+	},
+	"markets": {
+		"capability": { "newbuild": "ACTIVE", "secondary": "ACTIVE" },
+		"byCity": {
+			"rostov-na-donu": { "newbuild": "ACTIVE", "secondary": "ACTIVE" },
+			"bataysk": { "newbuild": "PREPARED_OFF", "secondary": "PREPARED_OFF" },
+			"aksay": { "newbuild": "PREPARED_OFF", "secondary": "PREPARED_OFF" }
+		}
+	},
+	"seo": {
+		"facets": {
+			"vtorichka": {
+				"geo": "rostov-na-donu",
+				"category": "kvartiry",
+				"filter": { "key": "market", "value": "secondary" }
+			}
+		},
+		"tiers": {
+			"metric": "broad39",
+			"snapshotDate": "2026-09-27",
+			"bands": { "P1": 500, "P2": 100, "TEST": 50 },
+			"minInventory": { "P1": 5, "P2": 5, "TEST": 10 },
+			"unmeasuredPolicy": "NONE"
+		},
+		"searchConsole": { "yandex": null, "google": null }
+	},
+	"legacy": {
+		"routes": [
+			{ "from": "/nedvizhimost", "to": "/kvartiry/", "statusCode": 301 },
+			{
+				"from": "/kvartiry-rostova",
+				"to": "/rostov-na-donu/kvartiry/",
+				"statusCode": 301
+			}
+		],
+		"patterns": [
+			{ "kind": "property", "from": "/obekty/{slug}", "statusCode": 301 }
+		]
+	},
+	"nap": {
+		"phone": "+7 863 000-00-00",
+		"email": "hello@souz-rostov.example",
+		"address": "Ростов-на-Дону",
+		"workingHours": "Пн-Пт 09:00-18:00"
+	},
+	"brand": {
+		"colors": {
+			"background": "#f4f4f3", "foreground": "#17161a", "surface": "#ffffff",
+			"surfaceMuted": "#ebebe9", "surfaceSoft": "#fafafa", "surfaceDark": "#18181a",
+			"surfaceDarkStrong": "#101011", "contentSecondary": "#413f41", "contentMuted": "#827f81",
+			"contentInverse": "#ffffff", "border": "#e3e3e1", "accent": "#8a1515",
+			"accentHover": "#630e0e", "accentSoft": "#f7f2f2", "statusWarning": "#996000",
+			"statusDanger": "#9e1c1c", "statusSuccess": "#159947", "statusInfo": "#0a66cc"
+		},
+		"radii": { "sm": "8px", "md": "10px", "lg": "12px", "xl": "12px", "full": "999px" },
+		"fontFamily": "Manrope",
+		"logoFile": "public/brand/logo.svg",
+		"faviconFile": "src/app/icon.svg"
+	},
+	"hostAllowlists": {
+		"outbound": ["api.souz-rostov.example"],
+		"externalImages": ["images.souz-rostov.example"],
+		"leadOutbound": ["crm.souz-rostov.example"]
+	}
+}

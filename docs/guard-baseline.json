@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"frozen": true,
+	"core184": {
+		"1": "overrideAccess:true outside System Gateway",
+		"5": "wildcard CORS",
+		"7": "obvious secret exposure",
+		"8": "top-level next/* inside ingest / job-handler / cache graph",
+		"payloadJobsCrud": "generic payload-jobs CRUD outside src/core/data-access/system/jobs",
+		"wildcardRemoteImages": "wildcard remote image hosts",
+		"publicJobsEndpoint": "public jobs API route"
+	},
+	"knownExceptions": [],
+	"uiCore18": {
+		"duplicateButtonInImportedCss": "FAIL",
+		"importedCssOver10kb": "FAIL",
+		"unimportedAtlasDumpSize": "not gated",
+		"sitePrimaryActionInRuntimeCss": "FAIL",
+		"secondTokenFile": "FAIL",
+		"uiBrowserPersistence": "FAIL"
+	}
+}

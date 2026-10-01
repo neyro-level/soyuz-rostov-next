@@ -1,0 +1,120 @@
+{
+	"schemaVersion": 2,
+	"cloneRuntimeScope": [
+		{ "path": "src", "type": "tree" },
+		{ "path": "packages", "type": "tree" },
+		{ "path": "migrations", "type": "tree" },
+		{ "path": "scripts", "type": "tree" },
+		{ "path": "deploy", "type": "tree" },
+		{ "path": "public", "type": "tree" },
+		{ "path": ".dockerignore", "type": "file" },
+		{ "path": "Dockerfile", "type": "file" },
+		{ "path": "instrumentation.ts", "type": "file" },
+		{ "path": "next.config.ts", "type": "file" },
+		{ "path": "payload.config.ts", "type": "file" },
+		{ "path": "package.json", "type": "file" },
+		{ "path": "pnpm-lock.yaml", "type": "file" },
+		{ "path": "pnpm-workspace.yaml", "type": "file" }
+	],
+	"ownership": {
+		"platform": [
+			{ "path": "starter-owned.json", "type": "file" },
+			{ "path": "AMS_REALTY_PLATFORM_CORE_STANDARD_5.5_SOLO_AI_FINAL.md", "type": "file" },
+			{ "path": "src/core", "type": "tree" },
+			{ "path": "src/proxy.ts", "type": "file" },
+			{ "path": "src/app/(payload)", "type": "tree", "except": ["src/app/(payload)/admin/importMap.d.ts", "src/app/(payload)/admin/importMap.js"] },
+			{ "path": "src/app/api/internal", "type": "tree" },
+			{ "path": "src/app/api/public/leads/route.ts", "type": "file" },
+			{ "path": "src/app/layout.tsx", "type": "file" },
+			{ "path": "src/app/not-found.tsx", "type": "file" },
+			{ "path": "src/app/robots.txt/route.ts", "type": "file" },
+			{ "path": "src/app/sitemap.ts", "type": "file" },
+			{ "path": "src/app/globals.css", "type": "file" },
+			{ "path": "src/project/brand.css", "type": "file" },
+			{ "path": "src/project/cache", "type": "tree" },
+			{ "path": "src/project/collections", "type": "tree" },
+			{ "path": "src/project/data-access", "type": "tree" },
+			{ "path": "src/project/jobs", "type": "tree" },
+			{ "path": "src/project/routing", "type": "tree" },
+			{ "path": "src/project/site-profile-presets.ts", "type": "file" },
+			{ "path": "src/project/site-profile.ts", "type": "file" },
+			{ "path": "src/project/env.ts", "type": "file" },
+			{ "path": "src/project/public-origin.ts", "type": "file" },
+			{ "path": "src/project/url-grammar.ts", "type": "file" },
+			{ "path": "src/project/seo", "type": "tree", "except": ["src/project/seo/registry-seed.ts"] },
+			{ "path": "packages", "type": "tree" },
+			{ "path": "migrations", "type": "tree" },
+			{ "path": "scripts", "type": "tree" },
+			{ "path": "deploy", "type": "tree" },
+			{ "path": ".dockerignore", "type": "file" },
+			{ "path": "Dockerfile", "type": "file" },
+			{ "path": "instrumentation.ts", "type": "file" },
+			{ "path": "next.config.ts", "type": "file" },
+			{ "path": "payload.config.ts", "type": "file" },
+			{ "path": "pnpm-lock.yaml", "type": "file" },
+			{ "path": "pnpm-workspace.yaml", "type": "file" },
+			{ "path": "docs/CLONE_PRESET.example.json", "type": "file" },
+			{ "path": "docs/CLONE_PRESET.souz.example.json", "type": "file" },
+			{ "path": "docs/CORE_5_5_COMPLIANCE_MATRIX.md", "type": "file" },
+			{ "path": "docs/CLONE_ONBOARDING.md", "type": "file" },
+			{ "path": "docs/UPSTREAM_CANDIDATES.md", "type": "file" },
+			{ "path": "docs/platform", "type": "tree" },
+			{ "path": "docs/adr/ADR-PLATFORM-LAYOUT.md", "type": "file" }
+		],
+		"client": [
+			{
+				"path": "src/app",
+				"type": "tree",
+				"except": [
+					"src/app/(payload)",
+					"src/app/api/internal",
+					"src/app/api/public/leads/route.ts",
+					"src/app/globals.css",
+					"src/app/layout.tsx",
+					"src/app/not-found.tsx",
+					"src/app/robots.txt/route.ts",
+					"src/app/sitemap.ts",
+					"src/app/(payload)/admin/importMap.d.ts",
+					"src/app/(payload)/admin/importMap.js"
+				]
+			},
+			{
+				"path": "src/project",
+				"type": "tree",
+				"except": [
+					"src/project/cache",
+					"src/project/collections",
+					"src/project/data-access",
+					"src/project/jobs",
+					"src/project/routing",
+					"src/project/site-profile-presets.ts",
+					"src/project/site-profile.ts",
+					"src/project/env.ts",
+					"src/project/public-origin.ts",
+					"src/project/url-grammar.ts",
+					"src/project/seo",
+					"src/project/brand.css",
+					"src/project/copy.ts",
+					"src/project/font.generated.ts",
+					"src/project/payload-types.ts",
+					"src/project/site-profile.config.ts",
+					"src/project/seo/registry-seed.ts"
+				]
+			},
+			{ "path": "src/fixture", "type": "tree" },
+			{ "path": "public", "type": "tree" }
+		],
+		"generated": [
+			{ "path": "src/app/(payload)/admin/importMap.d.ts", "type": "file" },
+			{ "path": "src/app/(payload)/admin/importMap.js", "type": "file" },
+			{ "path": "src/project/copy.ts", "type": "file" },
+			{ "path": "src/project/font.generated.ts", "type": "file" },
+			{ "path": "src/project/payload-types.ts", "type": "file" },
+			{ "path": "src/project/site-profile.config.ts", "type": "file" },
+			{ "path": "src/project/seo/registry-seed.ts", "type": "file" }
+		],
+		"composite": [
+			{ "path": "package.json", "type": "file", "strategy": "structured" }
+		]
+	}
+}

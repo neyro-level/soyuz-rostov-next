@@ -1,0 +1,168 @@
+{
+	"schemaVersion": 3,
+	"projectId": "CLIENT-PROJECT-ID",
+	"packageName": "client-realty-site",
+	"brandName": "Клиент Недвижимость",
+	"defaultDescription": "Недвижимость в Клиентограде",
+	"domain": "realty-client.ru",
+	"preset": "MIXED",
+	"geoMode": "SINGLE_GEO",
+	"primaryGeo": "klientograd",
+	"productionIndexing": "noindex",
+	"region": {
+		"slug": "klientogradskiy-kray",
+		"name": "Клиентоградский край",
+		"genitive": "Клиентоградского края",
+		"locative": "Клиентоградском крае",
+		"shortName": "Клиентоградский край"
+	},
+	"geos": [
+		{
+			"slug": "klientograd",
+			"title": "Клиентоград",
+			"published": true,
+			"hubStatus": "ACTIVE",
+			"morphologyApproved": true,
+			"morphology": {
+				"nominative": "Клиентоград",
+				"genitive": "Клиентограда",
+				"prepositional": "Клиентограде",
+				"preposition": "в"
+			},
+			"districts": [
+				{
+					"slug": "tsentralnyy",
+					"name": "Центральный район",
+					"type": "admin_district",
+					"locative": "Центральном районе",
+					"adjLocative": "Центральном",
+					"adjGenitive": "Центрального",
+					"preposition": "в",
+					"synonyms": ["Центр"],
+					"parent": null
+				}
+			]
+		}
+	],
+	"seoFacets": {},
+	"seoTiers": {
+		"metric": "searchDemand",
+		"snapshotDate": "2026-09-27",
+		"bands": { "P1": 100, "P2": 50, "TEST": 0 },
+		"minInventory": { "P1": 5, "P2": 5, "TEST": 10 },
+		"unmeasuredPolicy": "TEST"
+	},
+	"searchConsole": { "yandex": null, "google": null },
+	"staticRoutes": [
+		{
+			"path": "/",
+			"changeFrequency": "daily",
+			"priority": 1,
+			"indexable": true
+		},
+		{
+			"path": "/uslugi",
+			"changeFrequency": "weekly",
+			"priority": 0.7,
+			"indexable": true
+		},
+		{
+			"path": "/o-kompanii",
+			"changeFrequency": "monthly",
+			"priority": 0.6,
+			"indexable": true
+		},
+		{
+			"path": "/ipoteka",
+			"changeFrequency": "weekly",
+			"priority": 0.7,
+			"indexable": true
+		},
+		{
+			"path": "/prodat",
+			"changeFrequency": "weekly",
+			"priority": 0.7,
+			"indexable": true
+		},
+		{
+			"path": "/sdat",
+			"changeFrequency": "weekly",
+			"priority": 0.7,
+			"indexable": true
+		},
+		{
+			"path": "/kontakty",
+			"changeFrequency": "monthly",
+			"priority": 0.6,
+			"indexable": true
+		},
+		{
+			"path": "/politika-konfidencialnosti",
+			"changeFrequency": "yearly",
+			"priority": 0.2,
+			"indexable": false
+		},
+		{
+			"path": "/soglasie-na-obrabotku-personalnyh-dannyh",
+			"changeFrequency": "yearly",
+			"priority": 0.2,
+			"indexable": false
+		}
+	],
+	"legacyPatterns": [
+		{ "kind": "property", "from": "/obekty/{slug}", "statusCode": 301 }
+	],
+	"nap": {
+		"phone": "+7 900 000-00-00",
+		"email": "hello@realty-client.ru",
+		"address": "Клиентоград, ул. Примерная, 1",
+		"workingHours": "Пн-Пт 09:00-18:00"
+	},
+	"brand": {
+		"colors": {
+			"background": "#f4f4f3", "foreground": "#17161a", "surface": "#ffffff",
+			"surfaceMuted": "#ebebe9", "surfaceSoft": "#fafafa", "surfaceDark": "#18181a",
+			"surfaceDarkStrong": "#101011", "contentSecondary": "#413f41", "contentMuted": "#827f81",
+			"contentInverse": "#ffffff", "border": "#e3e3e1", "accent": "#8a1515",
+			"accentHover": "#630e0e", "accentSoft": "#f7f2f2", "statusWarning": "#996000",
+			"statusDanger": "#9e1c1c", "statusSuccess": "#159947", "statusInfo": "#0a66cc"
+		},
+		"radii": { "sm": "8px", "md": "10px", "lg": "12px", "xl": "12px", "full": "999px" },
+		"fontFamily": "Manrope",
+		"logoFile": "public/brand/logo.svg",
+		"faviconFile": "src/app/icon.svg"
+	},
+	"brandAssets": {
+		"status": "ready",
+		"logoPath": "/brand/logo.svg",
+		"faviconPath": "/icon.svg",
+		"tokenSource": "src/app/globals.css"
+	},
+	"feed": {
+		"status": "ready",
+		"mode": "external-urls"
+	},
+	"developmentExcel": {
+		"status": "ready",
+		"template": "client-developments.xlsx"
+	},
+	"clientReadiness": {
+		"deploymentTarget": "approved-runtime",
+		"database": "approved-managed-postgresql",
+		"mediaStorage": "approved-object-storage",
+		"feedImageSource": "external-urls",
+		"jobsActiveRuntimeCount": 1,
+		"leadRetentionDays": 180,
+		"archiveRetentionDays": 90,
+		"legalContent": "approved",
+		"requiredHostAllowlists": {
+			"outbound": ["api.realty-client.ru"],
+			"externalImages": ["images.realty-client.ru"],
+			"leadOutbound": ["crm.realty-client.ru"]
+		},
+		"nginx": true,
+		"automaticBackup": true,
+		"externalMonitoring": true
+	},
+	"seoTemplateFile": "CLONE_SEO_TEMPLATES.example.json"
+}

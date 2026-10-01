@@ -1,0 +1,27 @@
+.max-w-site-frame {
+  max-width: var(--site-frame-max);
+}
+
+.max-w-site-frame-floating {
+  max-width: var(--site-frame-floating-max);
+}
+
+@media (max-width: 640px) {
+  .mobile-safe-shell {
+    width: min(calc(100% - 40px), 350px);
+    margin-left: 20px;
+    margin-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Header must stay full-bleed so burger sits at the right edge. */
+  #site-header .mobile-safe-shell {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}

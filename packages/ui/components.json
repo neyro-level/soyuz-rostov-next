@@ -1,0 +1,18 @@
+{
+	"$schema": "https://ui.shadcn.com/schema.json",
+	"style": "new-york",
+	"rsc": true,
+	"tsx": true,
+	"iconLibrary": "lucide",
+	"tailwind": {
+		"css": "../../src/app/globals.css",
+		"baseColor": "neutral",
+		"cssVariables": true
+	},
+	"aliases": {
+		"components": "@ams/realtbase-ui/components",
+		"utils": "@ams/realtbase-ui/lib/utils",
+		"ui": "@ams/realtbase-ui/components/ui",
+		"lib": "@ams/realtbase-ui/lib"
+	}
+}

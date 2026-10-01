@@ -1,0 +1,61 @@
+workflows:
+  merge-standard:
+    inputs:
+      expected_commit_sha:
+        type: string
+        required: true
+        description: Full PR head SHA
+    env:
+      EXPECTED_COMMIT_SHA: ${{ inputs.expected_commit_sha }}
+    tasks:
+      - name: verify-exact-head
+        cubes:
+          - name: verify
+            image: node:24.21.0-bookworm
+            script:
+              - corepack enable
+              - corepack prepare pnpm@11.28.2 --activate
+              - node scripts/ci/assert-exact-head.mjs
+              - pnpm install --frozen-lockfile
+              - pnpm verify:merge-standard
+
+  merge-risky:
+    inputs:
+      expected_commit_sha:
+        type: string
+        required: true
+        description: Full PR head SHA
+      risk_scope:
+        type: choice
+        required: true
+        description: Only the affected high-risk boundary
+        options:
+          - schema-data
+          - auth-pii-leads
+          - ingest-jobs
+          - dependency-runtime
+          - ci-governance
+    env:
+      EXPECTED_COMMIT_SHA: ${{ inputs.expected_commit_sha }}
+      RISK_SCOPE: ${{ inputs.risk_scope }}
+    tasks:
+      - name: verify-risky-exact-head
+        cubes:
+          - name: standard-plus-targeted-risk
+            image:
+              name: postgres:18-bookworm
+              entrypoint: ""
+            env:
+              DATABASE_URI_TEST: postgresql://postgres@127.0.0.1:5432/ams_realtbase_ci_test
+              PAYLOAD_SECRET: sourcecraft-risky-gate-test-only-secret
+            script:
+              - chmod +x scripts/ci/sourcecraft-merge-risky.sh
+              - bash scripts/ci/sourcecraft-merge-risky.sh
+
+# Explicit no-automatic-run sentinel. Both workflows remain reachable only by
+# an operator/AI exact-SHA manual start; push and PR events spend zero CI time.
+on:
+  push:
+    - workflows: [merge-standard, merge-risky]
+      filter:
+        paths: []

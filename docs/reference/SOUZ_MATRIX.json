@@ -1,0 +1,436 @@
+{
+	"schemaVersion": 1,
+	"referenceScope": {
+		"classification": "sourceBackedSubset",
+		"completeRealClientGeoParity": false,
+		"representedBehaviorsOnly": true
+	},
+	"scopeSources": {
+		"/classification": ["PLAN12-OD12-01"],
+		"/completeRealClientGeoParity": ["PLAN12-OD12-01"],
+		"/representedBehaviorsOnly": ["PLAN12-OD12-01"]
+	},
+	"source": {
+		"planId": "AMS-SOUZ-HOME-GEO-CATALOG-PLATFORM-BUILD",
+		"version": "4.1.1 FINAL",
+		"file": "AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+		"requiredSections": [
+			"SOUZ-4.4",
+			"SOUZ-9.4",
+			"SOUZ-9.5",
+			"SOUZ-17.3",
+			"SOUZ-18",
+			"SOUZ-20",
+			"SOUZ-30",
+			"SOUZ-MODULE-JOURNAL"
+		],
+		"sections": {
+			"SOUZ-4.4": {
+				"heading": "4.4. Souz R1 project config [PROJECT]",
+				"sourceLines": "621-665"
+			},
+			"SOUZ-5": {
+				"heading": "5. INTENT OWNERSHIP / SEMANTIC SNAPSHOT [PROJECT]",
+				"sourceLines": "684-722"
+			},
+			"SOUZ-9.4": {
+				"heading": "9.4. Represented district subset",
+				"sourceSection": "§9.4"
+			},
+			"SOUZ-9.5": {
+				"heading": "9.5. Apartment district page tiers",
+				"sourceSection": "§9.5"
+			},
+			"SOUZ-17.3": {
+				"heading": "17.3. Canonical metadata templates [PLATFORM]",
+				"sourceLines": "2063-2117"
+			},
+			"SOUZ-18": {
+				"heading": "18. Active route skeleton",
+				"sourceSection": "§18"
+			},
+			"SOUZ-20": {
+				"heading": "20. LEGACY MIGRATION POLICY [PROJECT]",
+				"sourceLines": "2197-2258"
+			},
+			"SOUZ-30": {
+				"heading": "30. R1 page responsibility matrix",
+				"sourceSection": "§30"
+			},
+			"SOUZ-MODULE-JOURNAL": {
+				"heading": "Module and journal requirements relevant to R1",
+				"sourceSection": "module/journal requirements relevant to R1"
+			},
+			"PLAN11-OD11-01": {
+				"heading": "Plan 11 OD11-01 — komnaty status",
+				"decision": "OUT"
+			},
+			"PLAN11-OD11-02": {
+				"heading": "Plan 11 OD11-02 — garazhi status",
+				"decision": "OUT"
+			},
+			"PLAN11-OD11-04": {
+				"heading": "Plan 11 OD11-04 — owner-approved city and district morphology",
+				"decision": "APPROVED"
+			},
+			"PLAN12-OD12-01": {
+				"heading": "Plan 12 OD12-01 — universal starter geo fixture boundary",
+				"decision": "SOUZ_SOURCE_BACKED_SUBSET"
+			}
+		}
+	},
+	"behaviorCoverage": {
+		"projectConfig": {
+			"claim": "The represented R1 project configuration is limited to fields guarded by this matrix.",
+			"sources": ["SOUZ-4.4"]
+		},
+		"representedDistrictSubset": {
+			"claim": "Only the owner-approved represented district subset is covered; complete real-client district parity is not claimed.",
+			"sources": ["SOUZ-9.4", "PLAN11-OD11-04", "PLAN12-OD12-01"]
+		},
+		"apartmentDistrictPageTiers": {
+			"claim": "Apartment district page tiers are a source-covered behavior, not evidence of a complete district inventory.",
+			"sources": ["SOUZ-9.5", "PLAN12-OD12-01"]
+		},
+		"canonicalMetadataTemplates": {
+			"claim": "Canonical metadata behavior uses only approved morphology and source-backed template semantics.",
+			"sources": ["SOUZ-17.3", "PLAN11-OD11-04"]
+		},
+		"activeRouteSkeleton": {
+			"claim": "Only the active route skeleton represented by the reference preset is covered.",
+			"sources": ["SOUZ-18"]
+		},
+		"legacyMigrationPolicy": {
+			"claim": "Legacy behavior is governed per exact route; no bulk or inferred redirect is claimed.",
+			"sources": ["SOUZ-20"]
+		},
+		"r1PageResponsibilityMatrix": {
+			"claim": "R1 page responsibilities are covered only for represented reference surfaces.",
+			"sources": ["SOUZ-30"]
+		},
+		"moduleAndJournalRequirements": {
+			"claim": "Relevant module and journal requirements are source-covered without inventing client content facts.",
+			"sources": ["SOUZ-MODULE-JOURNAL"]
+		}
+	},
+	"districtSeoClassification": {
+		"policy": {
+			"allowed": ["P1", "P2", "TEST", "filter-only"],
+			"publishFromRecordExistence": false,
+			"unverifiedTierFallback": "filter-only",
+			"sources": ["SOUZ-9.5", "PLAN12-OD12-01"]
+		},
+		"rostov-na-donu/leninskiy": {
+			"classification": "filter-only",
+			"publicationClaim": false,
+			"sources": ["PLAN12-OD12-01"]
+		},
+		"rostov-na-donu/voroshilovskiy": {
+			"classification": "filter-only",
+			"publicationClaim": false,
+			"sources": ["PLAN12-OD12-01"]
+		},
+		"rostov-na-donu/severnyy": {
+			"classification": "filter-only",
+			"publicationClaim": false,
+			"sources": ["PLAN12-OD12-01"]
+		},
+		"rostov-na-donu/tsentr": {
+			"classification": "filter-only",
+			"publicationClaim": false,
+			"sources": ["PLAN12-OD12-01"]
+		}
+	},
+	"staticServiceSurfaces": {
+		"active": [
+			{ "key": "home", "path": "/", "sources": ["SOUZ-18", "SOUZ-30"] },
+			{
+				"key": "geoHub",
+				"path": "/rostov-na-donu/",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "newbuild",
+				"path": "/novostroyki/",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "apartments",
+				"path": "/rostov-na-donu/kvartiry/",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "developers",
+				"path": "/zastroyshchiki/",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "mortgage",
+				"path": "/ipoteka",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{ "key": "sell", "path": "/prodat", "sources": ["SOUZ-18", "SOUZ-30"] },
+			{
+				"key": "about",
+				"path": "/o-kompanii",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "reviews",
+				"path": "/otzyvy",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "contacts",
+				"path": "/kontakty",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "privacy",
+				"path": "/politika-konfidencialnosti",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			},
+			{
+				"key": "consent",
+				"path": "/soglasie-na-obrabotku-personalnyh-dannyh",
+				"sources": ["SOUZ-18", "SOUZ-30"]
+			}
+		],
+		"legacyDecisions": [
+			{ "path": "/uslugi", "decision": "REVIEW", "sources": ["SOUZ-20"] }
+		]
+	},
+	"journalContract": {
+		"souzR1": "activation-required-before-R1",
+		"genericStarterDefault": "optional",
+		"requiredRoutes": [
+			"/journal/",
+			"/journal/category/{slug}/",
+			"/journal/{slug}/"
+		],
+		"sources": ["SOUZ-MODULE-JOURNAL", "SOUZ-30"]
+	},
+	"developerRootContract": {
+		"appliesWhen": { "geoMode": "SINGLE_GEO", "surfaceStatus": "ACTIVE" },
+		"path": "/zastroyshchiki/",
+		"statusCode": 200,
+		"robots": "noindex,follow",
+		"includeInSitemap": false,
+		"sourceOfTruth": "reference-profile-contract",
+		"syntheticRegistryFallbackAllowed": false,
+		"sources": ["SOUZ-4.4", "SOUZ-18", "SOUZ-30"]
+	},
+	"metadataTemplateExamples": [
+		{
+			"kind": "categoryGeoDistrictMicro",
+			"title": "Купить квартиру на Северном в Ростове-на-Дону — цены",
+			"sources": ["SOUZ-17.3", "PLAN11-OD11-04"]
+		},
+		{
+			"kind": "categoryGeoDistrictAdmin",
+			"title": "Купить дом в Ленинском районе Ростова-на-Дону — цены",
+			"sources": ["SOUZ-17.3", "PLAN11-OD11-04"]
+		}
+	],
+	"expectedPreset": {
+		"geoMode": "SINGLE_GEO",
+		"primaryGeo": "rostov-na-donu",
+		"categoryStatus": {
+			"kvartiry": "ACTIVE",
+			"doma": "PREPARED_OFF",
+			"uchastki": "PREPARED_OFF",
+			"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+			"komnaty": "OUT",
+			"garazhi": "OUT",
+			"arenda": "OUT",
+			"novostroyki": "ACTIVE",
+			"kottedzhnye-poselki": "PREPARED_OFF"
+		},
+		"marketCapability": {
+			"newbuild": "ACTIVE",
+			"secondary": "ACTIVE"
+		},
+		"geoCategoryStatus": {
+			"rostov-na-donu": {
+				"kvartiry": "ACTIVE",
+				"doma": "PREPARED_OFF",
+				"uchastki": "PREPARED_OFF",
+				"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+				"komnaty": "OUT",
+				"garazhi": "OUT",
+				"arenda": "OUT",
+				"novostroyki": "ACTIVE",
+				"kottedzhnye-poselki": "PREPARED_OFF"
+			},
+			"bataysk": {
+				"kvartiry": "PREPARED_OFF",
+				"doma": "PREPARED_OFF",
+				"uchastki": "PREPARED_OFF",
+				"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+				"komnaty": "OUT",
+				"garazhi": "OUT",
+				"arenda": "OUT",
+				"novostroyki": "PREPARED_OFF",
+				"kottedzhnye-poselki": "PREPARED_OFF"
+			},
+			"aksay": {
+				"kvartiry": "PREPARED_OFF",
+				"doma": "PREPARED_OFF",
+				"uchastki": "PREPARED_OFF",
+				"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+				"komnaty": "OUT",
+				"garazhi": "OUT",
+				"arenda": "OUT",
+				"novostroyki": "PREPARED_OFF",
+				"kottedzhnye-poselki": "PREPARED_OFF"
+			}
+		},
+		"marketStatus": {
+			"rostov-na-donu": {
+				"newbuild": "ACTIVE",
+				"secondary": "ACTIVE"
+			},
+			"bataysk": {
+				"newbuild": "PREPARED_OFF",
+				"secondary": "PREPARED_OFF"
+			},
+			"aksay": {
+				"newbuild": "PREPARED_OFF",
+				"secondary": "PREPARED_OFF"
+			}
+		},
+		"geos": [
+			{
+				"slug": "rostov-na-donu",
+				"hubStatus": "ACTIVE",
+				"morphology": {
+					"nominative": "Ростов-на-Дону",
+					"genitive": "Ростова-на-Дону",
+					"prepositional": "Ростове-на-Дону",
+					"preposition": "в"
+				},
+				"districts": [
+					{
+						"slug": "leninskiy",
+						"name": "Ленинский",
+						"type": "admin_district",
+						"locative": "Ленинском",
+						"adjLocative": "Ленинском",
+						"adjGenitive": "Ленинского",
+						"preposition": "в",
+						"synonyms": [],
+						"parent": null
+					},
+					{
+						"slug": "voroshilovskiy",
+						"name": "Ворошиловский",
+						"type": "admin_district",
+						"locative": "Ворошиловском",
+						"adjLocative": "Ворошиловском",
+						"adjGenitive": "Ворошиловского",
+						"preposition": "в",
+						"synonyms": [],
+						"parent": null
+					},
+					{
+						"slug": "severnyy",
+						"name": "Северный",
+						"type": "microdistrict",
+						"locative": "Северном",
+						"preposition": "на",
+						"synonyms": [],
+						"parent": null
+					},
+					{
+						"slug": "tsentr",
+						"name": "Центр",
+						"type": "microdistrict",
+						"locative": "Центре",
+						"preposition": "в",
+						"synonyms": [],
+						"parent": null
+					}
+				]
+			},
+			{
+				"slug": "bataysk",
+				"hubStatus": "PREPARED_OFF",
+				"agglomerationOf": "rostov-na-donu"
+			},
+			{
+				"slug": "aksay",
+				"hubStatus": "PREPARED_OFF",
+				"agglomerationOf": "rostov-na-donu"
+			}
+		],
+		"seoFacets": {
+			"vtorichka": {
+				"geo": "rostov-na-donu",
+				"category": "kvartiry",
+				"filter": {
+					"key": "market",
+					"value": "secondary"
+				}
+			}
+		}
+	},
+	"constraints": {
+		"forbiddenStaticRoutes": [
+			{
+				"path": "/sdat",
+				"sources": ["SOUZ-4.4", "PLAN11-OD11-01"]
+			}
+		],
+		"requiredLegacyRoutes": [
+			{
+				"sourceFrom": "/kvartiry-rostova/",
+				"from": "/kvartiry-rostova",
+				"to": "/rostov-na-donu/kvartiry/",
+				"statusCode": 301,
+				"sources": ["SOUZ-20"]
+			}
+		],
+		"requiredLegacyPatterns": [
+			{
+				"sourceFrom": "/kvartiry-rostova/{legacy-slug}/",
+				"from": "/kvartiry-rostova/{legacy-slug}",
+				"matchKind": "legacyApartment",
+				"resolution": "typed-entity-aware-property-lookup",
+				"target": "final-global-canonical-property-url",
+				"statusCode": 301,
+				"missingOrNonApartment": 404,
+				"sources": ["SOUZ-20"]
+			}
+		],
+		"forbiddenPreparedCategories": [
+			{
+				"category": "komnaty",
+				"sources": ["PLAN11-OD11-01"]
+			},
+			{
+				"category": "garazhi",
+				"sources": ["PLAN11-OD11-02"]
+			}
+		]
+	},
+	"fieldSources": {
+		"/geoMode": ["SOUZ-4.4"],
+		"/primaryGeo": ["SOUZ-4.4"],
+		"/categoryStatus": ["SOUZ-4.4"],
+		"/categoryStatus/komnaty": ["PLAN11-OD11-01"],
+		"/categoryStatus/garazhi": ["PLAN11-OD11-02"],
+		"/marketCapability": ["SOUZ-4.4"],
+		"/geoCategoryStatus": ["SOUZ-4.4"],
+		"/geoCategoryStatus/rostov-na-donu/komnaty": ["PLAN11-OD11-01"],
+		"/geoCategoryStatus/rostov-na-donu/garazhi": ["PLAN11-OD11-02"],
+		"/geoCategoryStatus/bataysk/komnaty": ["PLAN11-OD11-01"],
+		"/geoCategoryStatus/bataysk/garazhi": ["PLAN11-OD11-02"],
+		"/geoCategoryStatus/aksay/komnaty": ["PLAN11-OD11-01"],
+		"/geoCategoryStatus/aksay/garazhi": ["PLAN11-OD11-02"],
+		"/marketStatus": ["SOUZ-4.4"],
+		"/geos": ["SOUZ-4.4"],
+		"/geos/0/morphology": ["SOUZ-17.3", "PLAN11-OD11-04"],
+		"/geos/0/districts": ["SOUZ-9.4", "SOUZ-17.3", "PLAN11-OD11-04"],
+		"/seoFacets/vtorichka": ["SOUZ-5"]
+	}
+}

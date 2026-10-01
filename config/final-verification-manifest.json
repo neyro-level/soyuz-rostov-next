@@ -1,0 +1,216 @@
+{
+	"schemaVersion": 1,
+	"verificationId": "AMS-REALTY-BAZA-STARTER-CURRENT-FINAL-VERIFICATION",
+	"verificationVersion": "current",
+	"suites": [
+		{
+			"command": "verify:mandatory-capabilities",
+			"capabilities": ["mandatory-capability-contract"]
+		},
+		{
+			"command": "contracts:test",
+			"capabilities": ["contract-line-endings"]
+		},
+		{
+			"command": "contracts:check",
+			"capabilities": ["contract-locks"]
+		},
+		{
+			"command": "verify:schema",
+			"capabilities": ["schema"]
+		},
+		{
+			"command": "verify:development-excel",
+			"capabilities": ["development-import"]
+		},
+		{
+			"command": "verify:jobs-config",
+			"capabilities": ["jobs-owner"]
+		},
+		{
+			"command": "verify:public-gateway",
+			"capabilities": ["public-gateway"]
+		},
+		{
+			"command": "verify:feed-parser",
+			"capabilities": ["feed-parser"]
+		},
+		{
+			"command": "verify:feed-ingest",
+			"capabilities": ["feed-ingest"]
+		},
+		{
+			"command": "verify:feed-media-mapping",
+			"capabilities": ["feed-media-mapping"]
+		},
+		{
+			"command": "verify:feed-lifecycle",
+			"capabilities": ["feed-lifecycle"]
+		},
+		{
+			"command": "verify:manual-ownership",
+			"capabilities": ["manual-ownership"]
+		},
+		{
+			"command": "verify:lead-intake",
+			"capabilities": ["lead-intake"]
+		},
+		{
+			"command": "verify:lead-analytics",
+			"capabilities": ["pii-logs-analytics"]
+		},
+		{
+			"command": "verify:lead-outbox",
+			"capabilities": ["lead-outbox"]
+		},
+		{
+			"command": "verify:lead-delivery-state",
+			"capabilities": ["lead-delivery-state"]
+		},
+		{
+			"command": "verify:max-adapter",
+			"capabilities": ["max-adapter"]
+		},
+		{
+			"command": "verify:custom-webhook-adapter",
+			"capabilities": ["custom-webhook-adapter"]
+		},
+		{
+			"command": "verify:seo-contracts",
+			"capabilities": [
+				"global-indexing",
+				"metadata-adapter",
+				"https-origin",
+				"robots-clean-param"
+			]
+		},
+		{
+			"command": "verify:discovery-feeds",
+			"capabilities": ["sitemap-failure"]
+		},
+		{
+			"command": "verify:tracking-query-params",
+			"capabilities": ["tracking-query"]
+		},
+		{
+			"command": "verify:filtered-catalog-cache",
+			"capabilities": ["filtered-query-load"]
+		},
+		{
+			"command": "verify:tracking-traffic",
+			"capabilities": ["tracking-traffic-smoke"]
+		},
+		{
+			"command": "verify:runtime-seo-templates",
+			"capabilities": ["legacy-canonical-targets", "seo-template-matrix"]
+		},
+		{
+			"command": "verify:seo-crawl-matrix",
+			"capabilities": ["seo-crawl-matrix"]
+		},
+		{
+			"command": "verify:content-gate",
+			"capabilities": ["development-gate-passport"]
+		},
+		{
+			"command": "verify:starter-ownership",
+			"capabilities": ["ownership-v2"]
+		},
+		{
+			"command": "verify:starter-upgrade-propagation",
+			"capabilities": ["starter-upgrade-e2e"]
+		},
+		{
+			"command": "verify:version-comments",
+			"capabilities": ["active-doc-state"]
+		},
+		{
+			"command": "verify:souz-parity",
+			"capabilities": ["souz-source-integrity"]
+		},
+		{
+			"command": "verify:template-geo-matrix",
+			"capabilities": ["synthetic-geo-matrix"]
+		},
+		{
+			"command": "verify:owner-operations",
+			"capabilities": ["owner-operations"]
+		},
+		{
+			"command": "verify:health-alerts",
+			"capabilities": ["health-alerts"]
+		},
+		{
+			"command": "verify:operational-recovery",
+			"capabilities": ["operational-recovery"]
+		},
+		{
+			"command": "verify:security-boundaries",
+			"capabilities": ["security-boundaries"]
+		},
+		{
+			"command": "verify:security-regression-contract",
+			"capabilities": ["security-regression"]
+		},
+		{
+			"command": "verify:product-regression",
+			"capabilities": ["product-regression"]
+		},
+		{
+			"command": "verify:production-topology",
+			"capabilities": ["production-topology"]
+		},
+		{
+			"command": "verify:release-artifact",
+			"capabilities": ["release-artifact-contract"]
+		},
+		{
+			"command": "verify:integration:required",
+			"capabilities": ["required-integration"]
+		},
+		{
+			"command": "verify:clone-readiness",
+			"capabilities": ["clone-readiness"]
+		},
+		{
+			"command": "verify:client-readiness",
+			"capabilities": ["client-readiness"]
+		},
+		{
+			"command": "verify:clone-matrix",
+			"capabilities": ["clone-matrix", "five-profile-clone-matrix"]
+		},
+		{
+			"command": "verify:clone-matrix-contract",
+			"capabilities": ["clone-matrix-contract"]
+		},
+		{
+			"command": "verify:ui-core:final",
+			"capabilities": ["ui-core", "design-source-of-truth"]
+		},
+		{
+			"command": "verify:ui-browser:final",
+			"capabilities": ["ui-browser-proof"]
+		},
+		{
+			"command": "quality:architecture",
+			"capabilities": ["architecture-boundaries"]
+		},
+		{
+			"command": "quality:architecture-guards",
+			"capabilities": ["architecture-guards"]
+		},
+		{
+			"command": "typecheck",
+			"capabilities": ["typescript"]
+		},
+		{
+			"command": "lint",
+			"capabilities": ["lint"]
+		},
+		{
+			"command": "build",
+			"capabilities": ["production-build"]
+		}
+	]
+}

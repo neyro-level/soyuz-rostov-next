@@ -1,0 +1,13 @@
+{
+	"schema_version": 1,
+	"core": {
+		"version": "5.5",
+		"path": "AMS_REALTY_PLATFORM_CORE_STANDARD_5.5_SOLO_AI_FINAL.md",
+		"sha256": "ee5d0ccb80d32abad234a4672b7b2e95a43b6df360ba335df45cbba8c9202529"
+	},
+	"ui": {
+		"version": "5.0",
+		"path": "AMS_UI_CORE_v5.0_FINAL.md",
+		"sha256": "3a68e274674c1bb6d652843be6963e9732edef4126d5b3a2dd0457f0d3b4b39a"
+	}
+}

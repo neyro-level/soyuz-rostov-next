@@ -1,0 +1,136 @@
+{
+	"schemaVersion": 1,
+	"matrixId": "TEMPLATE_GEO_MATRIX",
+	"safeguards": {
+		"fixtureOnly": true,
+		"synthetic": true,
+		"indexing": "noindex",
+		"clientExportByDefault": false,
+		"productionSeed": "forbidden"
+	},
+	"capabilityCoverage": {
+		"geoModes": ["SINGLE_GEO", "MULTI_GEO"],
+		"publicationStates": [true, false],
+		"behaviors": ["morphology", "normalization", "urlBuilding"]
+	},
+	"seoPolicy": {
+		"allowedClassifications": ["P1", "P2", "TEST", "filter-only"],
+		"publishFromRecordExistence": false
+	},
+	"city": {
+		"slug": "testograd",
+		"nominative": "Тестоград",
+		"genitive": "Тестограда",
+		"prepositional": "Тестограде",
+		"preposition": "в"
+	},
+	"administrativeDistricts": [
+		{
+			"name": "Северный",
+			"slug": "severnyy",
+			"locative": "Северном",
+			"genitive": "Северного",
+			"seoClassification": "P1",
+			"published": true
+		},
+		{
+			"name": "Южный",
+			"slug": "yuzhnyy",
+			"locative": "Южном",
+			"genitive": "Южного",
+			"seoClassification": "P2",
+			"published": true
+		},
+		{
+			"name": "Западный",
+			"slug": "zapadnyy",
+			"locative": "Западном",
+			"genitive": "Западного",
+			"seoClassification": "TEST",
+			"published": true
+		},
+		{
+			"name": "Восточный",
+			"slug": "vostochnyy",
+			"locative": "Восточном",
+			"genitive": "Восточного",
+			"seoClassification": "filter-only",
+			"published": true
+		},
+		{
+			"name": "Центральный",
+			"slug": "tsentralnyy",
+			"locative": "Центральном",
+			"genitive": "Центрального",
+			"seoClassification": "P1",
+			"published": false
+		},
+		{
+			"name": "Прибрежный",
+			"slug": "pribrezhnyy",
+			"locative": "Прибрежном",
+			"genitive": "Прибрежного",
+			"seoClassification": "P2",
+			"published": false
+		},
+		{
+			"name": "Лесной",
+			"slug": "lesnoy",
+			"locative": "Лесном",
+			"genitive": "Лесного",
+			"seoClassification": "TEST",
+			"published": false
+		},
+		{
+			"name": "Степной",
+			"slug": "stepnoy",
+			"locative": "Степном",
+			"genitive": "Степного",
+			"seoClassification": "filter-only",
+			"published": false
+		}
+	],
+	"microdistricts": [
+		{
+			"name": "Солнечный",
+			"slug": "solnechnyy",
+			"locative": "Солнечном",
+			"genitive": "Солнечного",
+			"preposition": "в",
+			"seoClassification": "P1",
+			"published": true
+		},
+		{
+			"name": "Речной",
+			"slug": "rechnoy",
+			"locative": "Речном",
+			"genitive": "Речного",
+			"preposition": "в",
+			"seoClassification": "P2",
+			"published": true
+		},
+		{
+			"name": "Старая слобода",
+			"slug": "staraya-sloboda",
+			"locative": "Старой слободе",
+			"genitive": "Старой слободы",
+			"preposition": "в",
+			"seoClassification": "TEST",
+			"published": false
+		},
+		{
+			"name": "Лесная поляна",
+			"slug": "lesnaya-polyana",
+			"locative": "Лесной поляне",
+			"genitive": "Лесной поляны",
+			"preposition": "на",
+			"seoClassification": "filter-only",
+			"published": false
+		}
+	],
+	"clientIntakePolicy": {
+		"verifiedClientGeoRequired": true,
+		"copySyntheticRecords": "forbidden",
+		"exposeByDefault": false
+	}
+}

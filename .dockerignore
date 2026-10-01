@@ -1,0 +1,13 @@
+.git
+.beads
+.next
+node_modules
+coverage
+dist
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+graphify-out
+.release

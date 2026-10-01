@@ -1,0 +1,335 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://ams24.ru/schemas/clone-intake-v1.json",
+	"title": "AMS Realty Clone Intake v1",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"schemaVersion",
+		"approvedDefaults",
+		"project",
+		"region",
+		"cities",
+		"surfaces",
+		"markets",
+		"seo",
+		"legacy",
+		"nap",
+		"brand",
+		"hostAllowlists"
+	],
+	"properties": {
+		"schemaVersion": { "const": 1 },
+		"approvedDefaults": { "const": "REALTY_BASE_CLIENT_V1" },
+		"project": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": [
+				"id",
+				"packageName",
+				"brandName",
+				"defaultDescription",
+				"domain",
+				"preset",
+				"geoMode",
+				"primaryGeo",
+				"productionIndexing"
+			],
+			"properties": {
+				"id": { "$ref": "#/$defs/nonEmpty" },
+				"packageName": { "$ref": "#/$defs/nonEmpty" },
+				"brandName": { "$ref": "#/$defs/nonEmpty" },
+				"defaultDescription": { "$ref": "#/$defs/nonEmpty" },
+				"domain": { "$ref": "#/$defs/nonEmpty" },
+				"preset": { "enum": ["MIXED", "NEWBUILD_FIRST", "SECONDARY_FIRST"] },
+				"geoMode": { "enum": ["SINGLE_GEO", "MULTI_GEO"] },
+				"primaryGeo": { "$ref": "#/$defs/slug" },
+				"productionIndexing": { "enum": ["public", "noindex"] }
+			}
+		},
+		"region": { "$ref": "#/$defs/region" },
+		"cities": {
+			"type": "array",
+			"minItems": 1,
+			"items": { "$ref": "#/$defs/city" }
+		},
+		"surfaces": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["global", "byCity", "developers"],
+			"properties": {
+				"global": { "$ref": "#/$defs/stateGroups" },
+				"byCity": {
+					"type": "object",
+					"additionalProperties": { "$ref": "#/$defs/stateGroups" }
+				},
+				"developers": { "$ref": "#/$defs/developers" }
+			}
+		},
+		"markets": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["capability", "byCity"],
+			"properties": {
+				"capability": { "$ref": "#/$defs/marketStates" },
+				"byCity": {
+					"type": "object",
+					"additionalProperties": { "$ref": "#/$defs/marketStates" }
+				}
+			}
+		},
+		"seo": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["facets", "tiers", "searchConsole"],
+			"properties": {
+				"facets": { "type": "object" },
+				"tiers": {
+					"type": "object",
+					"required": [
+						"metric",
+						"snapshotDate",
+						"bands",
+						"minInventory",
+						"unmeasuredPolicy"
+					]
+				},
+				"searchConsole": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["yandex", "google"],
+					"properties": {
+						"yandex": { "type": ["string", "null"], "minLength": 1 },
+						"google": { "type": ["string", "null"], "minLength": 1 }
+					}
+				}
+			}
+		},
+		"legacy": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["routes", "patterns"],
+			"properties": {
+				"routes": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"required": ["from", "to", "statusCode"]
+					}
+				},
+				"patterns": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"required": ["kind", "from", "statusCode"]
+					}
+				}
+			}
+		},
+		"nap": { "$ref": "#/$defs/nap" },
+		"brand": { "$ref": "#/$defs/brand" },
+		"hostAllowlists": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["outbound", "externalImages", "leadOutbound"],
+			"properties": {
+				"outbound": { "$ref": "#/$defs/hosts" },
+				"externalImages": { "$ref": "#/$defs/hosts" },
+				"leadOutbound": { "$ref": "#/$defs/hosts" }
+			}
+		}
+	},
+	"$defs": {
+		"nonEmpty": { "type": "string", "minLength": 1 },
+		"hexColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+		"radius": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+)?px$" },
+		"brand": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["colors", "radii", "fontFamily", "logoFile", "faviconFile"],
+			"properties": {
+				"colors": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["background", "foreground", "surface", "surfaceMuted", "surfaceSoft", "surfaceDark", "surfaceDarkStrong", "contentSecondary", "contentMuted", "contentInverse", "border", "accent", "accentHover", "accentSoft", "statusWarning", "statusDanger", "statusSuccess", "statusInfo"],
+					"properties": {
+						"background": { "$ref": "#/$defs/hexColor" },
+						"foreground": { "$ref": "#/$defs/hexColor" },
+						"surface": { "$ref": "#/$defs/hexColor" },
+						"surfaceMuted": { "$ref": "#/$defs/hexColor" },
+						"surfaceSoft": { "$ref": "#/$defs/hexColor" },
+						"surfaceDark": { "$ref": "#/$defs/hexColor" },
+						"surfaceDarkStrong": { "$ref": "#/$defs/hexColor" },
+						"contentSecondary": { "$ref": "#/$defs/hexColor" },
+						"contentMuted": { "$ref": "#/$defs/hexColor" },
+						"contentInverse": { "$ref": "#/$defs/hexColor" },
+						"border": { "$ref": "#/$defs/hexColor" },
+						"accent": { "$ref": "#/$defs/hexColor" },
+						"accentHover": { "$ref": "#/$defs/hexColor" },
+						"accentSoft": { "$ref": "#/$defs/hexColor" },
+						"statusWarning": { "$ref": "#/$defs/hexColor" },
+						"statusDanger": { "$ref": "#/$defs/hexColor" },
+						"statusSuccess": { "$ref": "#/$defs/hexColor" },
+						"statusInfo": { "$ref": "#/$defs/hexColor" }
+					}
+				},
+				"radii": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["sm", "md", "lg", "xl", "full"],
+					"properties": {
+						"sm": { "$ref": "#/$defs/radius" },
+						"md": { "$ref": "#/$defs/radius" },
+						"lg": { "$ref": "#/$defs/radius" },
+						"xl": { "$ref": "#/$defs/radius" },
+						"full": { "$ref": "#/$defs/radius" }
+					}
+				},
+				"fontFamily": { "enum": ["Manrope", "Inter", "Roboto"] },
+				"logoFile": { "$ref": "#/$defs/nonEmpty" },
+				"faviconFile": { "$ref": "#/$defs/nonEmpty" }
+			}
+		},
+		"slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+		"status": { "enum": ["ACTIVE", "NOINDEX_AUTO", "PREPARED_OFF", "OUT"] },
+		"region": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["slug", "name", "genitive", "locative", "shortName"],
+			"properties": {
+				"slug": { "$ref": "#/$defs/slug" },
+				"name": { "$ref": "#/$defs/nonEmpty" },
+				"genitive": { "$ref": "#/$defs/nonEmpty" },
+				"locative": { "$ref": "#/$defs/nonEmpty" },
+				"shortName": { "$ref": "#/$defs/nonEmpty" }
+			}
+		},
+		"morphology": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["nominative", "genitive", "prepositional", "preposition"],
+			"properties": {
+				"nominative": { "$ref": "#/$defs/nonEmpty" },
+				"genitive": { "$ref": "#/$defs/nonEmpty" },
+				"prepositional": { "$ref": "#/$defs/nonEmpty" },
+				"preposition": { "enum": ["в", "во", "на"] }
+			}
+		},
+		"district": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": [
+				"slug",
+				"name",
+				"type",
+				"locative",
+				"preposition",
+				"synonyms",
+				"parent"
+			],
+			"properties": {
+				"slug": { "$ref": "#/$defs/slug" },
+				"name": { "$ref": "#/$defs/nonEmpty" },
+				"type": { "enum": ["admin_district", "microdistrict"] },
+				"locative": { "$ref": "#/$defs/nonEmpty" },
+				"adjLocative": { "$ref": "#/$defs/nonEmpty" },
+				"adjGenitive": { "$ref": "#/$defs/nonEmpty" },
+				"preposition": { "enum": ["в", "во", "на"] },
+				"synonyms": {
+					"type": "array",
+					"items": { "$ref": "#/$defs/nonEmpty" }
+				},
+				"parent": { "type": ["string", "null"] }
+			},
+			"allOf": [
+				{
+					"if": { "properties": { "type": { "const": "admin_district" } } },
+					"then": { "required": ["adjLocative", "adjGenitive"] },
+					"else": {
+						"not": {
+							"anyOf": [
+								{ "required": ["adjLocative"] },
+								{ "required": ["adjGenitive"] }
+							]
+						}
+					}
+				}
+			]
+		},
+		"city": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": [
+				"slug",
+				"title",
+				"published",
+				"hubStatus",
+				"morphologyApproved",
+				"morphology",
+				"districts"
+			],
+			"properties": {
+				"slug": { "$ref": "#/$defs/slug" },
+				"title": { "$ref": "#/$defs/nonEmpty" },
+				"published": { "type": "boolean" },
+				"hubStatus": { "$ref": "#/$defs/status" },
+				"agglomerationOf": { "$ref": "#/$defs/slug" },
+				"morphologyApproved": { "const": true },
+				"morphology": { "$ref": "#/$defs/morphology" },
+				"districts": {
+					"type": "array",
+					"items": { "$ref": "#/$defs/district" }
+				}
+			}
+		},
+		"stateGroups": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"ACTIVE": { "type": "array", "items": { "$ref": "#/$defs/slug" } },
+				"NOINDEX_AUTO": {
+					"type": "array",
+					"items": { "$ref": "#/$defs/slug" }
+				},
+				"PREPARED_OFF": {
+					"type": "array",
+					"items": { "$ref": "#/$defs/slug" }
+				},
+				"OUT": { "type": "array", "items": { "$ref": "#/$defs/slug" } }
+			}
+		},
+		"marketStates": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["newbuild", "secondary"],
+			"properties": {
+				"newbuild": { "$ref": "#/$defs/status" },
+				"secondary": { "$ref": "#/$defs/status" }
+			}
+		},
+		"developers": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["root", "byCity"],
+			"properties": {
+				"root": { "$ref": "#/$defs/status" },
+				"byCity": {
+					"type": "object",
+					"additionalProperties": { "$ref": "#/$defs/status" }
+				}
+			}
+		},
+		"nap": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["phone", "email", "address", "workingHours"],
+			"properties": {
+				"phone": { "$ref": "#/$defs/nonEmpty" },
+				"email": { "$ref": "#/$defs/nonEmpty" },
+				"address": { "$ref": "#/$defs/nonEmpty" },
+				"workingHours": { "$ref": "#/$defs/nonEmpty" }
+			}
+		},
+		"hosts": { "type": "array", "items": { "$ref": "#/$defs/nonEmpty" } }
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"schema_version": 1,
+	"plain_usage_limit": 46,
+	"classification": {
+		"A_BEHAVIOR_PRIMITIVE": ["MediaGallery.tsx", "PropertyGalleryView.tsx", "CitySwitcherView.tsx", "DesktopSiteNavView.tsx", "MobileMenuView.tsx", "PhoneRevealView.tsx"],
+		"B_REPEATED_VISUAL": ["CatalogControlsView.tsx", "MortgageCalculatorView.tsx", "PropertyChatView.tsx", "PropertySidebarView.tsx", "PropertyViewingRequestView.tsx"],
+		"C_ONE_OFF": ["SaleFinalCtaView.tsx", "SalePreparationView.tsx", "PropertyCardGridLayout.tsx", "PropertyCardListLayout.tsx", "ExpertRequestModalView.tsx", "PropertyDetailSectionsView.tsx", "SiteFooterView.tsx", "PropertyPageActionsView.tsx"]
+	}
+}

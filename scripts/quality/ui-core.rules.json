@@ -1,0 +1,45 @@
+{
+	"schema_version": 1,
+	"rules": [
+		{
+			"id": "design-literals",
+			"classification": "MECHANICAL",
+			"proof": "Scanner plus negative fixtures; current debt is exact-fingerprint baselined until EPIC-11."
+		},
+		{
+			"id": "token-integrity",
+			"classification": "MECHANICAL",
+			"proof": "pnpm quality:design-tokens"
+		},
+		{
+			"id": "primitive-ownership",
+			"classification": "MECHANICAL",
+			"proof": "Canonical components.json aliases and unique packages/ui/src/components/ui owners."
+		},
+		{
+			"id": "font-mapping",
+			"classification": "TARGETED",
+			"proof": "CSS font token must match a next/font variable or an explicitly baselined system stack."
+		},
+		{
+			"id": "heading-form-association",
+			"classification": "TARGETED",
+			"proof": "pnpm verify:a11y-starter"
+		},
+		{
+			"id": "client-boundaries",
+			"classification": "TARGETED",
+			"proof": "Deterministic inventory of explicit use client files."
+		},
+		{
+			"id": "responsive-layout",
+			"classification": "VISUAL",
+			"proof": "Representative viewport matrix is required when UI behavior changes."
+		},
+		{
+			"id": "interaction-states",
+			"classification": "MANUAL",
+			"proof": "Keyboard, focus and modal behavior remain a manual acceptance surface."
+		}
+	]
+}

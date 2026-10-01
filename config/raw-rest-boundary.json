@@ -1,0 +1,51 @@
+{
+	"schemaVersion": 1,
+	"allowedRouteFiles": [
+		"src/app/api/internal/healthz/route.ts",
+		"src/app/api/internal/revalidate/route.ts",
+		"src/app/api/public/leads/route.ts",
+		"src/app/(payload)/api/[[...slug]]/route.ts",
+		"src/app/(payload)/api/graphql/route.ts",
+		"src/app/(payload)/api/graphql-playground/route.ts"
+	],
+	"classifiedCollections": {
+		"users": "admin-auth",
+		"pages": "deny-anonymous",
+		"regions": "deny-anonymous",
+		"cities": "deny-anonymous",
+		"districts": "deny-anonymous",
+		"properties": "deny-anonymous",
+		"feed-sources": "deny-anonymous",
+		"import-runs": "deny-anonymous",
+		"import-issues": "deny-anonymous",
+		"leads": "deny-anonymous",
+		"lead-deliveries": "deny-anonymous",
+		"media": "deny-anonymous",
+		"redirects": "deny-anonymous",
+		"payload-jobs": "system-only"
+	},
+	"anonymousDenyCollections": [
+		"users",
+		"pages",
+		"regions",
+		"cities",
+		"districts",
+		"properties",
+		"feed-sources",
+		"import-runs",
+		"import-issues",
+		"leads",
+		"lead-deliveries",
+		"media",
+		"redirects"
+	],
+	"anonymousAuthAllowPaths": [
+		"/api/users/login",
+		"/api/users/logout",
+		"/api/users/refresh-token",
+		"/api/users/forgot-password",
+		"/api/users/reset-password",
+		"/api/users/verify"
+	],
+	"note": "Every app API route must be explicitly approved here. Public lead intake is POST /api/public/leads only; generic Payload leads create remains deny-anonymous. Raw anonymous business REST remains denied by default."
+}

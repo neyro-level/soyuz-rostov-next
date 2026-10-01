@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"cases": [
+		{
+			"name": "rent status drift",
+			"path": "/categoryStatus/arenda",
+			"value": "ACTIVE"
+		},
+		{
+			"name": "owner morphology drift",
+			"path": "/geos/0/morphology/genitive",
+			"value": "Ростов-на-Дону"
+		},
+		{
+			"name": "forbidden rent route drift",
+			"path": "/staticRoutes/-",
+			"value": {
+				"path": "/sdat",
+				"changeFrequency": "weekly",
+				"priority": 0.7,
+				"indexable": true
+			}
+		},
+		{
+			"name": "legacy target drift",
+			"path": "/legacyRoutes/1/to",
+			"value": "/kvartiry/"
+		}
+	]
+}

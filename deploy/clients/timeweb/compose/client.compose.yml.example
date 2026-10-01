@@ -1,0 +1,21 @@
+services:
+  app:
+    image: "${IMAGE:?set an immutable image digest or immutable tag}"
+    restart: unless-stopped
+    env_file:
+      - "${CLIENT_ENV_FILE:?set an approved client env file path}"
+    environment:
+      NODE_ENV: production
+      JOBS_AUTORUN: "true"
+    ports:
+      - "127.0.0.1:3000:3000"
+    read_only: true
+    tmpfs:
+      - /tmp
+
+# Jobs-owner handover:
+# 1. old runtime remains JOBS_AUTORUN=true; start candidate with false
+# 2. run readiness/live proof
+# 3. stop old runtime and confirm no active owner
+# 4. restart this single service with JOBS_AUTORUN=true
+# 5. prove jobs health and backlog movement

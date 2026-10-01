@@ -1,0 +1,4 @@
+export async function invalidate() {
+	const { revalidateTag } = await import("next/cache");
+	return revalidateTag("properties", "max");
+}

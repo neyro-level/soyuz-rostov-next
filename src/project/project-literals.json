@@ -1,0 +1,8 @@
+{
+	"projectIdentity": {
+		"brands": ["AMS Realty Baza Starter"],
+		"domains": ["start-baza.ams24.ru"],
+		"cities": ["Демо-город"]
+	},
+	"hrefLiteralMode": "enforce"
+}

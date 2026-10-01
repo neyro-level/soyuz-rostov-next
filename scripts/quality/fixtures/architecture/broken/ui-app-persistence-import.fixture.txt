@@ -1,0 +1,3 @@
+import { payload } from "../../../src/project/payload";
+
+export const load = () => payload.find({ collection: "properties" });

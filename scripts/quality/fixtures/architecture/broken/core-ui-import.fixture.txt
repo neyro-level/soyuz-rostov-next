@@ -1,0 +1,3 @@
+import { Button } from "@ams/realtbase-ui/components/ui/button";
+
+export const forbiddenButton = Button;

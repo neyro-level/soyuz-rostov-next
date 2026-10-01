@@ -1,0 +1,3 @@
+import { parsePublicRoute } from "@/core/routing/parse-public-route";
+
+export const parseRoute = parsePublicRoute;

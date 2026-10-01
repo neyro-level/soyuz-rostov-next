@@ -1,0 +1,10 @@
+{
+	"name": "@ams/realtbase-contracts",
+	"version": "2.4.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./journal": "./src/journal/index.ts"
+	}
+}

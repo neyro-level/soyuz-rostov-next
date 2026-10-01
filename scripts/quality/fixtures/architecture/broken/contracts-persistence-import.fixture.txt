@@ -1,0 +1,3 @@
+import type { Payload } from "payload";
+
+export type ContractWithRuntime = { payload: Payload };
