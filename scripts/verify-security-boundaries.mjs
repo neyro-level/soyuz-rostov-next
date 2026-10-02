@@ -168,7 +168,7 @@ requireIncludes(
 	"local media overwrite must stay disabled",
 );
 requireIncludes(
-	"deploy/nginx/start-baza.ams24.ru.conf",
+	"deploy/souz-rostov/nginx.conf.example",
 	"location /media/",
 	"nginx must alias persistent MEDIA_DIR",
 );
@@ -226,7 +226,7 @@ assert.ok(
 	"CSP and HSTS must use the tested environment-aware header builder",
 );
 assert.ok(
-	!read("deploy/nginx/start-baza.ams24.ru.conf").includes(
+	!read("deploy/souz-rostov/nginx.conf.example").includes(
 		"includeSubDomains; preload",
 	),
 	"nginx must not bypass the HSTS_PRELOAD app opt-in",
@@ -284,7 +284,7 @@ for (const required of [
 }
 
 for (const nginxFile of [
-	"deploy/nginx/start-baza.ams24.ru.conf",
+	"deploy/souz-rostov/nginx.conf.example",
 	"deploy/clients/timeweb/nginx/site.conf.example",
 ]) {
 	const nginx = read(nginxFile);

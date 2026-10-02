@@ -4,51 +4,93 @@ import type { ProjectSiteProfileConfig } from "./site-profile.config.types.ts";
 export const projectSiteProfileConfig = {
 	"preset": "MIXED",
 	"geoMode": "SINGLE_GEO",
-	"primaryGeo": "primorsk",
+	"primaryGeo": "rostov-na-donu",
 	"geos": {
-		"primorsk": {
+		"rostov-na-donu": {
 			"published": true,
 			"hubStatus": "ACTIVE"
+		},
+		"bataysk": {
+			"published": true,
+			"hubStatus": "PREPARED_OFF",
+			"agglomerationOf": "rostov-na-donu"
+		},
+		"aksay": {
+			"published": true,
+			"hubStatus": "PREPARED_OFF",
+			"agglomerationOf": "rostov-na-donu"
 		}
 	},
 	"categoryStatus": {
 		"kvartiry": "ACTIVE",
-		"doma": "ACTIVE",
-		"uchastki": "ACTIVE",
-		"kommercheskaya-nedvizhimost": "ACTIVE",
-		"komnaty": "ACTIVE",
-		"garazhi": "ACTIVE",
-		"arenda": "ACTIVE",
+		"doma": "PREPARED_OFF",
+		"uchastki": "PREPARED_OFF",
+		"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+		"komnaty": "OUT",
+		"garazhi": "OUT",
+		"arenda": "OUT",
 		"novostroyki": "ACTIVE",
-		"kottedzhnye-poselki": "ACTIVE"
+		"kottedzhnye-poselki": "PREPARED_OFF"
 	},
 	"marketCapability": {
 		"newbuild": "ACTIVE",
 		"secondary": "ACTIVE"
 	},
 	"geoCategoryStatus": {
-		"primorsk": {
+		"rostov-na-donu": {
 			"kvartiry": "ACTIVE",
-			"doma": "ACTIVE",
-			"uchastki": "ACTIVE",
-			"kommercheskaya-nedvizhimost": "ACTIVE",
-			"komnaty": "ACTIVE",
-			"garazhi": "ACTIVE",
-			"arenda": "ACTIVE",
+			"doma": "PREPARED_OFF",
+			"uchastki": "PREPARED_OFF",
+			"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+			"komnaty": "OUT",
+			"garazhi": "OUT",
+			"arenda": "OUT",
 			"novostroyki": "ACTIVE",
-			"kottedzhnye-poselki": "ACTIVE"
+			"kottedzhnye-poselki": "PREPARED_OFF"
+		},
+		"bataysk": {
+			"kvartiry": "PREPARED_OFF",
+			"doma": "PREPARED_OFF",
+			"uchastki": "PREPARED_OFF",
+			"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+			"komnaty": "OUT",
+			"garazhi": "OUT",
+			"arenda": "OUT",
+			"novostroyki": "PREPARED_OFF",
+			"kottedzhnye-poselki": "PREPARED_OFF"
+		},
+		"aksay": {
+			"kvartiry": "PREPARED_OFF",
+			"doma": "PREPARED_OFF",
+			"uchastki": "PREPARED_OFF",
+			"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+			"komnaty": "OUT",
+			"garazhi": "OUT",
+			"arenda": "OUT",
+			"novostroyki": "PREPARED_OFF",
+			"kottedzhnye-poselki": "PREPARED_OFF"
 		}
 	},
 	"marketStatus": {
-		"primorsk": {
+		"rostov-na-donu": {
 			"newbuild": "ACTIVE",
 			"secondary": "ACTIVE"
+		},
+		"bataysk": {
+			"newbuild": "PREPARED_OFF",
+			"secondary": "PREPARED_OFF"
+		},
+		"aksay": {
+			"newbuild": "PREPARED_OFF",
+			"secondary": "PREPARED_OFF"
 		}
 	},
 	"developersSurface": {
 		"root": "ACTIVE",
 		"byGeo": {
-			"primorsk": "ACTIVE"
+			"rostov-na-donu": "ACTIVE",
+			"bataysk": "PREPARED_OFF",
+			"aksay": "PREPARED_OFF"
 		}
 	},
 	"searchConsole": {
@@ -104,38 +146,28 @@ export const projectSiteProfileConfig = {
 	},
 	"seoFacets": {
 		"vtorichka": {
-			"geo": "primorsk",
+			"geo": "rostov-na-donu",
 			"category": "kvartiry",
 			"filter": {
 				"key": "market",
 				"value": "secondary"
 			}
-		},
-		"dvukhkomnatnye": {
-			"geo": "primorsk",
-			"category": "kvartiry",
-			"filter": {
-				"key": "rooms",
-				"value": [
-					2
-				]
-			}
 		}
 	},
 	"seoTiers": {
-		"metric": "searchDemand",
-		"snapshotDate": "2026-09-24",
+		"metric": "broad39",
+		"snapshotDate": "2026-10-01",
 		"bands": {
-			"P1": 100,
-			"P2": 50,
-			"TEST": 0
+			"P1": 500,
+			"P2": 100,
+			"TEST": 50
 		},
 		"minInventory": {
 			"P1": 5,
 			"P2": 5,
 			"TEST": 10
 		},
-		"unmeasuredPolicy": "TEST"
+		"unmeasuredPolicy": "NONE"
 	},
 	"gate": {
 		"listingIntroMinChars": 600,
@@ -185,13 +217,13 @@ export const projectSiteProfileConfig = {
 			"indexable": true
 		},
 		{
-			"path": "/prodat",
+			"path": "/ipoteka/semeynaya",
 			"changeFrequency": "weekly",
-			"priority": 0.7,
-			"indexable": true
+			"priority": 0.6,
+			"indexable": false
 		},
 		{
-			"path": "/sdat",
+			"path": "/prodat",
 			"changeFrequency": "weekly",
 			"priority": 0.7,
 			"indexable": true
@@ -217,8 +249,8 @@ export const projectSiteProfileConfig = {
 	],
 	"legacyRoutes": [
 		{
-			"from": "/nedvizhimost",
-			"to": "/kvartiry/",
+			"from": "/kvartiry-rostova",
+			"to": "/rostov-na-donu/kvartiry/",
 			"statusCode": 301
 		}
 	],

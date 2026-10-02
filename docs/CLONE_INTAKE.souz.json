@@ -6,7 +6,7 @@
 		"packageName": "souz-rostov-realty",
 		"brandName": "Союз застройщиков",
 		"defaultDescription": "Недвижимость Ростова-на-Дону и Ростовской области",
-		"domain": "souz-rostov.example",
+		"domain": "souz-home.ru",
 		"preset": "MIXED",
 		"geoMode": "SINGLE_GEO",
 		"primaryGeo": "rostov-na-donu",
@@ -108,7 +108,10 @@
 	],
 	"surfaces": {
 		"global": {
-			"ACTIVE": ["kvartiry", "novostroyki"],
+			"ACTIVE": [
+				"kvartiry",
+				"novostroyki"
+			],
 			"NOINDEX_AUTO": [],
 			"PREPARED_OFF": [
 				"doma",
@@ -116,11 +119,18 @@
 				"kommercheskaya-nedvizhimost",
 				"kottedzhnye-poselki"
 			],
-			"OUT": ["komnaty", "garazhi", "arenda"]
+			"OUT": [
+				"komnaty",
+				"garazhi",
+				"arenda"
+			]
 		},
 		"byCity": {
 			"rostov-na-donu": {
-				"ACTIVE": ["kvartiry", "novostroyki"],
+				"ACTIVE": [
+					"kvartiry",
+					"novostroyki"
+				],
 				"NOINDEX_AUTO": [],
 				"PREPARED_OFF": [
 					"doma",
@@ -128,7 +138,11 @@
 					"kommercheskaya-nedvizhimost",
 					"kottedzhnye-poselki"
 				],
-				"OUT": ["komnaty", "garazhi", "arenda"]
+				"OUT": [
+					"komnaty",
+					"garazhi",
+					"arenda"
+				]
 			},
 			"bataysk": {
 				"ACTIVE": [],
@@ -141,7 +155,11 @@
 					"novostroyki",
 					"kottedzhnye-poselki"
 				],
-				"OUT": ["komnaty", "garazhi", "arenda"]
+				"OUT": [
+					"komnaty",
+					"garazhi",
+					"arenda"
+				]
 			},
 			"aksay": {
 				"ACTIVE": [],
@@ -154,7 +172,11 @@
 					"novostroyki",
 					"kottedzhnye-poselki"
 				],
-				"OUT": ["komnaty", "garazhi", "arenda"]
+				"OUT": [
+					"komnaty",
+					"garazhi",
+					"arenda"
+				]
 			}
 		},
 		"developers": {
@@ -167,11 +189,23 @@
 		}
 	},
 	"markets": {
-		"capability": { "newbuild": "ACTIVE", "secondary": "ACTIVE" },
+		"capability": {
+			"newbuild": "ACTIVE",
+			"secondary": "ACTIVE"
+		},
 		"byCity": {
-			"rostov-na-donu": { "newbuild": "ACTIVE", "secondary": "ACTIVE" },
-			"bataysk": { "newbuild": "PREPARED_OFF", "secondary": "PREPARED_OFF" },
-			"aksay": { "newbuild": "PREPARED_OFF", "secondary": "PREPARED_OFF" }
+			"rostov-na-donu": {
+				"newbuild": "ACTIVE",
+				"secondary": "ACTIVE"
+			},
+			"bataysk": {
+				"newbuild": "PREPARED_OFF",
+				"secondary": "PREPARED_OFF"
+			},
+			"aksay": {
+				"newbuild": "PREPARED_OFF",
+				"secondary": "PREPARED_OFF"
+			}
 		}
 	},
 	"seo": {
@@ -179,21 +213,34 @@
 			"vtorichka": {
 				"geo": "rostov-na-donu",
 				"category": "kvartiry",
-				"filter": { "key": "market", "value": "secondary" }
+				"filter": {
+					"key": "market",
+					"value": "secondary"
+				}
 			}
 		},
 		"tiers": {
 			"metric": "broad39",
 			"snapshotDate": "2026-09-27",
-			"bands": { "P1": 500, "P2": 100, "TEST": 50 },
-			"minInventory": { "P1": 5, "P2": 5, "TEST": 10 },
+			"bands": {
+				"P1": 500,
+				"P2": 100,
+				"TEST": 50
+			},
+			"minInventory": {
+				"P1": 5,
+				"P2": 5,
+				"TEST": 10
+			},
 			"unmeasuredPolicy": "NONE"
 		},
-		"searchConsole": { "yandex": null, "google": null }
+		"searchConsole": {
+			"yandex": null,
+			"google": null
+		}
 	},
 	"legacy": {
 		"routes": [
-			{ "from": "/nedvizhimost", "to": "/kvartiry/", "statusCode": 301 },
 			{
 				"from": "/kvartiry-rostova",
 				"to": "/rostov-na-donu/kvartiry/",
@@ -201,32 +248,60 @@
 			}
 		],
 		"patterns": [
-			{ "kind": "property", "from": "/obekty/{slug}", "statusCode": 301 }
+			{
+				"kind": "property",
+				"from": "/obekty/{slug}",
+				"statusCode": 301
+			}
 		]
 	},
 	"nap": {
 		"phone": "+7 863 000-00-00",
-		"email": "hello@souz-rostov.example",
+		"email": "info@souz-home.ru",
 		"address": "Ростов-на-Дону",
 		"workingHours": "Пн-Пт 09:00-18:00"
 	},
 	"brand": {
 		"colors": {
-			"background": "#f4f4f3", "foreground": "#17161a", "surface": "#ffffff",
-			"surfaceMuted": "#ebebe9", "surfaceSoft": "#fafafa", "surfaceDark": "#18181a",
-			"surfaceDarkStrong": "#101011", "contentSecondary": "#413f41", "contentMuted": "#827f81",
-			"contentInverse": "#ffffff", "border": "#e3e3e1", "accent": "#8a1515",
-			"accentHover": "#630e0e", "accentSoft": "#f7f2f2", "statusWarning": "#996000",
-			"statusDanger": "#9e1c1c", "statusSuccess": "#159947", "statusInfo": "#0a66cc"
+			"background": "#f4f4f3",
+			"foreground": "#17161a",
+			"surface": "#ffffff",
+			"surfaceMuted": "#ebebe9",
+			"surfaceSoft": "#fafafa",
+			"surfaceDark": "#18181a",
+			"surfaceDarkStrong": "#101011",
+			"contentSecondary": "#413f41",
+			"contentMuted": "#827f81",
+			"contentInverse": "#ffffff",
+			"border": "#e3e3e1",
+			"accent": "#8a1515",
+			"accentHover": "#630e0e",
+			"accentSoft": "#f7f2f2",
+			"statusWarning": "#996000",
+			"statusDanger": "#9e1c1c",
+			"statusSuccess": "#159947",
+			"statusInfo": "#0a66cc"
 		},
-		"radii": { "sm": "8px", "md": "10px", "lg": "12px", "xl": "12px", "full": "999px" },
+		"radii": {
+			"sm": "8px",
+			"md": "10px",
+			"lg": "12px",
+			"xl": "12px",
+			"full": "999px"
+		},
 		"fontFamily": "Manrope",
 		"logoFile": "public/brand/logo.svg",
 		"faviconFile": "src/app/icon.svg"
 	},
 	"hostAllowlists": {
-		"outbound": ["api.souz-rostov.example"],
-		"externalImages": ["images.souz-rostov.example"],
-		"leadOutbound": ["crm.souz-rostov.example"]
+		"outbound": [
+			"soyuz-rostov.tw1.ru"
+		],
+		"externalImages": [
+			"soyuz-rostov.tw1.ru"
+		],
+		"leadOutbound": [
+			"soyuz-rostov.tw1.ru"
+		]
 	}
 }

@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"presetSha": "4984dd910ddbff6f6e58760e94fd6a4ad82b0f3cdcb8b4acfa96550c0207627c",
+	"outputs": {
+		"package.json": "6390a7c46e545ecb5ee8bdb6f28fadc0c294e7104ff92ff0a1b3c88ef97a9044",
+		"src/project/site.config.ts": "24d29894a7b6ccfd7a5a235a1c712d3b86508db90a074534fb6c103e18be98bb",
+		"src/project/site-profile.config.ts": "5aa83c0ab0a148a9949fcaae1e38c735a4dadd3a04c0ca13a4a97e55e40b877e",
+		"src/project/project-literals.json": "f6619d857561e393d28c4b0402ac36e6ab2f7e64fbaab2aa59933bdb468e32bb",
+		"src/project/copy.ts": "089c295f291d7418e70ac8ed3f58afdb178ea85edf47a2e3e047e43eeefbe4f2",
+		"src/project/seo/template-inputs.ts": "33b30122e998a072cc3a356b0b756ec73e9501910eec6585e11765863b113596",
+		"src/app/globals.css": "bd94aac017a4c5d03e54f44b6881002bb7202626c79f4f35574bb343bcd38d26",
+		"src/project/font.generated.ts": "d28856d4c780e4f4e0417d87cd1392bb8065e1469e937c6e07498b91dd2f0dde",
+		"src/project/client-readiness.config.ts": "0cc9d0bfbe0204589b2fbc013281944184a9836c7cf08b168fcdfba981a0b623",
+		"docs/CLIENT_BOOTSTRAP.json": "6b1c088ba47c5021248d647c550d900021cfcc293938502cfbf7688093f4cf70",
+		"docs/seo/DISTRICTS.csv": "88e6f84b48bd7410d50265bafce12efeea58ddaaff33c751f3a828f2495af6a6",
+		"docs/seo/SEO_REGISTRY_SEED.csv": "baa3789500b1911a7c61e17cb2982663933fd9e3fe3220eb038c04083ea53de9",
+		"src/project/seo/registry-seed.ts": "15f8c8499a474bedf15d874ed8217ab0a93b1b35ac4463373eee3497ae03d706",
+		"docs/CLONE_PROVENANCE.md": "a5bf43eeed6bca82fd065bb8d51af1b6505a7ce908c1bb9f5d5b9b6626f3a69e"
+	}
+}

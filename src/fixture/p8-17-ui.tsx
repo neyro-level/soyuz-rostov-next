@@ -70,7 +70,6 @@ export function P817FixtureView({
 					progress: {
 						label: "Дом сдан",
 						description: "Демонстрационный статус",
-						checkedAt: "24 сентября 2026",
 					},
 					faq: [
 						{

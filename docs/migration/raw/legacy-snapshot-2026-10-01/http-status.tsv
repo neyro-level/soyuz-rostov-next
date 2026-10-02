@@ -1,0 +1,15 @@
+url	status	content_type	final_url	title	h1	canonical	robots
+https://souz-home.ru/robots.txt	200	text/plain	https://souz-home.ru/robots.txt				
+https://souz-home.ru/sitemap.xml	404	text/html	https://souz-home.ru/sitemap.xml	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/	200	text/html	https://souz-home.ru/	Союз Застройщиков Ростов: квартиры, дома, ипотека	Проверенная недвижимость в Ростове-на-Дону	https://souz-home.ru/	index, follow
+https://souz-home.ru/prodat/	404	text/html	https://souz-home.ru/prodat/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/sdat/	404	text/html	https://souz-home.ru/sdat/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/uslugi/	404	text/html	https://souz-home.ru/uslugi/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/nedvizhimost/	404	text/html	https://souz-home.ru/nedvizhimost/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/obekty/	404	text/html	https://souz-home.ru/obekty/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/sotrudniki/	404	text/html	https://souz-home.ru/sotrudniki/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/stroitelstvo-domov/	200	text/html	https://souz-home.ru/stroitelstvo-domov/	Строительство домов в Ростове: ипотека 6% и подрядчик	Построим дом в Ростове под ключ с ипотекой от 6% и проверенным подрядчиком	https://souz-home.ru/stroitelstvo-domov/	index, follow
+https://souz-home.ru/reviews/	200	text/html	https://souz-home.ru/reviews/	Отзывы клиентов о Союзе Застройщиков в Ростове	Реальные отзывы о работе Союза Застройщиков в Ростове	https://souz-home.ru/reviews/	index, follow
+https://souz-home.ru/otzyvy/	404	text/html	https://souz-home.ru/otzyvy/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/semeinaya-ipoteka/	404	text/html	https://souz-home.ru/semeinaya-ipoteka/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow
+https://souz-home.ru/ipoteka/semeynaya/	404	text/html	https://souz-home.ru/ipoteka/semeynaya/	Страница не найдена — Союз Застройщиков	Страница не найдена	https://souz-home.ru/404/	noindex, nofollow

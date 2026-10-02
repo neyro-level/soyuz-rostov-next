@@ -1,0 +1,21 @@
+services:
+  app:
+    image: "${IMAGE:?set immutable souz-rostov image digest or immutable tag}"
+    restart: unless-stopped
+    env_file:
+      - "${SOUZ_ROSTOV_ENV_FILE:-/etc/souz-rostov/app.env}"
+    environment:
+      NODE_ENV: production
+      JOBS_AUTORUN: "true"
+    ports:
+      - "127.0.0.1:3000:3000"
+    read_only: true
+    tmpfs:
+      - /tmp
+
+# Jobs-owner handover:
+# 1. start candidate with JOBS_AUTORUN=false while old runtime owns jobs
+# 2. run health/live proof
+# 3. stop old jobs owner
+# 4. restart exactly one runtime with JOBS_AUTORUN=true
+# 5. prove jobs health/backlog movement

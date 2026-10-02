@@ -341,7 +341,9 @@ const outputManifest = {
 		generatedOutputs.map((relativePath) => [
 			relativePath,
 			createHash("sha256")
-				.update(readFileSync(join(root, relativePath)))
+				.update(
+					readFileSync(join(root, relativePath), "utf8").replace(/\r\n/g, "\n"),
+				)
 				.digest("hex"),
 		]),
 	),

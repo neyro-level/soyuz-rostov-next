@@ -1,67 +1,42 @@
-# AMS Realty Baza Starter
+# Союз застройщиков Ростов
 
 ## Project router
 
 - Контур: Windows 11, SourceCraft primary.
-- Platform: AMS Realty Platform Core Standard 5.5, `AMS_PROFILE=REALTY_BASE`,
-  режим `BUILD`.
+- Client: `Союз застройщиков`, город Ростов-на-Дону.
+- Package/runtime identity: `souz-rostov-realty`.
+- Platform: AMS Realty Platform Core Standard 5.5, `AMS_PROFILE=REALTY_BASE`, режим `BUILD`.
 - Delivery: `COMMERCIAL`.
-- Secrets source of truth: Secret Master, self-hosted Infisical
-  `https://infisical.ams24.ru`; Doppler is legacy/import source only until old
-  secrets are migrated.
-- Backend/data owner: Payload CMS + PostgreSQL; Prisma и второй backend/auth
-  запрещены.
-- Активной implementation queue нет. Новые задачи начинаются отдельным
-  branch/worktree от актуального SourceCraft `main`.
-- Current release state, tag boundary, runtime versions and live-proof status:
-  `docs/STARTER_RELEASE_STATE.md`.
-- `start-baza.ams24.ru` - owner-operated demo/template verification contour on
-  AMS Server. Runtime: local PostgreSQL + persistent `MEDIA_DIR`. S3 и Timeweb
-  Managed PostgreSQL не являются starter runtime; клиентский clone принимает
-  собственное topology decision (`docs/CLONE_ONBOARDING.md`).
+- Backend/data owner: Payload CMS + PostgreSQL; Prisma и второй backend/auth запрещены.
+- Runtime project kind: `client` (`src/project/site.config.ts`).
+- Final public domain: `souz-home.ru`.
+- Timeweb technical/staging host: `soyuz-rostov.tw1.ru`.
+- Production indexing: currently `noindex` until owner cutover decision from old live site to this project.
+- Secrets source of truth: Secret Master, self-hosted Infisical `https://infisical.ams24.ru`; values must never be printed.
+- Server access: SZ Rostov / `szrostov` (`szrostov-server/prod`), Timeweb Cloud.
 
 ## Reading order
 
 1. `docs/README.md`.
 2. `AMS_REALTY_PLATFORM_CORE_STANDARD_5.5_SOLO_AI_FINAL.md`.
-3. `AMS_UI_CORE_v5.0_FINAL.md` для UI-scope.
-4. `docs/01_PRD.md`, `02_PRODUCT_STRUCTURE.md`, `03_ARCHITECTURE.md`.
-5. `docs/04_BACKLOG.md`, `05_RELEASE_CHECKLIST.md`,
-   `STARTER_RELEASE_STATE.md`.
-6. `docs/PROJECT.md`.
-7. `docs/DESIGN.md` or `docs/OPERATIONS.md` по scope.
-8. Профильный ADR/module/research документ, только когда он входит в scope.
+3. `AMS_UI_CORE_v5.0_FINAL.md` for UI scope.
+4. `docs/PROJECT.md`, `docs/OPERATIONS.md`.
+5. `docs/01_PRD.md`, `02_PRODUCT_STRUCTURE.md`, `03_ARCHITECTURE.md`.
+6. `docs/04_BACKLOG.md`, `05_RELEASE_CHECKLIST.md`.
+7. `docs/DESIGN.md` and relevant deploy docs under `deploy/clients/timeweb/`.
+8. ADR/module/research document only when in scope.
 
 ## Invariants
 
 - Один независимый stream = одна branch/worktree = один Pull Request.
-- Repository mode: `SOURCECRAFT_PRIMARY_GITHUB_MIRROR`. Ветки, PR, exact-head
-  Gate, merge и будущий release tag принадлежат SourceCraft; GitHub получает
-  только односторонний fast-forward mirror canonical SourceCraft `main`.
-  Reverse/bidirectional sync запрещён.
-- Git SHA и mirror equality проверяются через Git/SourceCraft, а не через
-  устаревающие текстовые поля документации.
-- Независимый reviewer / Task Manager Code Reviewer запускается только по
-  явному триггеру владельца (`проведи review`, `аудит кода`, `позови
-  ревьюера`) или для отдельно зафиксированного high-risk/high-complexity scope.
-  Создание Pull Request и обычная READY-задача не запускают независимый review
-  автоматически.
-- Автономность не отменяет COMMERCIAL Gate и fail-closed stop при красных
-  проверках или изменившемся SHA.
-- Production выполняется только по отдельной явной команде владельца.
-- Client Master Plan создаётся только от immutable released starter tag и exact
-  40-character SourceCraft SHA этого tag; moving `main` не baseline.
-- Новые пароли, API tokens, SSH keys, database credentials и service
-  credentials хранятся только в Secret Master. Для доступа к секретам
-  использовать trigger `подключись к секрет мастеру`; для Git-доступов
-  SourceCraft/GitHub - trigger `подключись к гид-сервису`. Значения секретов не
-  печатать в чат, markdown, логи или git.
-- UI работает через замороженные presentation contracts и Public
-  Gateway/fixture provider по режиму.
-- Payload не диктует форму UI; public data проходит через Gateway и DTO.
-- Новая инфраструктура или модуль добавляются только по доказанному trigger.
-- Не заменять неизвестное решение догадкой: фиксировать `TODO` или
-  `NEEDS_OWNER` в профильном документе.
+- Repository mode: SourceCraft primary. GitHub mirror only if explicitly requested.
+- Production deploy, DNS cutover, production DB migration/rollback and indexing promotion require separate explicit owner command.
+- Public UI/API receives data only through Gateway/DTO. Payload Admin remains CMS-native.
+- Runtime secrets, DB credentials, SSH keys, API tokens and env files live only in Secret Master / server root-only env files.
+- Do not print `.env`, secret values, DB URLs with credentials, private keys or tokens.
+- `souz-home.ru` is canonical final domain; `soyuz-rostov.tw1.ru` is technical host for server validation/staging.
+- Until final cutover from the old site, keep noindex safeguards for technical host and generated project indexing.
+- New infrastructure/module/dependency is added only by proven trigger and documented decision.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

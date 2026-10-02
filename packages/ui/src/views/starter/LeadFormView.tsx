@@ -49,6 +49,8 @@ export type LeadFormViewProps = {
 		| "quiz";
 	entityContext?: {
 		geo?: string;
+		region?: string;
+		city?: string;
 		surface?:
 			| "apartments"
 			| "new-buildings"
@@ -60,6 +62,8 @@ export type LeadFormViewProps = {
 		propertyUrlId?: string;
 		development?: string;
 		developer?: string;
+		dataTier?: "A" | "B" | "C";
+		preferences?: string[];
 	};
 	analytics?: PublicAnalyticsDimensions;
 };

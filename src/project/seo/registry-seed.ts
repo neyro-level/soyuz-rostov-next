@@ -5,10 +5,12 @@ import { createProjectUrlGrammar, type ProjectDistrictRouteRegistry } from "../u
 import type { ProjectSeoTemplateKey } from "./templates.ts";
 
 export const projectDistrictRouteRegistry = {
-  "primorsk": {
+  "rostov-na-donu": {
     "kvartiry": [
+      "leninskiy",
+      "voroshilovskiy",
       "severnyy",
-      "leninskiy"
+      "tsentr"
     ]
   }
 } as const satisfies ProjectDistrictRouteRegistry;
@@ -23,51 +25,23 @@ export const projectSeoRegistrySeed: readonly SeoRegistryRow<ProjectSeoTemplateK
     "canonical": "/",
     "entityRef": null,
     "targetPhrases": [
-      "fixture home intent"
+      "client skeleton /"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
     "templateKey": "homeSingleGeo",
-    "title": "Недвижимость Приморска — AMS Realty",
-    "h1": "Недвижимость Приморска",
-    "description": "Подбор недвижимости в Приморске",
+    "title": "Недвижимость Ростова-на-Дону — Союз застройщиков",
+    "h1": "Недвижимость Ростова-на-Дону",
+    "description": "Подбор недвижимости в Ростове-на-Дону",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "geoHub",
-      "geo": "primorsk"
-    },
-    "url": "/primorsk/",
-    "canonical": "/primorsk/",
-    "entityRef": "geo:primorsk",
-    "targetPhrases": [
-      "fixture geo hub intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "geoHub",
-    "title": "Недвижимость Приморска — AMS Realty",
-    "h1": "Недвижимость Приморска",
-    "description": "Квартиры, дома и новостройки в Приморске — 28 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
@@ -79,511 +53,23 @@ export const projectSeoRegistrySeed: readonly SeoRegistryRow<ProjectSeoTemplateK
     "canonical": "/kvartiry/",
     "entityRef": "category:kvartiry",
     "targetPhrases": [
-      "fixture root catalog intent"
+      "client skeleton /kvartiry/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
     "templateKey": "categoryRoot",
-    "title": "Квартиры — AMS Realty",
+    "title": "Квартиры — Союз застройщиков",
     "h1": "Квартиры",
-    "description": "Квартиры — актуальные предложения. 21 объект.",
+    "description": "Квартиры — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "kvartiry"
-    },
-    "url": "/primorsk/kvartiry/",
-    "canonical": "/primorsk/kvartiry/",
-    "entityRef": "geo:primorsk/category:kvartiry",
-    "targetPhrases": [
-      "fixture geo catalog intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeo",
-    "title": "Квартиры в Приморске — AMS Realty",
-    "h1": "Квартиры в Приморске",
-    "description": "Квартиры в Приморске — актуальные предложения. 18 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryGeoDistrict",
-      "geo": "primorsk",
-      "category": "kvartiry",
-      "district": "severnyy"
-    },
-    "url": "/primorsk/kvartiry/severnyy/",
-    "canonical": "/primorsk/kvartiry/severnyy/",
-    "entityRef": "district:severnyy",
-    "targetPhrases": [
-      "fixture district catalog intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeoDistrictMicro",
-    "title": "Купить квартиру на Северном в Приморске — цены",
-    "h1": "Квартиры на Северном",
-    "description": "Квартиры на Северном в Приморске — актуальные предложения. 12 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryGeoDistrict",
-      "geo": "primorsk",
-      "category": "kvartiry",
-      "district": "leninskiy"
-    },
-    "url": "/primorsk/kvartiry/leninskiy/",
-    "canonical": "/primorsk/kvartiry/leninskiy/",
-    "entityRef": "district:leninskiy",
-    "targetPhrases": [
-      "fixture admin district catalog intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeoDistrictAdmin",
-    "title": "Купить квартиру в Ленинском районе Приморска — цены",
-    "h1": "Квартиры в Ленинском районе Приморска",
-    "description": "Квартиры в Ленинском районе Приморска — актуальные предложения. 9 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryGeoFacet",
-      "geo": "primorsk",
-      "category": "kvartiry",
-      "facet": "dvukhkomnatnye"
-    },
-    "url": "/primorsk/kvartiry/dvukhkomnatnye/",
-    "canonical": "/primorsk/kvartiry/dvukhkomnatnye/",
-    "entityRef": "facet:dvukhkomnatnye",
-    "targetPhrases": [
-      "fixture facet catalog intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeoFacet",
-    "title": "Двухкомнатные квартиры в Приморске — AMS Realty",
-    "h1": "Двухкомнатные квартиры в Приморске",
-    "description": "Двухкомнатные квартиры в Приморске — актуальные предложения. 11 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryGeoFacet",
-      "geo": "primorsk",
-      "category": "kvartiry",
-      "facet": "vtorichka"
-    },
-    "url": "/primorsk/kvartiry/vtorichka/",
-    "canonical": "/primorsk/kvartiry/vtorichka/",
-    "entityRef": "facet:vtorichka",
-    "targetPhrases": [
-      "fixture secondary market catalog intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeoFacet",
-    "title": "Вторичные квартиры в Приморске — AMS Realty",
-    "h1": "Вторичные квартиры в Приморске",
-    "description": "Вторичные квартиры в Приморске — актуальные предложения. 10 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "geoDevelopers",
-      "geo": "primorsk"
-    },
-    "url": "/primorsk/zastroyshchiki/",
-    "canonical": "/primorsk/zastroyshchiki/",
-    "entityRef": "geo:primorsk/developers",
-    "targetPhrases": [
-      "fixture geo developers intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "geoDevelopers",
-    "title": "Застройщики в Приморске — AMS Realty",
-    "h1": "Застройщики в Приморске",
-    "description": "Застройщики и жилые комплексы в Приморске — 7 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "developerGeo"
-  },
-  {
-    "pageKey": {
-      "kind": "developerRoot"
-    },
-    "url": "/zastroyshchiki/",
-    "canonical": "/zastroyshchiki/",
-    "entityRef": "developers:root",
-    "targetPhrases": [
-      "fixture developer root intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "developerRoot",
-    "title": "Застройщики — AMS Realty",
-    "h1": "Застройщики",
-    "description": "Застройщики и жилые комплексы — 7 объектов.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "developerGeo"
-  },
-  {
-    "pageKey": {
-      "kind": "development",
-      "developmentKind": "residential_complex",
-      "slug": "severnyy-bereg"
-    },
-    "url": "/novostroyki/zhk-severnyy-bereg/",
-    "canonical": "/novostroyki/zhk-severnyy-bereg/",
-    "entityRef": "development:severnyy-bereg",
-    "targetPhrases": [
-      "fixture development normal intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "developmentNormal",
-    "title": "ЖК «Северный берег» — AMS Realty",
-    "h1": "ЖК «Северный берег»",
-    "description": "ЖК «Северный берег» в Приморске — от 6,2 млн ₽.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "development"
-  },
-  {
-    "pageKey": {
-      "kind": "development",
-      "developmentKind": "cottage_village",
-      "slug": "severnyy-bereg"
-    },
-    "url": "/kottedzhnye-poselki/kp-severnyy-bereg/",
-    "canonical": "/kottedzhnye-poselki/kp-severnyy-bereg/",
-    "entityRef": "development:severnyy-bereg-kp",
-    "targetPhrases": [
-      "fixture development collision intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "developmentCollision",
-    "title": "КП «Северный берег» в Приморске — AMS Realty",
-    "h1": "КП «Северный берег» в Приморске",
-    "description": "КП «Северный берег» в Приморске",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "development"
-  },
-  {
-    "pageKey": {
-      "kind": "developer",
-      "slug": "stroy-invest"
-    },
-    "url": "/zastroyshchiki/stroy-invest/",
-    "canonical": "/zastroyshchiki/stroy-invest/",
-    "entityRef": "developer:stroy-invest",
-    "targetPhrases": [
-      "fixture developer intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "developer",
-    "title": "Строй Инвест — AMS Realty",
-    "h1": "Строй Инвест",
-    "description": "Объекты застройщика Строй Инвест в Приморске — 4 объекта.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "developer"
-  },
-  {
-    "pageKey": {
-      "kind": "property",
-      "category": "kvartiry",
-      "semantic": "ulitsa-mira-10",
-      "publicUrlId": 42
-    },
-    "url": "/kvartiry/ulitsa-mira-10-42/",
-    "canonical": "/kvartiry/ulitsa-mira-10-42/",
-    "entityRef": "property:42",
-    "targetPhrases": [
-      "fixture property intent"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "property",
-    "title": "2-комнатная квартира, улица Мира, 10 — AMS Realty",
-    "h1": "2-комнатная квартира, улица Мира, 10",
-    "description": "2-комнатная квартира, улица Мира, 10 в Приморске — 5,8 млн ₽.",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "secondary"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryRoot",
-      "category": "arenda"
-    },
-    "url": "/arenda/",
-    "canonical": "/arenda/",
-    "entityRef": "category:arenda",
-    "targetPhrases": [
-      "starter coverage /arenda/"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryRoot",
-    "title": "Аренда — AMS Realty",
-    "h1": "Аренда",
-    "description": "Аренда — актуальные предложения",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryRoot",
-      "category": "doma"
-    },
-    "url": "/doma/",
-    "canonical": "/doma/",
-    "entityRef": "category:doma",
-    "targetPhrases": [
-      "starter coverage /doma/"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryRoot",
-    "title": "Дома — AMS Realty",
-    "h1": "Дома",
-    "description": "Дома — актуальные предложения",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryRoot",
-      "category": "garazhi"
-    },
-    "url": "/garazhi/",
-    "canonical": "/garazhi/",
-    "entityRef": "category:garazhi",
-    "targetPhrases": [
-      "starter coverage /garazhi/"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryRoot",
-    "title": "Гаражи — AMS Realty",
-    "h1": "Гаражи",
-    "description": "Гаражи — актуальные предложения",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryRoot",
-      "category": "kommercheskaya-nedvizhimost"
-    },
-    "url": "/kommercheskaya-nedvizhimost/",
-    "canonical": "/kommercheskaya-nedvizhimost/",
-    "entityRef": "category:kommercheskaya-nedvizhimost",
-    "targetPhrases": [
-      "starter coverage /kommercheskaya-nedvizhimost/"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryRoot",
-    "title": "Коммерческая недвижимость — AMS Realty",
-    "h1": "Коммерческая недвижимость",
-    "description": "Коммерческая недвижимость — актуальные предложения",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryRoot",
-      "category": "komnaty"
-    },
-    "url": "/komnaty/",
-    "canonical": "/komnaty/",
-    "entityRef": "category:komnaty",
-    "targetPhrases": [
-      "starter coverage /komnaty/"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryRoot",
-    "title": "Комнаты — AMS Realty",
-    "h1": "Комнаты",
-    "description": "Комнаты — актуальные предложения",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
-  },
-  {
-    "pageKey": {
-      "kind": "categoryRoot",
-      "category": "kottedzhnye-poselki"
-    },
-    "url": "/kottedzhnye-poselki/",
-    "canonical": "/kottedzhnye-poselki/",
-    "entityRef": "category:kottedzhnye-poselki",
-    "targetPhrases": [
-      "starter coverage /kottedzhnye-poselki/"
-    ],
-    "metric": "searchDemand",
-    "value": null,
-    "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
-    "defaultRobots": "noindex,follow",
-    "templateKey": "categoryRoot",
-    "title": "Коттеджные посёлки — AMS Realty",
-    "h1": "Коттеджные посёлки",
-    "description": "Коттеджные посёлки — актуальные предложения",
-    "status": "draft",
-    "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
@@ -595,285 +81,316 @@ export const projectSeoRegistrySeed: readonly SeoRegistryRow<ProjectSeoTemplateK
     "canonical": "/novostroyki/",
     "entityRef": "category:novostroyki",
     "targetPhrases": [
-      "starter coverage /novostroyki/"
+      "client skeleton /novostroyki/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
     "templateKey": "categoryRoot",
-    "title": "Новостройки — AMS Realty",
+    "title": "Новостройки — Союз застройщиков",
     "h1": "Новостройки",
     "description": "Новостройки — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
-      "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "arenda"
+      "kind": "geoHub",
+      "geo": "rostov-na-donu"
     },
-    "url": "/primorsk/arenda/",
-    "canonical": "/primorsk/arenda/",
-    "entityRef": "geo:primorsk/category:arenda",
+    "url": "/rostov-na-donu/",
+    "canonical": "/rostov-na-donu/",
+    "entityRef": "geo:rostov-na-donu",
     "targetPhrases": [
-      "starter coverage /primorsk/arenda/"
+      "client skeleton /rostov-na-donu/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeo",
-    "title": "Аренда в Приморске — AMS Realty",
-    "h1": "Аренда в Приморске",
-    "description": "Аренда в Приморске — актуальные предложения",
+    "templateKey": "geoHub",
+    "title": "Недвижимость Ростова-на-Дону — Союз застройщиков",
+    "h1": "Недвижимость Ростова-на-Дону",
+    "description": "квартиры и новостройки в Ростове-на-Дону",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
       "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "doma"
+      "geo": "rostov-na-donu",
+      "category": "kvartiry"
     },
-    "url": "/primorsk/doma/",
-    "canonical": "/primorsk/doma/",
-    "entityRef": "geo:primorsk/category:doma",
+    "url": "/rostov-na-donu/kvartiry/",
+    "canonical": "/rostov-na-donu/kvartiry/",
+    "entityRef": "geo:rostov-na-donu/category:kvartiry",
     "targetPhrases": [
-      "starter coverage /primorsk/doma/"
+      "client skeleton /rostov-na-donu/kvartiry/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
     "templateKey": "categoryGeo",
-    "title": "Дома в Приморске — AMS Realty",
-    "h1": "Дома в Приморске",
-    "description": "Дома в Приморске — актуальные предложения",
+    "title": "Квартиры в Ростове-на-Дону — Союз застройщиков",
+    "h1": "Квартиры в Ростове-на-Дону",
+    "description": "Квартиры в Ростове-на-Дону — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
-      "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "garazhi"
+      "kind": "categoryGeoDistrict",
+      "geo": "rostov-na-donu",
+      "category": "kvartiry",
+      "district": "leninskiy"
     },
-    "url": "/primorsk/garazhi/",
-    "canonical": "/primorsk/garazhi/",
-    "entityRef": "geo:primorsk/category:garazhi",
+    "url": "/rostov-na-donu/kvartiry/leninskiy/",
+    "canonical": "/rostov-na-donu/kvartiry/leninskiy/",
+    "entityRef": "geo:rostov-na-donu/category:kvartiry/district:leninskiy",
     "targetPhrases": [
-      "starter coverage /primorsk/garazhi/"
+      "client skeleton /rostov-na-donu/kvartiry/leninskiy/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeo",
-    "title": "Гаражи в Приморске — AMS Realty",
-    "h1": "Гаражи в Приморске",
-    "description": "Гаражи в Приморске — актуальные предложения",
+    "templateKey": "categoryGeoDistrictAdmin",
+    "title": "Купить квартиру в Ленинском районе Ростова-на-Дону — цены",
+    "h1": "Квартиры в Ленинском районе Ростова-на-Дону",
+    "description": "Квартиры в Ленинском районе Ростова-на-Дону — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
-      "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "kommercheskaya-nedvizhimost"
+      "kind": "categoryGeoDistrict",
+      "geo": "rostov-na-donu",
+      "category": "kvartiry",
+      "district": "voroshilovskiy"
     },
-    "url": "/primorsk/kommercheskaya-nedvizhimost/",
-    "canonical": "/primorsk/kommercheskaya-nedvizhimost/",
-    "entityRef": "geo:primorsk/category:kommercheskaya-nedvizhimost",
+    "url": "/rostov-na-donu/kvartiry/voroshilovskiy/",
+    "canonical": "/rostov-na-donu/kvartiry/voroshilovskiy/",
+    "entityRef": "geo:rostov-na-donu/category:kvartiry/district:voroshilovskiy",
     "targetPhrases": [
-      "starter coverage /primorsk/kommercheskaya-nedvizhimost/"
+      "client skeleton /rostov-na-donu/kvartiry/voroshilovskiy/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeo",
-    "title": "Коммерческая недвижимость в Приморске — AMS Realty",
-    "h1": "Коммерческая недвижимость в Приморске",
-    "description": "Коммерческая недвижимость в Приморске — актуальные предложения",
+    "templateKey": "categoryGeoDistrictAdmin",
+    "title": "Купить квартиру в Ворошиловском районе Ростова-на-Дону — цены",
+    "h1": "Квартиры в Ворошиловском районе Ростова-на-Дону",
+    "description": "Квартиры в Ворошиловском районе Ростова-на-Дону — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
-      "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "komnaty"
+      "kind": "categoryGeoDistrict",
+      "geo": "rostov-na-donu",
+      "category": "kvartiry",
+      "district": "severnyy"
     },
-    "url": "/primorsk/komnaty/",
-    "canonical": "/primorsk/komnaty/",
-    "entityRef": "geo:primorsk/category:komnaty",
+    "url": "/rostov-na-donu/kvartiry/severnyy/",
+    "canonical": "/rostov-na-donu/kvartiry/severnyy/",
+    "entityRef": "geo:rostov-na-donu/category:kvartiry/district:severnyy",
     "targetPhrases": [
-      "starter coverage /primorsk/komnaty/"
+      "client skeleton /rostov-na-donu/kvartiry/severnyy/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeo",
-    "title": "Комнаты в Приморске — AMS Realty",
-    "h1": "Комнаты в Приморске",
-    "description": "Комнаты в Приморске — актуальные предложения",
+    "templateKey": "categoryGeoDistrictMicro",
+    "title": "Купить квартиру на Северном в Ростове-на-Дону — цены",
+    "h1": "Квартиры на Северном",
+    "description": "Квартиры на Северном в Ростове-на-Дону — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
-      "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "kottedzhnye-poselki"
+      "kind": "categoryGeoDistrict",
+      "geo": "rostov-na-donu",
+      "category": "kvartiry",
+      "district": "tsentr"
     },
-    "url": "/primorsk/kottedzhnye-poselki/",
-    "canonical": "/primorsk/kottedzhnye-poselki/",
-    "entityRef": "geo:primorsk/category:kottedzhnye-poselki",
+    "url": "/rostov-na-donu/kvartiry/tsentr/",
+    "canonical": "/rostov-na-donu/kvartiry/tsentr/",
+    "entityRef": "geo:rostov-na-donu/category:kvartiry/district:tsentr",
     "targetPhrases": [
-      "starter coverage /primorsk/kottedzhnye-poselki/"
+      "client skeleton /rostov-na-donu/kvartiry/tsentr/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeo",
-    "title": "Коттеджные посёлки в Приморске — AMS Realty",
-    "h1": "Коттеджные посёлки в Приморске",
-    "description": "Коттеджные посёлки в Приморске — актуальные предложения",
+    "templateKey": "categoryGeoDistrictMicro",
+    "title": "Купить квартиру в Центре в Ростове-на-Дону — цены",
+    "h1": "Квартиры в Центре",
+    "description": "Квартиры в Центре в Ростове-на-Дону — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
       "kind": "categoryGeo",
-      "geo": "primorsk",
+      "geo": "rostov-na-donu",
       "category": "novostroyki"
     },
-    "url": "/primorsk/novostroyki/",
-    "canonical": "/primorsk/novostroyki/",
-    "entityRef": "geo:primorsk/category:novostroyki",
+    "url": "/rostov-na-donu/novostroyki/",
+    "canonical": "/rostov-na-donu/novostroyki/",
+    "entityRef": "geo:rostov-na-donu/category:novostroyki",
     "targetPhrases": [
-      "starter coverage /primorsk/novostroyki/"
+      "client skeleton /rostov-na-donu/novostroyki/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
     "templateKey": "categoryGeo",
-    "title": "Новостройки в Приморске — AMS Realty",
-    "h1": "Новостройки в Приморске",
-    "description": "Новостройки в Приморске — актуальные предложения",
+    "title": "Новостройки в Ростове-на-Дону — Союз застройщиков",
+    "h1": "Новостройки в Ростове-на-Дону",
+    "description": "Новостройки в Ростове-на-Дону — актуальные предложения",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   },
   {
     "pageKey": {
-      "kind": "categoryGeo",
-      "geo": "primorsk",
-      "category": "uchastki"
+      "kind": "geoDevelopers",
+      "geo": "rostov-na-donu"
     },
-    "url": "/primorsk/uchastki/",
-    "canonical": "/primorsk/uchastki/",
-    "entityRef": "geo:primorsk/category:uchastki",
+    "url": "/rostov-na-donu/zastroyshchiki/",
+    "canonical": "/rostov-na-donu/zastroyshchiki/",
+    "entityRef": "geo:rostov-na-donu/developers",
     "targetPhrases": [
-      "starter coverage /primorsk/uchastki/"
+      "client skeleton /rostov-na-donu/zastroyshchiki/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
-    "templateKey": "categoryGeo",
-    "title": "Участки в Приморске — AMS Realty",
-    "h1": "Участки в Приморске",
-    "description": "Участки в Приморске — актуальные предложения",
+    "templateKey": "geoDevelopers",
+    "title": "Застройщики в Ростове-на-Дону — Союз застройщиков",
+    "h1": "Застройщики в Ростове-на-Дону",
+    "description": "Застройщики и жилые комплексы в Ростове-на-Дону",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
-    "contentGateRule": "listing"
+    "release": "client-bootstrap",
+    "contentGateRule": "developerGeo"
   },
   {
     "pageKey": {
-      "kind": "categoryRoot",
-      "category": "uchastki"
+      "kind": "developerRoot"
     },
-    "url": "/uchastki/",
-    "canonical": "/uchastki/",
-    "entityRef": "category:uchastki",
+    "url": "/zastroyshchiki/",
+    "canonical": "/zastroyshchiki/",
+    "entityRef": "developers:root",
     "targetPhrases": [
-      "starter coverage /uchastki/"
+      "client skeleton /zastroyshchiki/"
     ],
-    "metric": "searchDemand",
+    "metric": "broad39",
     "value": null,
     "source": "fallback_no_data",
-    "snapshotDate": "2026-09-24",
-    "synthetic": true,
-    "tier": "TEST",
-    "minimumObjects": 10,
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
     "defaultRobots": "noindex,follow",
-    "templateKey": "categoryRoot",
-    "title": "Участки — AMS Realty",
-    "h1": "Участки",
-    "description": "Участки — актуальные предложения",
+    "templateKey": "developerRoot",
+    "title": "Застройщики — Союз застройщиков",
+    "h1": "Застройщики",
+    "description": "Застройщики и жилые комплексы",
     "status": "draft",
     "morphologyApproved": true,
-    "release": "starter-v2.1.0",
+    "release": "client-bootstrap",
+    "contentGateRule": "developerGeo"
+  },
+  {
+    "pageKey": {
+      "kind": "categoryGeoFacet",
+      "geo": "rostov-na-donu",
+      "category": "kvartiry",
+      "facet": "vtorichka"
+    },
+    "url": "/rostov-na-donu/kvartiry/vtorichka/",
+    "canonical": "/rostov-na-donu/kvartiry/vtorichka/",
+    "entityRef": "facet:vtorichka",
+    "targetPhrases": [
+      "client skeleton /rostov-na-donu/kvartiry/vtorichka/"
+    ],
+    "metric": "broad39",
+    "value": null,
+    "source": "fallback_no_data",
+    "snapshotDate": "2026-10-01",
+    "synthetic": false,
+    "tier": "NONE",
+    "minimumObjects": 0,
+    "defaultRobots": "noindex,follow",
+    "templateKey": "categoryGeoFacet",
+    "title": "Вторичные квартиры в Ростове-на-Дону — Союз застройщиков",
+    "h1": "Вторичные квартиры в Ростове-на-Дону",
+    "description": "Вторичные квартиры в Ростове-на-Дону — актуальные предложения",
+    "status": "draft",
+    "morphologyApproved": true,
+    "release": "client-bootstrap",
     "contentGateRule": "listing"
   }
 ] as const;
 
-assertSeoRegistry({ rows: projectSeoRegistrySeed, buildUrl: grammar.buildUrl, now: new Date("2026-09-24T23:59:59.999Z") });
+assertSeoRegistry({ rows: projectSeoRegistrySeed, buildUrl: grammar.buildUrl, now: new Date("2026-10-01T23:59:59.999Z") });

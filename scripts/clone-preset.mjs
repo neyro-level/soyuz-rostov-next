@@ -1095,7 +1095,9 @@ export function validateCloneBootstrap(root) {
 		if (!rootRelative || rootRelative.startsWith("..") || isAbsolute(rootRelative) || !existsSync(outputPath)) {
 			throw new Error(`Generated output is missing or unsafe: ${relativePath}.`);
 		}
-		const actualHash = createHash("sha256").update(readFileSync(outputPath)).digest("hex");
+		const actualHash = createHash("sha256")
+			.update(readFileSync(outputPath, "utf8").replace(/\r\n/g, "\n"))
+			.digest("hex");
 		if (actualHash !== expectedHash) {
 			throw new Error(`Generated output hash mismatch: ${relativePath}.`);
 		}

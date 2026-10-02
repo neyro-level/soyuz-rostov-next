@@ -26,9 +26,12 @@ const logo = {
 };
 
 const navigation = [
-	{ label: "Недвижимость", href: "/kvartiry/" },
-	{ label: "Услуги", href: "/uslugi/" },
+	{ label: "Новостройки", href: "/rostov-na-donu/novostroyki/" },
+	{ label: "Квартиры", href: "/rostov-na-donu/kvartiry/" },
+	{ label: "Вторичка", href: "/rostov-na-donu/kvartiry/vtorichka/" },
+	{ label: "Застройщики", href: "/rostov-na-donu/zastroyshchiki/" },
 	{ label: "Ипотека", href: "/ipoteka/" },
+	{ label: "Продать", href: "/prodat/" },
 	{ label: "О компании", href: "/o-kompanii/" },
 	{ label: "Контакты", href: "/kontakty/" },
 ] as const;
@@ -39,22 +42,16 @@ export const fixtureHeader: SiteHeaderDTO = {
 	logo,
 	navigation,
 	phone: { label: "+7 (000) 000-00-00", href: "tel:+70000000000" },
-	primaryAction: { label: "Подобрать объект", href: "/kvartiry/" },
+	primaryAction: { label: "Подобрать объект", href: "/rostov-na-donu/kvartiry/" },
 };
 
 export const fixtureFooter: SiteFooterDTO = {
 	brandName,
 	logo,
 	groups: [
-		{ title: "Недвижимость", links: navigation.slice(0, 3) },
-		{
-			title: "Услуги",
-			links: [
-				{ label: "Продать", href: "/prodat/" },
-				{ label: "Сдать", href: "/sdat/" },
-			],
-		},
-		{ title: "Компания", links: navigation.slice(3) },
+		{ title: "Недвижимость", links: navigation.slice(0, 4) },
+		{ title: "Услуги", links: navigation.slice(4, 6) },
+		{ title: "Компания", links: navigation.slice(6) },
 	],
 	contacts: [
 		{ label: "+7 (000) 000-00-00", href: "tel:+70000000000" },
@@ -238,19 +235,19 @@ export const fixtureHome: HomePageDTO = {
 	featuredPropertyId: fixtureProperties[0]?.id ?? "",
 	serviceLinks: [
 		{
-			label: "Купить",
-			href: "/kvartiry/",
+			label: "Новостройки",
+			href: "/rostov-na-donu/novostroyki/",
+			description: "ЖК и новостройки Ростова-на-Дону",
+		},
+		{
+			label: "Квартиры",
+			href: "/rostov-na-donu/kvartiry/",
 			description: "Квартиры из актуального каталога",
 		},
 		{
 			label: "Продать",
 			href: "/prodat/",
 			description: "Оценка и план продажи",
-		},
-		{
-			label: "Сдать",
-			href: "/sdat/",
-			description: "Поиск арендатора и сопровождение",
 		},
 		{
 			label: "Ипотека",
@@ -310,6 +307,23 @@ const marketingPages = [
 			{
 				title: "Что проверяем",
 				text: "Условия банка, требования к заёмщику и ограничения по объекту.",
+			},
+		],
+		formKind: "mortgage" as const,
+	},
+	{
+		slug: "ipoteka-semeynaya",
+		eyebrow: "Семейная ипотека",
+		title: "Семейная ипотека для покупки квартиры",
+		lead: "Проверяем требования программы и помогаем заранее понять, подходит ли объект под условия банка.",
+		sections: [
+			{
+				title: "Проверка условий",
+				text: "Сверяем состав семьи, лимиты, первый взнос и тип объекта до выбора квартиры.",
+			},
+			{
+				title: "Подбор объекта",
+				text: "Отбираем варианты, которые можно безопасно вынести на одобрение банка.",
 			},
 		],
 		formKind: "mortgage" as const,

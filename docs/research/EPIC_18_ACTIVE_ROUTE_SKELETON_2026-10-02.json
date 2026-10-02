@@ -1,0 +1,47 @@
+{
+  "schema": "EPIC_18_ACTIVE_ROUTE_SKELETON_V1",
+  "task": "szh-task-18-implementation",
+  "date": "2026-10-02",
+  "activeRoutes": [
+    "/",
+    "/rostov-na-donu/",
+    "/novostroyki/",
+    "/rostov-na-donu/novostroyki/",
+    "/novostroyki/zhk-{slug}/",
+    "/zastroyshchiki/",
+    "/rostov-na-donu/zastroyshchiki/",
+    "/zastroyshchiki/{slug}/",
+    "/kvartiry/",
+    "/rostov-na-donu/kvartiry/",
+    "/rostov-na-donu/kvartiry/vtorichka/",
+    "/rostov-na-donu/kvartiry/{district}/",
+    "/kvartiry/{property-slug}/",
+    "/uslugi/",
+    "/prodat/",
+    "/ipoteka/",
+    "/ipoteka/semeynaya/",
+    "/o-kompanii/",
+    "/kontakty/",
+    "/politika-konfidencialnosti/",
+    "/soglasie-na-obrabotku-personalnyh-dannyh/"
+  ],
+  "failClosedRoutes": [
+    "/sdat/",
+    "/nedvizhimost/",
+    "/otzyvy/",
+    "/stroitelstvo-domov/",
+    "/journal/",
+    "/journal/**"
+  ],
+  "r1Exclusions": [
+    "reviews without verified source",
+    "construction service",
+    "journal/feed surfaces",
+    "generic /nedvizhimost redirect",
+    "homes/land/commercial/cottage/rent public category pages"
+  ],
+  "indexingSafety": {
+    "productionIndexing": "noindex",
+    "familyMortgage": "active route skeleton, indexable=false until content/evidence gate"
+  }
+}

@@ -6,17 +6,32 @@ export function PriceRequestFormView({
 	leadContext,
 	developmentSlug,
 	geo,
+	city,
+	district,
+	developer,
+	dataTier,
 	analytics,
 }: {
 	leadContext: LeadFormContext;
 	developmentSlug: string;
 	geo?: string;
+	city?: string;
+	district?: string;
+	developer?: string;
+	dataTier?: "A" | "B" | "C";
 	analytics?: PublicAnalyticsDimensions;
 }) {
 	return (
 		<LeadFormView
 			context={leadContext}
-			entityContext={{ development: developmentSlug, geo }}
+			entityContext={{
+				development: developmentSlug,
+				geo,
+				city,
+				district,
+				developer,
+				dataTier,
+			}}
 			analytics={analytics}
 			title="Запросить актуальные цены"
 			description="Уточним доступные варианты и дату последней проверки цены."

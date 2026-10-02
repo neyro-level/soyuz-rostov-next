@@ -21,26 +21,23 @@ redirect-only compatibility adapters без прежнего presentation/runtim
 | Карточка объекта | `/{category}/{semantic}-{publicUrlId}/` |
 | Geo hub | `/{geo}/` |
 | Застройщики | `/zastroyshchiki/`, `/zastroyshchiki/{slug}/`, `/{geo}/zastroyshchiki/` |
-| Проекты | `/novostroyki/zhk-{slug}/`, `/kottedzhnye-poselki/kp-{slug}/` |
-| Услуги | `/uslugi` |
-| О компании | `/o-kompanii` |
-| Ипотека | `/ipoteka` |
-| Продать | `/prodat` |
-| Сдать | `/sdat` |
-| Контакты | `/kontakty` |
+| Проекты | `/novostroyki/zhk-{slug}/`; cottage-village entities remain PREPARED_OFF in R1 |
+| Услуги | `/uslugi/` |
+| О компании | `/o-kompanii/` |
+| Ипотека | `/ipoteka/`, `/ipoteka/semeynaya/` |
+| Продать | `/prodat/` |
+| Сдать | `/sdat/` = R1 `404`, unless an exact legacy row gets a same-intent outcome |
+| Контакты | `/kontakty/` |
 | Политика конфиденциальности | `/politika-konfidencialnosti` |
 | Согласие на обработку данных | `/soglasie-na-obrabotku-personalnyh-dannyh` |
 
 ## Активные и зарезервированные пространства
 
-- `/novostroyki/zhk-{slug}/` и `/kottedzhnye-poselki/kp-{slug}/` — активные
-  базовые страницы unified development model;
-- более глубокие building/layout/chessboard URL внутри development namespace —
-  зарезервированы до отдельной активации optional-модуля `novostroyki`;
-- `/sotrudniki/**` — сотрудники;
-- `/journal/**` — журнал.
+- `/novostroyki/zhk-{slug}/` — активная R1 entity grammar;
+- `/kottedzhnye-poselki/kp-{slug}/` и более глубокие building/layout/chessboard URL зарезервированы до отдельной activation;
+- `/sotrudniki/**` и `/journal/**` зарезервированы, но R1 возвращает `404` unless an exact legacy redirect/archive decision applies.
 
-Их нельзя использовать для несвязанных страниц. Активация модулей фиксируется в `PROJECT.md` до появления маршрутов.
+Зарезервированные пространства нельзя использовать для несвязанных страниц. Активация future-модулей требует новой owner-approved revision до появления публичных маршрутов.
 
 ## Владение контентом и данными
 

@@ -12,7 +12,7 @@ import {
 	getPropertyByPublicUrlId,
 } from "../../src/project/data-access/public/geo-catalog.ts";
 import { requirePayloadRuntime } from "../../src/project/env.ts";
-import { siteProfile } from "../../src/project/site-profile.ts";
+import { siteProfileFixtures } from "../../src/fixture/site-profile.ts";
 import { createProjectUrlGrammar } from "../../src/project/url-grammar.ts";
 
 requirePayloadRuntime();
@@ -20,6 +20,8 @@ const payload = await getPayload({ config });
 const access = systemOverrideAccess("system-job");
 const suffix = Date.now().toString(36);
 const brandName = "Integration Realty";
+const fixtureProfile = siteProfileFixtures.singleGeoThreeCities;
+const fixtureGrammar = createProjectUrlGrammar(fixtureProfile);
 
 const feedSource = await payload.create({
 	collection: "feed-sources",
@@ -217,6 +219,8 @@ const primorskListing = await getListing(
 		surface: "kvartiry",
 	},
 	brandName,
+	fixtureGrammar,
+	fixtureProfile,
 );
 assert.ok(primorskListing, "primary geo listing must resolve");
 assert.ok(
@@ -253,6 +257,8 @@ const pageTwoListing = await getListing(
 		query: { limit: 1 },
 	},
 	brandName,
+	fixtureGrammar,
+	fixtureProfile,
 );
 assert.ok(pageTwoListing, "catalog page 2 must resolve when inventory exists");
 assert.equal(pageTwoListing.pagination.page, 2);
@@ -279,6 +285,8 @@ const facetListing = await getListing(
 		facet: "dvukhkomnatnye",
 	},
 	brandName,
+	fixtureGrammar,
+	fixtureProfile,
 );
 assert.ok(facetListing, "configured SEO facet must resolve");
 assert.deepEqual(
@@ -298,6 +306,8 @@ const secondaryFacetListing = await getListing(
 		facet: "vtorichka",
 	},
 	brandName,
+	fixtureGrammar,
+	fixtureProfile,
 );
 assert.ok(secondaryFacetListing, "secondary market SEO facet must resolve");
 assert.ok(
@@ -311,12 +321,12 @@ assert.equal(
 		geo: "primorsk",
 		surface: "kvartiry",
 		facet: "vtorichka",
-	}),
+	}, fixtureProfile),
 	secondaryFacetListing.total,
 	"vtorichka inventory count must use the same secondary market filter",
 );
 
-const secondaryOnlyInput = structuredClone(siteProfile);
+const secondaryOnlyInput = structuredClone(fixtureProfile);
 secondaryOnlyInput.marketStatus.primorsk.newbuild = "OUT";
 const secondaryOnlyProfile = defineSiteProfile(secondaryOnlyInput);
 const secondaryOnlyGrammar = createProjectUrlGrammar(secondaryOnlyProfile);
@@ -365,14 +375,14 @@ assert.equal(
 
 observedQueries = 0;
 assert.equal(
-	(await getGeoBySlug(observedPayload, "zarechnyy"))?.slug,
+	(await getGeoBySlug(observedPayload, "zarechnyy", fixtureProfile))?.slug,
 	"zarechnyy",
 );
 assert.equal(observedQueries, 1, "geo lookup must use one bounded query");
 
 observedQueries = 0;
 assert.deepEqual(
-	await getNearby(observedPayload, "primorsk"),
+	await getNearby(observedPayload, "primorsk", fixtureProfile),
 	[],
 	"single-geo profile must not expose a non-routable agglomeration city",
 );
@@ -386,7 +396,7 @@ assert.ok(
 	(await countInventory(observedPayload, {
 		geo: "primorsk",
 		surface: "kvartiry",
-	})) >= 2,
+	}, fixtureProfile)) >= 2,
 );
 assert.ok(observedQueries <= 2, "inventory count must use a bounded aggregate");
 

@@ -114,6 +114,8 @@ export const Leads: CollectionConfig = {
 			},
 			fields: [
 				{ name: "geo", type: "text", index: true },
+				{ name: "region", type: "text", index: true },
+				{ name: "city", type: "text", index: true },
 				{
 					name: "surface",
 					type: "select",
@@ -130,6 +132,19 @@ export const Leads: CollectionConfig = {
 				{ name: "propertyUrlId", type: "text", index: true },
 				{ name: "development", type: "text", index: true },
 				{ name: "developer", type: "text", index: true },
+				{
+					name: "dataTier",
+					type: "select",
+					options: ["A", "B", "C"],
+				},
+				{
+					name: "preferences",
+					type: "json",
+					admin: {
+						description:
+							"Non-PII quiz preference keys only. Raw free-text answers stay out of this context.",
+					},
+				},
 			],
 		},
 		{

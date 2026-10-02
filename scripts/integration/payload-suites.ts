@@ -521,7 +521,7 @@ configuredDevelopmentGeoInput.geos[developmentCity.slug] = {
 	hubStatus: "ACTIVE",
 };
 configuredDevelopmentGeoInput.geoCategoryStatus[developmentCity.slug] = {
-	...configuredDevelopmentGeoInput.geoCategoryStatus.primorsk,
+	...configuredDevelopmentGeoInput.geoCategoryStatus[siteProfile.primaryGeo],
 };
 configuredDevelopmentGeoInput.marketStatus[developmentCity.slug] = {
 	newbuild: "ACTIVE",
@@ -1116,17 +1116,101 @@ assert.equal(
 	"lead.property_context_invalid",
 );
 
+const leadRegion = await payload.create({
+	collection: "regions",
+	data: {
+		slug: `lead-region-${suffix}`,
+		title: "Lead Region",
+		morphology: {
+			nominative: "Lead Region",
+			genitive: "Lead Region genitive",
+			prepositional: "Lead Region prepositional",
+		},
+		shortName: "Lead",
+		sortOrder: 91,
+		status: "published",
+		publishedAt: clock.nowIso(),
+	},
+	...access,
+});
+const leadCity = await payload.create({
+	collection: "cities",
+	data: {
+		slug: `lead-city-${suffix}`,
+		title: "Lead City",
+		morphology: {
+			nominative: "Lead City",
+			genitive: "Lead City genitive",
+			prepositional: "Lead City prepositional",
+		},
+		preposition: "v",
+		cityType: "city",
+		region: leadRegion.id,
+		morphologyApproved: true,
+		sortOrder: 91,
+		status: "published",
+		publishedAt: clock.nowIso(),
+	},
+	...access,
+});
+const leadDeveloper = await payload.create({
+	collection: "developers",
+	data: {
+		name: "Lead Developer",
+		slug: `lead-developer-${suffix}`,
+		source: "integration-fixture",
+		checkedAt: clock.nowIso(),
+		status: "published",
+		publishedAt: clock.nowIso(),
+	},
+	...access,
+});
+const leadDevelopment = await payload.create({
+	collection: "developments",
+	draft: true,
+	data: {
+		name: "Lead Residential Complex",
+		slug: `lead-complex-${suffix}`,
+		kind: "residential_complex",
+		region: leadRegion.id,
+		city: leadCity.id,
+		developer: leadDeveloper.id,
+		salesStatus: "on_sale",
+		salesAvailability: "confirmed",
+		dataTier: "B",
+		source: "integration-fixture",
+		checkedAt: clock.nowIso(),
+		priceByRooms: [
+			{
+				roomsLabel: "1-комнатные",
+				priceFromMinor: 6_000_000_00,
+				priceCheckedAt: "2026-09-10T12:00:00.000Z",
+				source: "integration-fixture",
+			},
+		],
+		status: "published",
+		publishedAt: clock.nowIso(),
+	},
+	...access,
+});
+const priceAuthorityCheck = await getDevelopment(
+	payload,
+	leadDevelopment.slug,
+	fixtureSiteSettingsData.brandName,
+);
+assert.ok(priceAuthorityCheck?.href, "development price authority fixture must be public");
+
 const priceLeadBody = {
 	name: "Integration Price Lead",
 	phone: "+79990000019",
 	formKind: "development_price",
-	sourcePage: "/novostroyki/zhk-integration/",
+	sourcePage: priceAuthorityCheck.href,
 	context: {
 		geo: "rostov-na-donu",
 		surface: "new-buildings",
 		district: "leninskiy",
-		development: "zhk-integration",
-		developer: "developer-integration",
+		development: leadDevelopment.slug,
+		developer: leadDeveloper.slug,
 	},
 	consentAccepted: true,
 	consentVersion: "pd-2026-01",
@@ -1160,8 +1244,12 @@ assert.equal(persistedPriceLeads.totalDocs, 1);
 assert.equal(persistedPriceLeads.docs[0]?.formKind, "development_price");
 assert.equal(
 	persistedPriceLeads.docs[0]?.context?.development,
-	"zhk-integration",
+	leadDevelopment.slug,
 );
+assert.equal(persistedPriceLeads.docs[0]?.context?.city, leadCity.slug);
+assert.equal(persistedPriceLeads.docs[0]?.context?.region, leadRegion.slug);
+assert.equal(persistedPriceLeads.docs[0]?.context?.developer, leadDeveloper.slug);
+assert.equal(persistedPriceLeads.docs[0]?.context?.dataTier, "B");
 
 const lead = await payload.create({
 	collection: "leads",

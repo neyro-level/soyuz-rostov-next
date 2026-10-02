@@ -19,28 +19,29 @@ export type ClientReadinessConfig = {
 	externalMonitoring: boolean;
 };
 
-/**
- * Starter-demo values are intentionally incomplete. Client clones switch
- * siteConfig.projectKind to `client` and replace every placeholder before the
- * staging/release readiness gate.
- */
 export const clientReadinessConfig = {
-	domain: null,
-	deploymentTarget: null,
-	database: null,
-	mediaStorage: null,
-	feedImageSource: null,
-	jobsActiveRuntimeCount: null,
-	leadRetentionDays: null,
-	archiveRetentionDays: null,
-	legalContent: "placeholder",
-	productionIndexing: null,
-	requiredHostAllowlists: {
-		outbound: [],
-		externalImages: [],
-		leadOutbound: [],
+	"domain": "souz-home.ru",
+	"deploymentTarget": "approved-runtime",
+	"database": "approved-managed-postgresql",
+	"mediaStorage": "timeweb-s3",
+	"feedImageSource": "external-urls",
+	"jobsActiveRuntimeCount": 1,
+	"leadRetentionDays": 180,
+	"archiveRetentionDays": 90,
+	"legalContent": "approved",
+	"requiredHostAllowlists": {
+		"outbound": [
+			"soyuz-rostov.tw1.ru"
+		],
+		"externalImages": [
+			"soyuz-rostov.tw1.ru"
+		],
+		"leadOutbound": [
+			"soyuz-rostov.tw1.ru"
+		]
 	},
-	nginx: false,
-	automaticBackup: false,
-	externalMonitoring: false,
+	"nginx": true,
+	"automaticBackup": true,
+	"externalMonitoring": true,
+	"productionIndexing": "noindex"
 } as const satisfies ClientReadinessConfig;

@@ -1,0 +1,1050 @@
+{
+	"schemaVersion": 3,
+	"presetSha": "4984dd910ddbff6f6e58760e94fd6a4ad82b0f3cdcb8b4acfa96550c0207627c",
+	"preparedAt": "2026-10-01T13:50:00.000Z",
+	"projectId": "SOUZ-ROSTOV",
+	"packageName": "souz-rostov-realty",
+	"defaultDescription": "Недвижимость Ростова-на-Дону и Ростовской области",
+	"domain": "souz-home.ru",
+	"preset": "MIXED",
+	"geoMode": "SINGLE_GEO",
+	"primaryGeo": "rostov-na-donu",
+	"region": {
+		"slug": "rostovskaya-oblast",
+		"name": "Ростовская область",
+		"genitive": "Ростовской области",
+		"locative": "Ростовской области",
+		"shortName": "Ростовская область"
+	},
+	"geos": [
+		{
+			"slug": "rostov-na-donu",
+			"title": "Ростов-на-Дону",
+			"published": true,
+			"hubStatus": "ACTIVE",
+			"morphologyApproved": true,
+			"morphology": {
+				"nominative": "Ростов-на-Дону",
+				"genitive": "Ростова-на-Дону",
+				"prepositional": "Ростове-на-Дону",
+				"preposition": "в"
+			},
+			"districts": [
+				{
+					"slug": "leninskiy",
+					"name": "Ленинский",
+					"type": "admin_district",
+					"locative": "Ленинском",
+					"adjLocative": "Ленинском",
+					"adjGenitive": "Ленинского",
+					"preposition": "в",
+					"synonyms": [],
+					"parent": null
+				},
+				{
+					"slug": "voroshilovskiy",
+					"name": "Ворошиловский",
+					"type": "admin_district",
+					"locative": "Ворошиловском",
+					"adjLocative": "Ворошиловском",
+					"adjGenitive": "Ворошиловского",
+					"preposition": "в",
+					"synonyms": [],
+					"parent": null
+				},
+				{
+					"slug": "severnyy",
+					"name": "Северный",
+					"type": "microdistrict",
+					"locative": "Северном",
+					"preposition": "на",
+					"synonyms": [],
+					"parent": null
+				},
+				{
+					"slug": "tsentr",
+					"name": "Центр",
+					"type": "microdistrict",
+					"locative": "Центре",
+					"preposition": "в",
+					"synonyms": [],
+					"parent": null
+				}
+			]
+		},
+		{
+			"slug": "bataysk",
+			"title": "Батайск",
+			"published": true,
+			"hubStatus": "PREPARED_OFF",
+			"agglomerationOf": "rostov-na-donu",
+			"morphologyApproved": true,
+			"morphology": {
+				"nominative": "Батайск",
+				"genitive": "Батайска",
+				"prepositional": "Батайске",
+				"preposition": "в"
+			},
+			"districts": []
+		},
+		{
+			"slug": "aksay",
+			"title": "Аксай",
+			"published": true,
+			"hubStatus": "PREPARED_OFF",
+			"agglomerationOf": "rostov-na-donu",
+			"morphologyApproved": true,
+			"morphology": {
+				"nominative": "Аксай",
+				"genitive": "Аксая",
+				"prepositional": "Аксае",
+				"preposition": "в"
+			},
+			"districts": []
+		}
+	],
+	"categoryStatus": {
+		"kvartiry": "ACTIVE",
+		"doma": "PREPARED_OFF",
+		"uchastki": "PREPARED_OFF",
+		"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+		"komnaty": "OUT",
+		"garazhi": "OUT",
+		"arenda": "OUT",
+		"novostroyki": "ACTIVE",
+		"kottedzhnye-poselki": "PREPARED_OFF"
+	},
+	"marketCapability": {
+		"newbuild": "ACTIVE",
+		"secondary": "ACTIVE"
+	},
+	"geoCategoryStatus": {
+		"rostov-na-donu": {
+			"kvartiry": "ACTIVE",
+			"doma": "PREPARED_OFF",
+			"uchastki": "PREPARED_OFF",
+			"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+			"komnaty": "OUT",
+			"garazhi": "OUT",
+			"arenda": "OUT",
+			"novostroyki": "ACTIVE",
+			"kottedzhnye-poselki": "PREPARED_OFF"
+		},
+		"bataysk": {
+			"kvartiry": "PREPARED_OFF",
+			"doma": "PREPARED_OFF",
+			"uchastki": "PREPARED_OFF",
+			"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+			"komnaty": "OUT",
+			"garazhi": "OUT",
+			"arenda": "OUT",
+			"novostroyki": "PREPARED_OFF",
+			"kottedzhnye-poselki": "PREPARED_OFF"
+		},
+		"aksay": {
+			"kvartiry": "PREPARED_OFF",
+			"doma": "PREPARED_OFF",
+			"uchastki": "PREPARED_OFF",
+			"kommercheskaya-nedvizhimost": "PREPARED_OFF",
+			"komnaty": "OUT",
+			"garazhi": "OUT",
+			"arenda": "OUT",
+			"novostroyki": "PREPARED_OFF",
+			"kottedzhnye-poselki": "PREPARED_OFF"
+		}
+	},
+	"marketStatus": {
+		"rostov-na-donu": {
+			"newbuild": "ACTIVE",
+			"secondary": "ACTIVE"
+		},
+		"bataysk": {
+			"newbuild": "PREPARED_OFF",
+			"secondary": "PREPARED_OFF"
+		},
+		"aksay": {
+			"newbuild": "PREPARED_OFF",
+			"secondary": "PREPARED_OFF"
+		}
+	},
+	"developersSurface": {
+		"root": "ACTIVE",
+		"byGeo": {
+			"rostov-na-donu": "ACTIVE",
+			"bataysk": "PREPARED_OFF",
+			"aksay": "PREPARED_OFF"
+		}
+	},
+	"seoFacets": {
+		"vtorichka": {
+			"geo": "rostov-na-donu",
+			"category": "kvartiry",
+			"filter": {
+				"key": "market",
+				"value": "secondary"
+			}
+		}
+	},
+	"seoTiers": {
+		"metric": "broad39",
+		"snapshotDate": "2026-10-01",
+		"bands": {
+			"P1": 500,
+			"P2": 100,
+			"TEST": 50
+		},
+		"minInventory": {
+			"P1": 5,
+			"P2": 5,
+			"TEST": 10
+		},
+		"unmeasuredPolicy": "NONE"
+	},
+	"staticRoutes": [
+		{
+			"path": "/",
+			"changeFrequency": "daily",
+			"priority": 1,
+			"indexable": true
+		},
+		{
+			"path": "/uslugi",
+			"changeFrequency": "weekly",
+			"priority": 0.7,
+			"indexable": true
+		},
+		{
+			"path": "/o-kompanii",
+			"changeFrequency": "monthly",
+			"priority": 0.6,
+			"indexable": true
+		},
+		{
+			"path": "/ipoteka",
+			"changeFrequency": "weekly",
+			"priority": 0.7,
+			"indexable": true
+		},
+		{
+			"path": "/ipoteka/semeynaya",
+			"changeFrequency": "weekly",
+			"priority": 0.6,
+			"indexable": false
+		},
+		{
+			"path": "/prodat",
+			"changeFrequency": "weekly",
+			"priority": 0.7,
+			"indexable": true
+		},
+		{
+			"path": "/kontakty",
+			"changeFrequency": "monthly",
+			"priority": 0.6,
+			"indexable": true
+		},
+		{
+			"path": "/politika-konfidencialnosti",
+			"changeFrequency": "yearly",
+			"priority": 0.2,
+			"indexable": false
+		},
+		{
+			"path": "/soglasie-na-obrabotku-personalnyh-dannyh",
+			"changeFrequency": "yearly",
+			"priority": 0.2,
+			"indexable": false
+		}
+	],
+	"legacyRoutes": [
+		{
+			"from": "/kvartiry-rostova",
+			"to": "/rostov-na-donu/kvartiry/",
+			"statusCode": 301
+		}
+	],
+	"legacyPatterns": [
+		{
+			"kind": "property",
+			"from": "/obekty/{slug}",
+			"statusCode": 301
+		}
+	],
+	"nap": {
+		"brandName": "Союз застройщиков",
+		"phone": "+7 863 000-00-00",
+		"email": "info@souz-home.ru",
+		"address": "Ростов-на-Дону",
+		"workingHours": "Пн-Пт 09:00-18:00"
+	},
+	"brand": {
+		"colors": {
+			"background": "#f4f4f3",
+			"foreground": "#17161a",
+			"surface": "#ffffff",
+			"surfaceMuted": "#ebebe9",
+			"surfaceSoft": "#fafafa",
+			"surfaceDark": "#18181a",
+			"surfaceDarkStrong": "#101011",
+			"contentSecondary": "#413f41",
+			"contentMuted": "#827f81",
+			"contentInverse": "#ffffff",
+			"border": "#e3e3e1",
+			"accent": "#8a1515",
+			"accentHover": "#630e0e",
+			"accentSoft": "#f7f2f2",
+			"statusWarning": "#996000",
+			"statusDanger": "#9e1c1c",
+			"statusSuccess": "#159947",
+			"statusInfo": "#0a66cc"
+		},
+		"radii": {
+			"sm": "8px",
+			"md": "10px",
+			"lg": "12px",
+			"xl": "12px",
+			"full": "999px"
+		},
+		"fontFamily": "Manrope",
+		"logoFile": "public/brand/logo.svg",
+		"faviconFile": "src/app/icon.svg"
+	},
+	"seoRegistry": {
+		"activeSurfaces": [
+			"kvartiry",
+			"doma",
+			"uchastki",
+			"kommercheskaya-nedvizhimost",
+			"komnaty",
+			"garazhi",
+			"arenda",
+			"novostroyki",
+			"kottedzhnye-poselki"
+		],
+		"rows": [
+			{
+				"pageKey": {
+					"kind": "home"
+				},
+				"url": "/",
+				"canonical": "/",
+				"entityRef": null,
+				"targetPhrases": [
+					"client skeleton /"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "homeSingleGeo",
+				"title": "Недвижимость Ростова-на-Дону — Союз застройщиков",
+				"h1": "Недвижимость Ростова-на-Дону",
+				"description": "Подбор недвижимости в Ростове-на-Дону",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryRoot",
+					"category": "kvartiry"
+				},
+				"url": "/kvartiry/",
+				"canonical": "/kvartiry/",
+				"entityRef": "category:kvartiry",
+				"targetPhrases": [
+					"client skeleton /kvartiry/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryRoot",
+				"title": "Квартиры — Союз застройщиков",
+				"h1": "Квартиры",
+				"description": "Квартиры — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryRoot",
+					"category": "novostroyki"
+				},
+				"url": "/novostroyki/",
+				"canonical": "/novostroyki/",
+				"entityRef": "category:novostroyki",
+				"targetPhrases": [
+					"client skeleton /novostroyki/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryRoot",
+				"title": "Новостройки — Союз застройщиков",
+				"h1": "Новостройки",
+				"description": "Новостройки — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "geoHub",
+					"geo": "rostov-na-donu"
+				},
+				"url": "/rostov-na-donu/",
+				"canonical": "/rostov-na-donu/",
+				"entityRef": "geo:rostov-na-donu",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "geoHub",
+				"title": "Недвижимость Ростова-на-Дону — Союз застройщиков",
+				"h1": "Недвижимость Ростова-на-Дону",
+				"description": "квартиры и новостройки в Ростове-на-Дону",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeo",
+					"geo": "rostov-na-donu",
+					"category": "kvartiry"
+				},
+				"url": "/rostov-na-donu/kvartiry/",
+				"canonical": "/rostov-na-donu/kvartiry/",
+				"entityRef": "geo:rostov-na-donu/category:kvartiry",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/kvartiry/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeo",
+				"title": "Квартиры в Ростове-на-Дону — Союз застройщиков",
+				"h1": "Квартиры в Ростове-на-Дону",
+				"description": "Квартиры в Ростове-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "kvartiry",
+					"district": "leninskiy"
+				},
+				"url": "/rostov-na-donu/kvartiry/leninskiy/",
+				"canonical": "/rostov-na-donu/kvartiry/leninskiy/",
+				"entityRef": "geo:rostov-na-donu/category:kvartiry/district:leninskiy",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/kvartiry/leninskiy/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictAdmin",
+				"title": "Купить квартиру в Ленинском районе Ростова-на-Дону — цены",
+				"h1": "Квартиры в Ленинском районе Ростова-на-Дону",
+				"description": "Квартиры в Ленинском районе Ростова-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "kvartiry",
+					"district": "voroshilovskiy"
+				},
+				"url": "/rostov-na-donu/kvartiry/voroshilovskiy/",
+				"canonical": "/rostov-na-donu/kvartiry/voroshilovskiy/",
+				"entityRef": "geo:rostov-na-donu/category:kvartiry/district:voroshilovskiy",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/kvartiry/voroshilovskiy/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictAdmin",
+				"title": "Купить квартиру в Ворошиловском районе Ростова-на-Дону — цены",
+				"h1": "Квартиры в Ворошиловском районе Ростова-на-Дону",
+				"description": "Квартиры в Ворошиловском районе Ростова-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "kvartiry",
+					"district": "severnyy"
+				},
+				"url": "/rostov-na-donu/kvartiry/severnyy/",
+				"canonical": "/rostov-na-donu/kvartiry/severnyy/",
+				"entityRef": "geo:rostov-na-donu/category:kvartiry/district:severnyy",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/kvartiry/severnyy/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictMicro",
+				"title": "Купить квартиру на Северном в Ростове-на-Дону — цены",
+				"h1": "Квартиры на Северном",
+				"description": "Квартиры на Северном в Ростове-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "kvartiry",
+					"district": "tsentr"
+				},
+				"url": "/rostov-na-donu/kvartiry/tsentr/",
+				"canonical": "/rostov-na-donu/kvartiry/tsentr/",
+				"entityRef": "geo:rostov-na-donu/category:kvartiry/district:tsentr",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/kvartiry/tsentr/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictMicro",
+				"title": "Купить квартиру в Центре в Ростове-на-Дону — цены",
+				"h1": "Квартиры в Центре",
+				"description": "Квартиры в Центре в Ростове-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeo",
+					"geo": "rostov-na-donu",
+					"category": "novostroyki"
+				},
+				"url": "/rostov-na-donu/novostroyki/",
+				"canonical": "/rostov-na-donu/novostroyki/",
+				"entityRef": "geo:rostov-na-donu/category:novostroyki",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/novostroyki/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeo",
+				"title": "Новостройки в Ростове-на-Дону — Союз застройщиков",
+				"h1": "Новостройки в Ростове-на-Дону",
+				"description": "Новостройки в Ростове-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "novostroyki",
+					"district": "leninskiy"
+				},
+				"url": "/rostov-na-donu/novostroyki/leninskiy/",
+				"canonical": "/rostov-na-donu/novostroyki/leninskiy/",
+				"entityRef": "geo:rostov-na-donu/category:novostroyki/district:leninskiy",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/novostroyki/leninskiy/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictAdmin",
+				"title": "Купить новостройку в Ленинском районе Ростова-на-Дону — цены",
+				"h1": "Новостройки в Ленинском районе Ростова-на-Дону",
+				"description": "Новостройки в Ленинском районе Ростова-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "novostroyki",
+					"district": "voroshilovskiy"
+				},
+				"url": "/rostov-na-donu/novostroyki/voroshilovskiy/",
+				"canonical": "/rostov-na-donu/novostroyki/voroshilovskiy/",
+				"entityRef": "geo:rostov-na-donu/category:novostroyki/district:voroshilovskiy",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/novostroyki/voroshilovskiy/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictAdmin",
+				"title": "Купить новостройку в Ворошиловском районе Ростова-на-Дону — цены",
+				"h1": "Новостройки в Ворошиловском районе Ростова-на-Дону",
+				"description": "Новостройки в Ворошиловском районе Ростова-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "novostroyki",
+					"district": "severnyy"
+				},
+				"url": "/rostov-na-donu/novostroyki/severnyy/",
+				"canonical": "/rostov-na-donu/novostroyki/severnyy/",
+				"entityRef": "geo:rostov-na-donu/category:novostroyki/district:severnyy",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/novostroyki/severnyy/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictMicro",
+				"title": "Купить новостройку на Северном в Ростове-на-Дону — цены",
+				"h1": "Новостройки на Северном",
+				"description": "Новостройки на Северном в Ростове-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoDistrict",
+					"geo": "rostov-na-donu",
+					"category": "novostroyki",
+					"district": "tsentr"
+				},
+				"url": "/rostov-na-donu/novostroyki/tsentr/",
+				"canonical": "/rostov-na-donu/novostroyki/tsentr/",
+				"entityRef": "geo:rostov-na-donu/category:novostroyki/district:tsentr",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/novostroyki/tsentr/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoDistrictMicro",
+				"title": "Купить новостройку в Центре в Ростове-на-Дону — цены",
+				"h1": "Новостройки в Центре",
+				"description": "Новостройки в Центре в Ростове-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			},
+			{
+				"pageKey": {
+					"kind": "geoDevelopers",
+					"geo": "rostov-na-donu"
+				},
+				"url": "/rostov-na-donu/zastroyshchiki/",
+				"canonical": "/rostov-na-donu/zastroyshchiki/",
+				"entityRef": "geo:rostov-na-donu/developers",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/zastroyshchiki/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "geoDevelopers",
+				"title": "Застройщики в Ростове-на-Дону — Союз застройщиков",
+				"h1": "Застройщики в Ростове-на-Дону",
+				"description": "Застройщики и жилые комплексы в Ростове-на-Дону",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "developerGeo"
+			},
+			{
+				"pageKey": {
+					"kind": "developerRoot"
+				},
+				"url": "/zastroyshchiki/",
+				"canonical": "/zastroyshchiki/",
+				"entityRef": "developers:root",
+				"targetPhrases": [
+					"client skeleton /zastroyshchiki/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "developerRoot",
+				"title": "Застройщики — Союз застройщиков",
+				"h1": "Застройщики",
+				"description": "Застройщики и жилые комплексы",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "developerGeo"
+			},
+			{
+				"pageKey": {
+					"kind": "categoryGeoFacet",
+					"geo": "rostov-na-donu",
+					"category": "kvartiry",
+					"facet": "vtorichka"
+				},
+				"url": "/rostov-na-donu/kvartiry/vtorichka/",
+				"canonical": "/rostov-na-donu/kvartiry/vtorichka/",
+				"entityRef": "facet:vtorichka",
+				"targetPhrases": [
+					"client skeleton /rostov-na-donu/kvartiry/vtorichka/"
+				],
+				"metric": "broad39",
+				"value": null,
+				"source": "fallback_no_data",
+				"snapshotDate": "2026-10-01",
+				"synthetic": false,
+				"tier": "NONE",
+				"minimumObjects": 0,
+				"defaultRobots": "noindex,follow",
+				"templateKey": "categoryGeoFacet",
+				"title": "Вторичные квартиры в Ростове-на-Дону — Союз застройщиков",
+				"h1": "Вторичные квартиры в Ростове-на-Дону",
+				"description": "Вторичные квартиры в Ростове-на-Дону — актуальные предложения",
+				"status": "draft",
+				"morphologyApproved": true,
+				"release": "client-bootstrap",
+				"contentGateRule": "listing"
+			}
+		]
+	},
+	"brandAssets": {
+		"status": "ready",
+		"logoPath": "/brand/logo.svg",
+		"faviconPath": "/icon.svg",
+		"tokenSource": "src/app/globals.css"
+	},
+	"feed": {
+		"status": "ready",
+		"mode": "external-urls"
+	},
+	"developmentExcel": {
+		"status": "ready",
+		"template": "client-developments.xlsx"
+	},
+	"clientReadiness": {
+		"deploymentTarget": "approved-runtime",
+		"database": "approved-managed-postgresql",
+		"mediaStorage": "timeweb-s3",
+		"feedImageSource": "external-urls",
+		"jobsActiveRuntimeCount": 1,
+		"leadRetentionDays": 180,
+		"archiveRetentionDays": 90,
+		"legalContent": "approved",
+		"requiredHostAllowlists": {
+			"outbound": [
+				"soyuz-rostov.tw1.ru"
+			],
+			"externalImages": [
+				"soyuz-rostov.tw1.ru"
+			],
+			"leadOutbound": [
+				"soyuz-rostov.tw1.ru"
+			]
+		},
+		"nginx": true,
+		"automaticBackup": true,
+		"externalMonitoring": true
+	},
+	"seoTemplates": {
+		"categoryLabels": {
+			"kvartiry": {
+				"nominativePlural": "Квартиры",
+				"nominativePluralLower": "квартиры",
+				"accusativeSingular": "квартиру",
+				"genitivePlural": "квартир",
+				"dealVerb": "Купить"
+			},
+			"doma": {
+				"nominativePlural": "Дома",
+				"nominativePluralLower": "дома",
+				"accusativeSingular": "дом",
+				"genitivePlural": "домов",
+				"dealVerb": "Купить"
+			},
+			"uchastki": {
+				"nominativePlural": "Участки",
+				"nominativePluralLower": "участки",
+				"accusativeSingular": "участок",
+				"genitivePlural": "участков",
+				"dealVerb": "Купить"
+			},
+			"kommercheskaya-nedvizhimost": {
+				"nominativePlural": "Коммерческая недвижимость",
+				"nominativePluralLower": "коммерческая недвижимость",
+				"accusativeSingular": "коммерческую недвижимость",
+				"genitivePlural": "объектов коммерческой недвижимости",
+				"dealVerb": "Купить"
+			},
+			"komnaty": {
+				"nominativePlural": "Комнаты",
+				"nominativePluralLower": "комнаты",
+				"accusativeSingular": "комнату",
+				"genitivePlural": "комнат",
+				"dealVerb": "Купить"
+			},
+			"garazhi": {
+				"nominativePlural": "Гаражи",
+				"nominativePluralLower": "гаражи",
+				"accusativeSingular": "гараж",
+				"genitivePlural": "гаражей",
+				"dealVerb": "Купить"
+			},
+			"arenda": {
+				"nominativePlural": "Аренда недвижимости",
+				"nominativePluralLower": "аренда недвижимости",
+				"accusativeSingular": "объект в аренду",
+				"genitivePlural": "предложений аренды",
+				"dealVerb": "Снять"
+			},
+			"novostroyki": {
+				"nominativePlural": "Новостройки",
+				"nominativePluralLower": "новостройки",
+				"accusativeSingular": "новостройку",
+				"genitivePlural": "новостроек",
+				"dealVerb": "Купить"
+			},
+			"kottedzhnye-poselki": {
+				"nominativePlural": "Коттеджные посёлки",
+				"nominativePluralLower": "коттеджные посёлки",
+				"accusativeSingular": "коттеджный посёлок",
+				"genitivePlural": "коттеджных посёлков",
+				"dealVerb": "Купить"
+			}
+		},
+		"facetLabels": {
+			"vtorichka": "Вторичные",
+			"dvukhkomnatnye": "Двухкомнатные",
+			"odnokomnatnye": "Однокомнатные"
+		},
+		"templates": {
+			"homeSingleGeo": {
+				"title": "Недвижимость {geoGenitive} — {brand}",
+				"h1": "Недвижимость {geoGenitive}",
+				"description": "Подбор недвижимости[ {cityPhrase}][ — {inventory}.]"
+			},
+			"homeMultiGeo": {
+				"title": "Недвижимость — {brand}",
+				"h1": "Недвижимость",
+				"description": "Подбор недвижимости и сопровождение сделок[ — {inventory}.]"
+			},
+			"geoHub": {
+				"title": "Недвижимость {geoGenitive} — {brand}",
+				"h1": "Недвижимость {geoGenitive}",
+				"description": "{activeCategoriesList}[ {cityPhrase}][ — {inventory}.]"
+			},
+			"categoryRoot": {
+				"title": "{category} — {brand}",
+				"h1": "{category}",
+				"description": "{category} — актуальные предложения[. {inventory}.]"
+			},
+			"categoryGeo": {
+				"title": "{category} {cityPhrase} — {brand}",
+				"h1": "{category} {cityPhrase}",
+				"description": "{category} {cityPhrase} — актуальные предложения[. {inventory}.]"
+			},
+			"categoryGeoDistrictAdmin": {
+				"title": "{dealVerb} {categoryAccusative} в {districtAdjLocative} районе {cityGenitive} — цены",
+				"h1": "{categoryNominativePlural} в {districtAdjLocative} районе {cityGenitive}",
+				"description": "{categoryNominativePlural} в {districtAdjLocative} районе {cityGenitive} — актуальные предложения[. {inventory}.]"
+			},
+			"categoryGeoDistrictMicro": {
+				"title": "{dealVerb} {categoryAccusative} {districtPhrase} {cityPhrase} — цены",
+				"h1": "{categoryNominativePlural} {districtPhrase}",
+				"description": "{categoryNominativePlural} {districtPhrase} {cityPhrase} — актуальные предложения[. {inventory}.]"
+			},
+			"categoryGeoFacet": {
+				"title": "{facet} {categoryLower} {cityPhrase} — {brand}",
+				"h1": "{facet} {categoryLower} {cityPhrase}",
+				"description": "{facet} {categoryLower} {cityPhrase} — актуальные предложения[. {inventory}.]"
+			},
+			"geoDevelopers": {
+				"title": "Застройщики {cityPhrase} — {brand}",
+				"h1": "Застройщики {cityPhrase}",
+				"description": "Застройщики и жилые комплексы {cityPhrase}[ — {inventory}.]"
+			},
+			"developerRoot": {
+				"title": "Застройщики — {brand}",
+				"h1": "Застройщики",
+				"description": "Застройщики и жилые комплексы[ — {inventory}.]"
+			},
+			"developmentNormal": {
+				"title": "{entityName} — {brand}",
+				"h1": "{entityName}",
+				"description": "{entityName}[ {cityPhrase}][ — {freshPrice}.]"
+			},
+			"developmentCollision": {
+				"title": "{entityName} {cityPhrase} — {brand}",
+				"h1": "{entityName} {cityPhrase}",
+				"description": "{entityName} {cityPhrase}[ — {freshPrice}.]"
+			},
+			"developer": {
+				"title": "{entityName} — {brand}",
+				"h1": "{entityName}",
+				"description": "Объекты застройщика {entityName}[ {cityPhrase}][ — {inventory}.]"
+			},
+			"property": {
+				"title": "{entityName} — {brand}",
+				"h1": "{entityName}",
+				"description": "{entityName}[ {cityPhrase}][ — {freshPrice}.]"
+			}
+		}
+	},
+	"reservedRoots": [
+		"_next",
+		"admin",
+		"api",
+		"arenda",
+		"doma",
+		"garazhi",
+		"ipoteka",
+		"journal",
+		"kommercheskaya-nedvizhimost",
+		"komnaty",
+		"komplex",
+		"kontakty",
+		"kottedzhnye-poselki",
+		"kvartiry",
+		"kvartiry-rostova",
+		"legal",
+		"media",
+		"novostroyki",
+		"o-kompanii",
+		"obekty",
+		"poisk",
+		"politika-konfidencialnosti",
+		"prodat",
+		"robots.txt",
+		"search",
+		"sitemap",
+		"sitemap.xml",
+		"soglasie-na-obrabotku-personalnyh-dannyh",
+		"sotrudniki",
+		"uchastki",
+		"uslugi",
+		"zastroyshchiki"
+	],
+	"catalogSurfaces": [
+		"kvartiry",
+		"doma",
+		"uchastki",
+		"kommercheskaya-nedvizhimost",
+		"komnaty",
+		"garazhi",
+		"arenda",
+		"novostroyki",
+		"kottedzhnye-poselki"
+	],
+	"productionIndexing": "noindex",
+	"fixtureData": "cleared"
+}

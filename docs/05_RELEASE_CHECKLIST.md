@@ -1,56 +1,84 @@
-# Release Checklist
+# Release Checklist — Союз застройщиков Ростов
 
-Статус: `ACTIVE RELEASE CONTRACT / NO CURRENT RELEASE AUTHORIZATION`.
+Статус: `ACTIVE CLIENT RELEASE CONTRACT / NO CURRENT RELEASE AUTHORIZATION`.
 
-Текущие release boundaries, tag status, runtime versions и live-proof status
-читаются из `STARTER_RELEASE_STATE.md`. Owner-operated demo contour существует,
-но сам по себе не доказывает текущий SHA. PII retention days остаются
-`NEEDS_OWNER` до client/release decision.
+This checklist does not authorize staging, production, DB migrations, DNS or indexing. Those actions require the exact master-plan state and explicit owner command defined below.
 
-## Перед Pull Request
+## Before Pull Request
 
-- scope соответствует одному workstream и одному worktree;
-- source documents и runtime не имеют известного незафиксированного drift;
-- релевантные локальные проверки завершены;
-- секреты, PII и generated artifacts не попали в diff;
-- новые или изменённые секреты заведены в Secret Master, а не в Doppler, git,
-  markdown или logs;
-- rollback impact описан, если изменение затрагивает runtime/data.
+- task belongs to one approved workstream/worktree;
+- source documents and runtime have no known unclassified drift;
+- scope uses actual owners (`src/core`, `src/project`, `packages`, Payload migrations), not a new parallel platform layer;
+- relevant local checks completed on the EPIC-01 approved latest-compatible-stable Node/pnpm/direct-dependency snapshot;
+- no canary/RC/prerelease dependency and no unapproved stale-stack exception;
+- no secrets, PII, credentials, env values, private source manifests or media binaries in diff;
+- rollback/data impact recorded where applicable.
 
-## Перед merge
+## Before merge
 
-- PR основан на актуальном SourceCraft `main` и не содержит чужого scope;
-- полный diff просмотрен;
-- риск классифицирован как `STANDARD` или `RISKY`;
-- `STANDARD` запускает `pnpm verify:merge-standard`;
-- `RISKY` выбирает ровно один `risk_scope` и запускает STANDARD плюс
-  соответствующий targeted proof;
-- safe isolated test DB и zero skipped required suites обязательны только для
-  `schema-data`, `auth-pii-leads` и `ingest-jobs`;
-- build выполняется только для `dependency-runtime`;
-- один ручной SourceCraft Merge Gate зелёный на exact head SHA;
-- все блокеры исправлены.
+- PR is based on current SourceCraft `main` and contains one coherent risk scope;
+- full diff reviewed;
+- risk classified `STANDARD` or one exact `RISKY` scope;
+- one manual SourceCraft Gate is green on exact head SHA;
+- required isolated test DB proof exists for schema/data/auth/ingest changes;
+- P0/P1 findings are closed;
+- merge does not initialize/import an unapproved Task Manager graph.
 
-## Перед production
+## Before staging
 
-- есть отдельная команда владельца на release;
-- SourceCraft canonical `main` чистый, итоговый SHA известен, GitHub не
-  используется как release source;
-- target domain для internal production: `start-baza.ams24.ru`, режим
-  `noindex`;
-- server identity, owner-approved local PostgreSQL on AMS Server and runtime env
-  file permissions are confirmed without moving secrets into git/logs;
-- S3 не требуется для starter; media = `MEDIA_DIR`;
-- staging обязателен для migration, parser/source identity, auth/access и major
-  upgrade;
-- migration, backup/restore, jobs ownership и rollback проверены по риску;
-- готов immutable Docker artifact из exact `main`; build на production host
-  запрещён;
-- production secrets берутся из Secret Master; Doppler допустим только как
-  временный legacy/import source для ещё не перенесённых значений;
-- после rollout выполнен live smoke изменённого сценария;
-- production URL, health и rollback point зафиксированы.
+- master plan exact version is owner-approved for implementation/delivery scope;
+- clean canonical SourceCraft `main` exact SHA is known;
+- immutable Docker image is built outside production host and recorded by digest;
+- image registry/name/publish/pull contract is documented;
+- Payload media adapter, env and compose use owner-selected Timeweb S3; local `MEDIA_DIR` is not production canon;
+- `REVALIDATE_SECRET` and all runtime secrets are canonical in Secret Master;
+- approved NAP identity and owner-approved privacy/consent/legal content exist; starter fixture identity and placeholder legal copy cannot surface;
+- all publish-eligible priority ЖК are source-identity-matched and have at least five accepted Payload/S3 photos;
+- Yandex Realty source URLs, rights notes and checkedAt remain private/admin-only; no public attribution/check date is required;
+- no media hotlinks or intake binaries in Git;
+- R1 Registry/profile contains no R2 route leakage;
+- DB backup/restore route and monitoring ownership are recorded;
+- technical host remains noindex.
 
-Live demo infrastructure on AMS Server exists (`start-baza.ams24.ru`).
-Checklist PASS for a given SHA requires immutable image + live smoke on that SHA,
-not only the existence of the contour.
+## Staging proof
+
+- server pulls exact immutable image digest;
+- migrations run from the same image against the approved clean DB;
+- exactly one runtime owns Payload jobs;
+- `/api/internal/healthz` passes locally and through technical host;
+- Admin/auth/access, media upload/read, restart persistence, leads/outbox/channel, Excel import, cache invalidation and backup/restore changed paths pass;
+- per-development photo-count assertion passes for every published priority ЖК;
+- Public Gateway proof confirms internal provenance/rights/checkedAt fields do not leak;
+- old/new crawl and migration rehearsal artifacts exist;
+- browser/a11y/performance/security acceptance is tied to exact candidate SHA;
+- rollback point includes previous image, env snapshot/checksum and DB restore point.
+
+## Before production
+
+- owner gives a separate explicit production/cutover command;
+- exact release candidate SHA/image digest and evidence ledger are approved;
+- final `souz-home.ru` DNS/TLS target is confirmed;
+- old-site migration/redirect decisions are frozen;
+- noindex remains until a separate explicit public-indexing promotion;
+- rollback operator and stop conditions are named.
+
+## Production live proof
+
+- final and technical origins serve the expected exact release identity;
+- health, critical catalog/entity pages, leads, Admin, media and jobs are healthy;
+- redirects have no chains and canonical/robots/sitemap match the approved registry;
+- logs contain no secrets/PII;
+- rollback point remains usable.
+
+## Hard stop conditions
+
+- plan is not `APPROVED` for the exact version;
+- image digest/SHA mismatch;
+- Timeweb S3 activation incomplete or adapter/env/compose mismatch;
+- starter fixture content can reach client public output;
+- missing Secret Master value or unapproved env mutation;
+- DB identity/backup uncertain;
+- duplicate jobs owner;
+- public indexing would be enabled without owner command;
+- unresolved P0/P1 or migration/crawl blocker;
+- any published placeholder, priority ЖК with fewer than five accepted photos, public source/check-date leakage, or known stale direct stack version without an approved compatibility exception.

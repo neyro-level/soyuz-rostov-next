@@ -248,10 +248,10 @@ const marketingPages = [
 	"src/app/(site)/uslugi/page.tsx",
 	"src/app/(site)/o-kompanii/page.tsx",
 	"src/app/(site)/ipoteka/page.tsx",
+	"src/app/(site)/ipoteka/semeynaya/page.tsx",
 	"src/app/(site)/kontakty/page.tsx",
 	"src/app/(site)/politika-konfidencialnosti/page.tsx",
 	"src/app/(site)/soglasie-na-obrabotku-personalnyh-dannyh/page.tsx",
-	"src/app/(site)/sdat/page.tsx",
 	"src/app/(site)/prodat/page.tsx",
 ];
 for (const file of marketingPages) {
@@ -281,20 +281,32 @@ assert.equal(
 	false,
 	"home must not be force-dynamic",
 );
+const siteProfileConfigSource = readFileSync(
+	"src/project/site-profile.config.ts",
+	"utf8",
+);
 assert.ok(
 	readFileSync("src/project/routing/legacy-route-manifest.ts", "utf8").includes(
 		"routes: siteProfile.legacyRoutes",
-	) &&
-		readFileSync("src/project/site-profile.config.ts", "utf8").includes(
-			'"to": "/kvartiry/"',
-		),
-	"legacy catalog must remain in the direct redirect manifest",
-);
-assert.ok(
-	readFileSync("src/app/(site)/nedvizhimost/page.tsx", "utf8").includes(
-		"notFound()",
 	),
-	"legacy catalog fallback page must fail closed",
+	"legacy route manifest must remain config-driven",
 );
+assert.equal(
+	siteProfileConfigSource.includes('"from": "/nedvizhimost"'),
+	false,
+	"generic /nedvizhimost redirect must stay absent in R1",
+);
+const failClosedRouteFiles = [
+	"src/app/(site)/nedvizhimost/page.tsx",
+	"src/app/(site)/sdat/page.tsx",
+	"src/app/(site)/otzyvy/page.tsx",
+	"src/app/(site)/stroitelstvo-domov/page.tsx",
+];
+for (const file of failClosedRouteFiles) {
+	assert.ok(
+		readFileSync(file, "utf8").includes("notFound()"),
+		`${file} must fail closed`,
+	);
+}
 
 console.log("verify-seo-contracts: ok");

@@ -1,0 +1,12 @@
+HTTP/1.1 200 Connection established
+
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 01 Oct 2026 20:29:34 GMT
+Content-Type: text/xml
+Content-Length: 183
+Last-Modified: Wed, 16 Sep 2026 10:41:49 GMT
+Connection: keep-alive
+ETag: "6aaa726d-b7"
+Accept-Ranges: bytes
+

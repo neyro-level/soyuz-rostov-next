@@ -1,30 +1,26 @@
 # Architecture
 
-Статус: `ACTIVE / LIVE OWNER-OPERATED DEMO / CLIENT PRE-PRODUCTION`.
+Статус: `ACTIVE CLIENT / MASTER PLAN REVIEW / PRE-RELEASE`.
 
 ## Профиль
 
 ```text
 AMS_PROFILE=REALTY_BASE
+PROJECT_CLASS=COMMERCIAL
 DELIVERY_PROFILE=COMMERCIAL
 Mode=BUILD
-Git platform=SOURCECRAFT_PRIMARY_GITHUB_MIRROR
+Git platform=SOURCECRAFT_PRIMARY
+GitHub=mirror-only when explicitly requested
 Secrets source=Secret Master / self-hosted Infisical
 ```
 
-Перед merge в `main` нужен один ручной exact-head SourceCraft Gate. Активного
-execution source нет: новые изменения начинаются с Task Contract и отдельного
-branch/worktree от актуального SourceCraft `main`. Текущий tag boundary, runtime
-versions и live-proof status принадлежат `STARTER_RELEASE_STATE.md`. GitHub
-mirror, новый immutable tag и production - отдельные owner actions.
+Перед merge в `main` нужен один ручной exact-head SourceCraft Gate. Canonical development program — `docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md`, currently `4.1.1-ARCH-v5 APPROVED` with `READY_WITH_LIMITS`. Owner approval is recorded, but Task Manager/Beads was not initialized/imported in the audit run; execution starts only after parent-controlled inventory validation and clean reconciliation. Новые изменения используют Task Contract и отдельный branch/worktree от актуального SourceCraft `main`. Default Task Manager delivery is `PR_ONLY`; GitHub mirror, immutable image publication, staging, production and indexing remain separate gated actions.
 
 ## Delivery baseline
 
 - Canonical repository — SourceCraft; GitHub — mirror-only. Точное равенство
   SHA подтверждается после каждого явно запрошенного mirror.
-- Portfolio `PROJECT_CLASS=STANDARD` не меняет project
-  `DELIVERY_PROFILE=COMMERCIAL`: template/demo требует review и один ручной
-  exact-head SourceCraft Gate перед merge.
+- `PROJECT_CLASS=COMMERCIAL` and `DELIVERY_PROFILE=COMMERCIAL`: client work requires review and one manual exact-head SourceCraft Gate before merge.
 - `.sourcecraft/ci.yaml` содержит только manual exact-SHA `merge-standard` и
   `merge-risky`; explicit `paths: []` sentinel блокирует auto push/PR CI.
   Исторические run counts и длительности не являются архитектурным контрактом;
@@ -37,13 +33,7 @@ mirror, новый immutable tag и production - отдельные owner action
   доказательство выбранного риска.
 - Один PR закрывается одним exact-head Gate. Несовместимые risk scopes в одном
   batch запрещены.
-- Demo release contract уже требует clean exact `main`, immutable Docker image,
-  migrations из того же image, один jobs owner, live health/smoke и сохранённый
-  previous image/env rollback point. Текущий Dockerfile копирует весь `/app` и
-  не использует standalone allowlist; release hardening остаётся отдельной
-  RISKY-задачей до первого client production и не выполняется этим inventory.
-- Следующий `starter-v2.MINOR.PATCH` выбирается только в отдельном release
-  scope и не создаётся ordinary WORK-задачей.
+- Client release contract requires clean exact `main`, immutable Docker image built outside production, migrations from the same image, exactly one jobs owner, live health/smoke and a retained image/env/DB rollback point. The current image publication/pull-by-digest route is not yet proven and blocks staging.
 
 ## Stack и ownership
 
@@ -51,11 +41,12 @@ mirror, новый immutable tag и production - отдельные owner action
 - Payload CMS — единственный владелец application schema;
 - PostgreSQL через `@payloadcms/db-postgres`; второй ORM запрещён;
 - Zod, pnpm, Tailwind CSS 4, shadcn/ui, Lucide;
-- Payload Jobs, streaming SAX parser, **local persistent media** (S3 plugin not used by starter), Nginx, SourceCraft.
+- Payload Jobs, streaming SAX parser, Nginx and SourceCraft;
+- owner selected Timeweb S3 for production media. Current Media collection still uses local filesystem, so S3 adapter/env/compose activation is an explicit architecture blocker before staging.
 
-Текущий lock snapshot: Next.js `16.3.8`, React `19.2.8`, Payload `3.90.2`.
-Фактические версии всегда определяют `package.json`, lockfile и runtime files.
-Major upgrade требует отдельного решения и targeted proof.
+Текущий installed snapshot: Node image `24.21.0`, pnpm `11.28.2`, Next.js `16.3.8`, React `19.2.8`, Payload `3.90.2`, TypeScript lock `5.9.3`, Tailwind lock `4.3.3`.
+
+Owner policy: R1 uses only the latest mutually compatible stable direct stack, re-resolved from official vendor/npm sources at implementation time; canary/RC/prerelease is forbidden. Verified target snapshot on `2026-10-01`: Node `24.21.0`, pnpm `12.8.1`, Next.js `16.3.8`, React/React DOM `19.3.0`, Payload `3.90.2`, TypeScript `7.0.2`, Tailwind `4.3.3`, PostgreSQL `18.6`. The snapshot is not permission for blind upgrades: EPIC-01 must align package/lock/Corepack/Docker, read versioned Next docs, run dependency-runtime proof and stop for an owner decision if latest stable components or the Timeweb PostgreSQL offering are incompatible.
 
 ## Hardened current contracts
 
@@ -72,8 +63,7 @@ Major upgrade требует отдельного решения и targeted pro
   page/sort keys, TTL и invalidation tags ограничены.
 - Souz matrix — честный source-backed subset; reusable geo capability
   доказывается отдельной synthetic non-production fixture.
-- Development Gate принимает managed media либо allowlisted external HTTPS с
-  type/source/rights/checkedAt; construction progress также требует capturedAt.
+- Development Gate accepts managed media with internal type/source/rights/checkedAt. The owner-approved Yandex Realty package is copied through Payload to Timeweb S3, never hotlinked; Public Gateway/UI does not expose source/rights/checkedAt. Construction progress also requires capturedAt.
 - Production public origin обязан быть exact approved HTTPS origin без
   credentials, path, query или hash.
 
@@ -385,24 +375,22 @@ catalog routes кэшируются только канонические `page`
 - `pnpm quality:architecture` + `pnpm quality:guards` — dependency direction,
   access/SQL/cache boundaries и negative fixtures.
 
-## Starter vs client clone
+## Client deployment contour
 
-Starter (этот репозиторий, `start-baza.ams24.ru`):
+This repository is the independent Soyuz client snapshot, not the starter demo runtime.
 
 ```text
-hosting: AMS Server
-database: local PostgreSQL, migrations only, PAYLOAD_DB_PUSH=false
-storage: persistent MEDIA_DIR, no S3 runtime
-jobs: exactly one JOBS_AUTORUN=true
-cache: http
-indexing: noindex
+hosting: Timeweb server szrostov
+technical host: soyuz-rostov.tw1.ru
+final domain: souz-home.ru
+database: Timeweb managed PostgreSQL, migrations only
+storage: Timeweb S3 selected; activation pending
+jobs: exactly one JOBS_AUTORUN=true runtime
+cache: authenticated HTTP invalidation
+indexing: noindex until explicit owner promotion
+artifact: immutable SourceCraft-built Docker image, pull by digest
 ```
 
-ADR: `docs/adr/ADR-LOCAL-STARTER-STORAGE.md`.
+The cleaned server baseline and empty DB are documented in `OPERATIONS.md` and `SERVER_PREP_PLAN.md`. Staging/release proof remains absent. Timeweb S3 is selected, but the current local-filesystem Media implementation is not approved production storage and must be replaced/activated before staging.
 
-Этот репозиторий остаётся демо на local PostgreSQL + MEDIA_DIR. Отдельный клиентский контур, если появится, принимает собственное topology decision вне этого репозитория. S3 и Managed PostgreSQL сюда не возвращаются.
-
-Production starter release использует immutable artifact из clean `main`. Процедуры — `OPERATIONS.md`.
-
-Текущее project-specific состояние определяют этот документ, `PROJECT.md`, ADR
-и код.
+Current project-specific state is determined by this document, `PROJECT.md`, the exact master-plan revision, ADRs and code.

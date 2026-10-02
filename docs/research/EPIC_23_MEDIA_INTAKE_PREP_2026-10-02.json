@@ -1,0 +1,13 @@
+{
+  "schema": "EPIC_23_MEDIA_INTAKE_PREP_V1",
+  "task": "szh-task-23b-media-intake-prep",
+  "date": "2026-10-02",
+  "source_matrix": "docs/research/EPIC_23_PRIORITY_DEVELOPMENTS_STATUS_2026-10-02.csv",
+  "private_manifest_path": "../.private/szh-task-23b-media-intake/media-intake-manifest.csv",
+  "private_manifest_sha256": "cc477a7e25323c3cb0094d72b452bc719d717f3217c21ff17e4ef96111c93720",
+  "development_count": 24,
+  "planned_media_slots": 120,
+  "accepted_media_count": 0,
+  "binary_policy": "No media binaries are committed to Git. Private manifest references planned filenames only.",
+  "next_stage": "szh-task-23c-s3-import-proof downloads/imports approved binaries through Payload Media to Timeweb S3/staging media owner."
+}

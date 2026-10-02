@@ -12,6 +12,8 @@ export type LeadFormKind =
 
 export type LeadEntityContext = {
 	geo?: string;
+	region?: string;
+	city?: string;
 	surface?:
 		| "apartments"
 		| "new-buildings"
@@ -23,6 +25,8 @@ export type LeadEntityContext = {
 	propertyUrlId?: string;
 	development?: string;
 	developer?: string;
+	dataTier?: "A" | "B" | "C";
+	preferences?: string[];
 };
 
 export type LeadIntakeAccepted = {
@@ -110,6 +114,8 @@ const leadIntakeSchema = z.object({
 	context: z
 		.object({
 			geo: normalizedContextKey().optional(),
+			region: normalizedContextKey().optional(),
+			city: normalizedContextKey().optional(),
 			surface: z
 				.enum([
 					"apartments",
@@ -124,6 +130,8 @@ const leadIntakeSchema = z.object({
 			propertyUrlId: z.string().regex(/^[1-9]\d{0,18}$/).optional(),
 			development: normalizedContextKey().optional(),
 			developer: normalizedContextKey().optional(),
+			dataTier: z.enum(["A", "B", "C"]).optional(),
+			preferences: z.array(normalizedContextKey()).max(12).optional(),
 		})
 		.strict()
 		.optional(),

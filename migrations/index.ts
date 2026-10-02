@@ -23,6 +23,7 @@ import * as migration_20260926_092324_plan9_s10b_indexnow_jobs from "./20260926_
 import * as migration_20260927_010000_geo_taxonomy_v3 from "./20260927_010000_geo_taxonomy_v3";
 import * as migration_20260927_110000_district_morphology from "./20260927_110000_district_morphology";
 import * as migration_20260928_163000_development_external_media from "./20260928_163000_development_external_media";
+import * as migration_20260928_180000_lead_safe_context_v2 from "./20260928_180000_lead_safe_context_v2";
 
 export const migrations = [
 	{
@@ -149,5 +150,10 @@ export const migrations = [
 		up: migration_20260928_163000_development_external_media.up,
 		down: migration_20260928_163000_development_external_media.down,
 		name: "20260928_163000_development_external_media",
+	},
+	{
+		up: migration_20260928_180000_lead_safe_context_v2.up,
+		down: migration_20260928_180000_lead_safe_context_v2.down,
+		name: "20260928_180000_lead_safe_context_v2",
 	},
 ];

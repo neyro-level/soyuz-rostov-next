@@ -1,0 +1,34 @@
+{
+  "schema": "EPIC_23D_PAYLOAD_MEDIA_IMPORT_PROOF_V1",
+  "task": "szh-task-23d-payload-media-import-proof",
+  "date": "2026-10-02",
+  "runtime": "staging-equivalent disposable PostgreSQL on szrostov via SSH tunnel + local Payload Local API + real Timeweb S3",
+  "payload_media_import": {
+    "status": "PASS",
+    "record": "created-read-deleted",
+    "database": "disposable_szh23d_postgres_not_soyuz_rostov_prod",
+    "production_db_refused": true
+  },
+  "s3": {
+    "status": "PASS",
+    "operation": "Payload storage upload + HeadObject/GetObject readback + cleanup",
+    "key_redacted": "media/<payload-media-proof>.png",
+    "etag_present": true,
+    "sha256": "4b5c5c92cec3b23e6a294fc0eea43234ef5126c5a64f4c6c531ac8430ab0b844",
+    "bytes": 68
+  },
+  "cleanup": {
+    "disposable_postgres_container_removed": true,
+    "ssh_tunnel_closed": true,
+    "payload_record_deleted": true,
+    "s3_object_deleted_or_payload_cleanup_confirmed": true
+  },
+  "safety": {
+    "secrets_printed": false,
+    "production_db_mutated": false,
+    "dns_changed": false,
+    "indexing_changed": false,
+    "deploy_performed": false,
+    "destructive_migration": false
+  }
+}

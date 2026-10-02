@@ -17,9 +17,12 @@ import { legalConsentConfig } from "@/project/legal.config";
 import { projectConfig } from "@/project/project.config";
 import { siteConfig } from "@/project/site.config";
 import { systemOverrideAccess } from "@/core/data-access/system/overrides";
+import type { City, Developer, Development, District, Region } from "@/project/payload-types";
 import { publicGatewayReadAccess } from "./access-mode.ts";
 import { getPublicGatewayPayload } from "./payload.ts";
 import { toPropertyCardDTO } from "./dto.ts";
+import { findPublicNap } from "./nap.ts";
+import { getDevelopment } from "./geo-catalog.ts";
 
 export type PublicLeadSubmitResult =
 	| { accepted: true; reused: boolean }
@@ -124,6 +127,52 @@ export async function submitPublicLead({
 			propertyUrlId: String(property.publicUrlId),
 		};
 	}
+	if (intake.lead.formKind === "development_price") {
+		const developmentSlug = intake.lead.context?.development;
+		if (!developmentSlug) {
+			return developmentContextRejected(intake.lead.sourcePage);
+		}
+		const nap = await findPublicNap(payload);
+		const publicDevelopment = await getDevelopment(
+			payload,
+			developmentSlug,
+			nap.brandName,
+		);
+		const canonicalSourcePage = publicDevelopment
+			? normalizeCanonicalSourcePage(publicDevelopment.href)
+			: undefined;
+		if (!publicDevelopment || intake.lead.sourcePage !== canonicalSourcePage) {
+			return developmentContextRejected(intake.lead.sourcePage);
+		}
+		const found = await payload.find({
+			collection: "developments",
+			where: {
+				and: [
+					{ slug: { equals: publicDevelopment.slug } },
+					{ status: { equals: "published" } },
+					{ publishedAt: { exists: true } },
+				],
+			},
+			limit: 1,
+			depth: 1,
+			...publicGatewayReadAccess(),
+		});
+		const development = found.docs[0] as Development | undefined;
+		intake.lead.sourcePage = canonicalSourcePage;
+		intake.lead.context = {
+			...intake.lead.context,
+			development: publicDevelopment.slug,
+			developer: development
+				? relationSlug<Developer>(development.developer)
+				: publicDevelopment.developer?.pageKey.kind === "developer"
+					? publicDevelopment.developer.pageKey.slug
+					: undefined,
+			city: development ? relationSlug<City>(development.city) : undefined,
+			region: development ? relationSlug<Region>(development.region) : undefined,
+			district: development ? relationSlug<District>(development.district) : undefined,
+			dataTier: development?.dataTier,
+		};
+	}
 	const repository = createPayloadLeadOutboxRepository(payload);
 	const committed = await commitLeadOutbox({
 		intake,
@@ -159,4 +208,25 @@ function propertyContextRejected(sourcePage: string): LeadIntakeRejected {
 			rawPiiIncluded: false,
 		},
 	};
+}
+
+function developmentContextRejected(sourcePage: string): LeadIntakeRejected {
+	return {
+		accepted: false,
+		status: 400,
+		code: "lead.invalid_payload",
+		safeDiagnostics: {
+			code: "lead.development_context_invalid",
+			formKind: "development_price",
+			sourcePage,
+			reason: "Development price request context is not a published canonical development.",
+			rawPiiIncluded: false,
+		},
+	};
+}
+
+function relationSlug<T extends { slug?: string | null }>(
+	relation: number | T | null | undefined,
+): string | undefined {
+	return typeof relation === "object" && relation?.slug ? relation.slug : undefined;
 }

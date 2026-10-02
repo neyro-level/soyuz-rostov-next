@@ -5,6 +5,7 @@ import { systemOverrideAccess } from "../../src/core/data-access/system/override
 import { siteProfileFixtures } from "../../src/fixture/site-profile.ts";
 import { requirePayloadRuntime } from "../../src/project/env.ts";
 import { geoHierarchyFixtures } from "../../src/project/geo/fixtures.ts";
+import { siteProfile } from "../../src/project/site-profile.ts";
 import type { District } from "../../src/project/payload-types.ts";
 import { readPublishedDistrictRouteRegistry } from "../../src/project/routing/district-registry.ts";
 import { createProjectUrlGrammar } from "../../src/project/url-grammar.ts";
@@ -268,12 +269,29 @@ await assert.rejects(
 		}),
 	/already owned/i,
 );
+const [facetSlug, facet] = Object.entries(siteProfile.seoFacets)[0] ?? [];
+assert.ok(facetSlug && facet, "project profile must expose an SEO facet");
+const facetCity = await payload.create({
+	collection: "cities",
+	data: {
+		slug: facet.geo,
+		title: "Facet Geo",
+		morphology: primaryFixture.morphology,
+		preposition: primaryFixture.preposition,
+		cityType: primaryFixture.cityType,
+		morphologyApproved: true,
+		sortOrder: 100,
+		region: region.id,
+		status: "draft",
+	},
+	...access,
+});
 await assert.rejects(
 	() =>
 		payload.create({
 			collection: "districts",
 			data: {
-				slug: "dvukhkomnatnye",
+				slug: facetSlug,
 				title: "Facet collision",
 				morphology: primaryFixture.morphology,
 				districtType: "microdistrict",
@@ -281,14 +299,15 @@ await assert.rejects(
 				preposition: "na",
 				morphologyApproved: true,
 				sortOrder: 99,
-				city: primary.id,
-				categories: ["kvartiry"],
+				city: facetCity.id,
+				categories: [facet.category],
 				status: "draft",
 			},
 			...access,
 		}),
 	/SEO facet/i,
 );
+await payload.delete({ collection: "cities", id: facetCity.id, ...access });
 await assert.rejects(
 	() =>
 		payload.update({
@@ -361,7 +380,7 @@ const districtCount = await payload.count({
 	collection: "districts",
 	...access,
 });
-assert.equal(cityCount.totalDocs, 3);
+assert.equal(cityCount.totalDocs, 4);
 assert.equal(districtCount.totalDocs, 5);
 
 await payload.destroy();

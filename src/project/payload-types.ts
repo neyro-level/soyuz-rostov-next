@@ -380,6 +380,8 @@ export interface Media {
   sourceSha256?: string | null;
   sourceFeed?: (number | null) | FeedSource;
   mirroredAt?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -790,11 +792,26 @@ export interface Lead {
    */
   context?: {
     geo?: string | null;
+    region?: string | null;
+    city?: string | null;
     surface?: ('apartments' | 'new-buildings' | 'houses' | 'plots' | 'commercial' | 'garages') | null;
     district?: string | null;
     propertyUrlId?: string | null;
     development?: string | null;
     developer?: string | null;
+    dataTier?: ('A' | 'B' | 'C') | null;
+    /**
+     * Non-PII quiz preference keys only. Raw free-text answers stay out of this context.
+     */
+    preferences?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
   };
   utm?: {
     source?: string | null;
@@ -1648,11 +1665,15 @@ export interface LeadsSelect<T extends boolean = true> {
     | T
     | {
         geo?: T;
+        region?: T;
+        city?: T;
         surface?: T;
         district?: T;
         propertyUrlId?: T;
         development?: T;
         developer?: T;
+        dataTier?: T;
+        preferences?: T;
       };
   utm?:
     | T
@@ -1741,6 +1762,8 @@ export interface MediaSelect<T extends boolean = true> {
   sourceSha256?: T;
   sourceFeed?: T;
   mirroredAt?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

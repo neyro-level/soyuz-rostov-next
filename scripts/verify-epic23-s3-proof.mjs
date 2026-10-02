@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+const proofPath='docs/research/EPIC_23_S3_IMPORT_PROOF_2026-10-02.json';
+assert.ok(existsSync(proofPath), 'S3 proof JSON is missing');
+const proof=JSON.parse(readFileSync(proofPath,'utf8'));
+assert.equal(proof.s3_storage_smoke.status, 'PASS');
+assert.equal(proof.s3_storage_smoke.object_deleted, true);
+assert.equal(proof.payload_s3_activation.status, 'PREPARED_IN_CODE');
+assert.equal(proof.security.secrets_printed, false);
+assert.equal(proof.security.production_db_mutated, false);
+assert.equal(proof.security.dns_indexing_deploy, false);
+console.log('verify:epic23-s3-proof passed (S3 smoke proven; DB-backed Payload proof is tracked by EPIC-23d)');

@@ -20,6 +20,7 @@ import { Redirects } from "./src/project/collections/Redirects.ts";
 import { Regions } from "./src/project/collections/Regions.ts";
 import { Users } from "./src/project/collections/Users.ts";
 import { runtimeEnv } from "./src/project/env.ts";
+import { timewebS3Plugin } from "./src/project/timeweb-s3.plugin.ts";
 import { SiteSettings } from "./src/project/globals/SiteSettings.ts";
 import { payloadJobsAutoRun } from "./src/project/jobs/queues.ts";
 import { payloadJobTasks } from "./src/project/jobs/tasks.ts";
@@ -74,6 +75,7 @@ export default buildConfig({
 				? false
 				: runtimeEnv.PAYLOAD_DB_PUSH,
 	}),
+	plugins: [timewebS3Plugin],
 	graphQL: {
 		disable: true,
 	},

@@ -73,16 +73,23 @@ for (const formKind of ["legal", "development_price", "quiz"]) {
 		formKind,
 		context: {
 			geo: "rostov-na-donu",
+			region: "rostovskaya-oblast",
+			city: "rostov-na-donu",
 			surface: "new-buildings",
 			district: "leninskiy",
 			propertyUrlId: "42",
 			development: "zhk-primer",
 			developer: "developer-primer",
+			dataTier: "A",
+			preferences: ["one-room", "mortgage"],
 		},
 	});
 	assert.equal(contextual.accepted, true);
 	assert.equal(contextual.lead.formKind, formKind);
 	assert.equal(contextual.lead.context.propertyUrlId, "42");
+	assert.equal(contextual.lead.context.city, "rostov-na-donu");
+	assert.equal(contextual.lead.context.dataTier, "A");
+	assert.deepEqual(contextual.lead.context.preferences, ["one-room", "mortgage"]);
 }
 
 for (const context of [
@@ -90,11 +97,37 @@ for (const context of [
 	{ surface: "unknown" },
 	{ propertyUrlId: "+79161234567" },
 	{ developer: "Иван Петров" },
+	{ dataTier: "D" },
+	{ preferences: ["ok", "Иван"] },
 ]) {
 	const rejectedContext = prepareLeadIntake({ ...validPayload, context });
 	assert.equal(rejectedContext.accepted, false);
 	assert.equal(rejectedContext.code, "lead.invalid_payload");
 }
+
+const developmentPresentation = readFileSync(
+	"packages/ui/src/views/starter/lead-form-kind.ts",
+	"utf8",
+);
+assert.equal(
+	developmentPresentation.includes('if (kind === "development") return "development_price"'),
+	true,
+	"presentation development kind must map to canonical development_price backend kind",
+);
+const leadFormSource = readFileSync(
+	"packages/ui/src/views/starter/LeadFormView.tsx",
+	"utf8",
+);
+assert.equal(
+	leadFormSource.includes('"quiz"'),
+	true,
+	"quiz must be available as an explicit intakeKind without expanding the frozen public LeadFormKind contract",
+);
+assert.equal(
+	developmentPresentation.includes("zhk_price_request") || leadFormSource.includes("zhk_price_request"),
+	false,
+	"Do not create a duplicate zhk_price_request backend kind",
+);
 
 const exactRetry = prepareLeadIntake({
 	...validPayload,

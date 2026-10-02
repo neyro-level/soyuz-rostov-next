@@ -44,6 +44,12 @@ const defaultStaticRoutes: ProjectSiteProfileConfig["staticRoutes"] = [
 		indexable: true,
 	},
 	{
+		path: "/ipoteka/semeynaya",
+		changeFrequency: "weekly",
+		priority: 0.6,
+		indexable: false,
+	},
+	{
 		path: "/prodat",
 		changeFrequency: "weekly",
 		priority: 0.7,
@@ -70,9 +76,7 @@ const defaultStaticRoutes: ProjectSiteProfileConfig["staticRoutes"] = [
 	},
 ];
 
-const defaultLegacyRoutes: ProjectSiteProfileConfig["legacyRoutes"] = [
-	{ from: "/nedvizhimost", to: "/kvartiry/", statusCode: 301 },
-];
+const defaultLegacyRoutes: ProjectSiteProfileConfig["legacyRoutes"] = [];
 
 const defaultLegacyPatterns: ProjectSiteProfileConfig["legacyPatterns"] = [
 	{ kind: "property", from: "/obekty/{slug}", statusCode: 301 },

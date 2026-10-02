@@ -9,5 +9,5 @@ export type SiteConfig = {
 export const siteConfig = {
 	locale: "ru-RU",
 	currency: "RUB",
-	projectKind: "starter-demo",
+	projectKind: "client",
 } as const satisfies SiteConfig;

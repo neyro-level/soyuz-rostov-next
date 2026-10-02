@@ -24,7 +24,7 @@ import { PriceRequestFormView } from "./PriceRequestFormView";
 
 export type DevelopmentPresentationContent = {
 	layouts?: readonly { name: string; area: string; priceLabel?: string }[];
-	progress?: { label: string; description?: string; checkedAt?: string };
+	progress?: { label: string; description?: string };
 	faq?: readonly { question: string; answer: string }[];
 };
 
@@ -224,11 +224,6 @@ export function DevelopmentDetailsView({
 							description={content.progress.description}
 						/>
 						<p className="mt-6 font-semibold">{content.progress.label}</p>
-						{content.progress.checkedAt ? (
-							<p className="mt-2 text-label text-content-default">
-								Проверено: {content.progress.checkedAt}
-							</p>
-						) : null}
 					</Container>
 				</Section>
 			) : null}

@@ -17,7 +17,7 @@ type HomeSectionProps = {
 };
 
 export function HomeHeroSection({ page, featured }: HomeSectionProps) {
-	const catalogHref = page.serviceLinks[0]?.href;
+	const catalogHref = page.serviceLinks.find((item) => item.href.includes("/kvartiry/"))?.href ?? page.serviceLinks[0]?.href;
 	return (
 		<section
 			id="section-home-hero"
@@ -56,8 +56,8 @@ export function HomeHeroSection({ page, featured }: HomeSectionProps) {
 						<CardHeader>
 							<CardTitle>Подберём объект под вашу задачу</CardTitle>
 							<CardDescription>
-								В каталоге пока нет опубликованных предложений. Оставьте заявку
-								— свяжемся и расскажем о ближайших вариантах.
+								В активных разделах пока нет опубликованных предложений для
+								главного экрана. Оставьте заявку — свяжемся и подберём маршрут.
 							</CardDescription>
 						</CardHeader>
 						<CardFooter>
@@ -81,8 +81,8 @@ export function HomeServicesSection({ page }: Pick<HomeSectionProps, "page">) {
 				<Container>
 					<SectionHeader
 						eyebrow="Направления"
-						title="Чем можем помочь"
-						description="Покупка, продажа, аренда и ипотечное сопровождение в одном агентстве."
+						title="Активные разделы R1"
+						description="Новостройки, квартиры, застройщики, ипотека и продажа — только разделы, разрешённые для первого релиза."
 					/>
 					<h2 id="home-services-title" className="sr-only">
 						Услуги
@@ -119,8 +119,8 @@ export function HomeFeaturedSection({
 			<Section>
 				<Container>
 					<SectionHeader
-						title="Актуальные предложения"
-						description="Карточки объектов из рабочего каталога агентства."
+						title="Квартиры из активного каталога"
+						description="Главный экран показывает только опубликованные Gateway DTO; без неподтверждённых объектов, отзывов или метрик."
 					/>
 					<h2 id="home-featured-title" className="sr-only">
 						Избранные объекты
@@ -131,7 +131,7 @@ export function HomeFeaturedSection({
 						</div>
 					) : (
 						<p className="mt-8 text-body-large text-content-default">
-							Как только объекты появятся в каталоге, они отобразятся здесь.
+							Когда объект пройдёт публикацию и Content Gate, он появится в этом блоке.
 						</p>
 					)}
 				</Container>
@@ -184,7 +184,7 @@ export function HomeTrustSection() {
 				<Container size="narrow">
 					<SectionHeader
 						title="Почему с нами спокойнее"
-						description="Проверяем документы, сопровождаем показ и помогаем довести сделку до регистрации."
+						description="Проверяем документы, условия объекта и маршрут сделки. Без неподтверждённых отзывов, цифр и обещаний."
 					/>
 					<h2 id="home-trust-title" className="sr-only">
 						Доверие

@@ -1,0 +1,5722 @@
+{
+  "schema_version": 2,
+  "beads_prefix": "szh",
+  "source": {
+    "plan_id": "AMS-SOUZ-HOME-GEO-CATALOG-PLATFORM-BUILD",
+    "path": "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+    "version": "v5",
+    "status": "APPROVED",
+    "approved_by": "owner",
+    "approved_at": "2026-10-01T22:00:00+03:00",
+    "sha256": "b53c17629ecc5ac67cbbbbfc0c1c78d282c292703bfa87350a09daf88d07bca5",
+    "epic_anchors": [
+      "EPIC-00",
+      "EPIC-01",
+      "EPIC-02",
+      "EPIC-03",
+      "EPIC-04",
+      "EPIC-05",
+      "EPIC-06",
+      "EPIC-07",
+      "EPIC-08",
+      "EPIC-09",
+      "EPIC-10",
+      "EPIC-11",
+      "EPIC-12",
+      "EPIC-13",
+      "EPIC-14",
+      "EPIC-15",
+      "EPIC-16",
+      "EPIC-17",
+      "EPIC-18",
+      "EPIC-19",
+      "EPIC-20",
+      "EPIC-21",
+      "EPIC-22",
+      "EPIC-23",
+      "EPIC-24",
+      "EPIC-25",
+      "EPIC-26",
+      "EPIC-27",
+      "EPIC-28",
+      "EPIC-29",
+      "EPIC-30",
+      "EPIC-31",
+      "EPIC-32",
+      "EPIC-33",
+      "EPIC-34",
+      "EPIC-35",
+      "EPIC-36",
+      "EPIC-37",
+      "EPIC-38",
+      "EPIC-39",
+      "EPIC-40",
+      "EPIC-41",
+      "EPIC-42",
+      "EPIC-43",
+      "EPIC-44",
+      "EPIC-45",
+      "EPIC-46",
+      "EPIC-47",
+      "EPIC-48",
+      "EPIC-49",
+      "EPIC-50"
+    ]
+  },
+  "repositories": [
+    {
+      "key": "souz-rostov-next",
+      "remote": "https://git.sourcecraft.dev/integrator-p/soyuz-rostov-next.git",
+      "default_branch": "main"
+    }
+  ],
+  "nodes": [
+    {
+      "key": "EPIC-00",
+      "title": "SOURCECRAFT REPOSITORY / WORKSPACE [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-00",
+      "goal": "Completed SourceCraft repository/workspace baseline; no autonomous task remains.",
+      "scope": [
+        "Completed SourceCraft repository/workspace baseline; no autonomous task remains."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "completed-baseline"
+      ]
+    },
+    {
+      "key": "EPIC-01",
+      "title": "CURRENT STARTER BASELINE IMPORT [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-01",
+      "goal": "Align runtime and direct dependencies to the latest mutually compatible stable stack before downstream implementation.",
+      "scope": [
+        "Re-resolve official stable versions",
+        "Align package/lock/Corepack/Docker/tooling references",
+        "Read bundled Next.js docs for changed APIs",
+        "Record compatibility evidence and stop on incompatible stable set"
+      ],
+      "acceptance_criteria": [
+        "Exact-date compatibility matrix",
+        "Changed-path dependency/runtime proof",
+        "No canary/RC/prerelease",
+        "No silent stale fallback"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 0,
+      "labels": [
+        "wave:a",
+        "risk:dependency-runtime"
+      ]
+    },
+    {
+      "key": "TASK-01-IMPLEMENTATION",
+      "title": "CURRENT STARTER BASELINE IMPORT [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-01",
+      "source_anchor": "EPIC-01",
+      "goal": "Align runtime and direct dependencies to the latest mutually compatible stable stack before downstream implementation.",
+      "scope": [
+        "Re-resolve official stable versions",
+        "Align package/lock/Corepack/Docker/tooling references",
+        "Read bundled Next.js docs for changed APIs",
+        "Record compatibility evidence and stop on incompatible stable set"
+      ],
+      "acceptance_criteria": [
+        "Exact-date compatibility matrix",
+        "Changed-path dependency/runtime proof",
+        "No canary/RC/prerelease",
+        "No silent stale fallback"
+      ],
+      "required_checks": [
+        "Exact-date compatibility matrix",
+        "Changed-path dependency/runtime proof",
+        "No canary/RC/prerelease",
+        "No silent stale fallback"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 0,
+      "labels": [
+        "wave:a",
+        "risk:dependency-runtime",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-01-DELIVERY",
+      "title": "CURRENT STARTER BASELINE IMPORT [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-01",
+      "source_anchor": "EPIC-01",
+      "goal": "Deliver EPIC-01 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-01-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 0,
+      "labels": [
+        "wave:a",
+        "risk:dependency-runtime",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-02",
+      "title": "CLIENT ACTIVATION / CLONE HYGIENE [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-02",
+      "goal": "Completed client activation/clone hygiene baseline; no autonomous task remains.",
+      "scope": [
+        "Completed client activation/clone hygiene baseline; no autonomous task remains."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "completed-baseline"
+      ]
+    },
+    {
+      "key": "EPIC-03",
+      "title": "LEGACY LIVE SNAPSHOT + STARTER ROUTE DECISIONS [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-03",
+      "goal": "Collect legacy live snapshot and explicit route decisions without fabricating redirects.",
+      "scope": [
+        "Inventory legacy URLs",
+        "Classify KEEP/301/410/archive/no-match",
+        "Record inaccessible URLs without blocking unrelated work"
+      ],
+      "acceptance_criteria": [
+        "Legacy manifest evidence",
+        "No generic home redirects"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:evidence"
+      ]
+    },
+    {
+      "key": "TASK-03-IMPLEMENTATION",
+      "title": "LEGACY LIVE SNAPSHOT + STARTER ROUTE DECISIONS [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-03",
+      "source_anchor": "EPIC-03",
+      "goal": "Collect legacy live snapshot and explicit route decisions without fabricating redirects.",
+      "scope": [
+        "Inventory legacy URLs",
+        "Classify KEEP/301/410/archive/no-match",
+        "Record inaccessible URLs without blocking unrelated work"
+      ],
+      "acceptance_criteria": [
+        "Legacy manifest evidence",
+        "No generic home redirects"
+      ],
+      "required_checks": [
+        "Legacy manifest evidence",
+        "No generic home redirects"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:evidence",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-03-DELIVERY",
+      "title": "LEGACY LIVE SNAPSHOT + STARTER ROUTE DECISIONS [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-03",
+      "source_anchor": "EPIC-03",
+      "goal": "Deliver EPIC-03 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-03-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:evidence",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-04",
+      "title": "SEMANTIC QA + SEO / URL FREEZE [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-04",
+      "goal": "Freeze semantic QA, URL and SEO Registry evidence for R1.",
+      "scope": [
+        "Measure semantic demand where required",
+        "Resolve collisions/homonyms",
+        "Approve typed Registry rows"
+      ],
+      "acceptance_criteria": [
+        "Raw dated evidence preserved",
+        "Unmeasured rows noindex/NONE",
+        "No invented demand"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:evidence"
+      ]
+    },
+    {
+      "key": "TASK-04-IMPLEMENTATION",
+      "title": "SEMANTIC QA + SEO / URL FREEZE [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-04",
+      "source_anchor": "EPIC-04",
+      "goal": "Freeze semantic QA, URL and SEO Registry evidence for R1.",
+      "scope": [
+        "Measure semantic demand where required",
+        "Resolve collisions/homonyms",
+        "Approve typed Registry rows"
+      ],
+      "acceptance_criteria": [
+        "Raw dated evidence preserved",
+        "Unmeasured rows noindex/NONE",
+        "No invented demand"
+      ],
+      "required_checks": [
+        "Raw dated evidence preserved",
+        "Unmeasured rows noindex/NONE",
+        "No invented demand"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:evidence",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-04-DELIVERY",
+      "title": "SEMANTIC QA + SEO / URL FREEZE [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-04",
+      "source_anchor": "EPIC-04",
+      "goal": "Deliver EPIC-04 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-04-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:evidence",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-05",
+      "title": "DOCS-FIRST + ADR + MODULE GOVERNANCE RECONCILIATION [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-05",
+      "goal": "Reconcile docs, ADRs and module governance with actual repository owners and approved plan scope.",
+      "scope": [
+        "Remove duplicate/obsolete owners",
+        "Synchronize Source of Truth documents",
+        "Preserve current core/project/app ownership"
+      ],
+      "acceptance_criteria": [
+        "Docs diff review",
+        "No competing owner remains",
+        "No runtime mutation outside docs/governance"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 0,
+      "labels": [
+        "wave:a",
+        "risk:governance"
+      ]
+    },
+    {
+      "key": "TASK-05-IMPLEMENTATION",
+      "title": "DOCS-FIRST + ADR + MODULE GOVERNANCE RECONCILIATION [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-05",
+      "source_anchor": "EPIC-05",
+      "goal": "Reconcile docs, ADRs and module governance with actual repository owners and approved plan scope.",
+      "scope": [
+        "Remove duplicate/obsolete owners",
+        "Synchronize Source of Truth documents",
+        "Preserve current core/project/app ownership"
+      ],
+      "acceptance_criteria": [
+        "Docs diff review",
+        "No competing owner remains",
+        "No runtime mutation outside docs/governance"
+      ],
+      "required_checks": [
+        "Docs diff review",
+        "No competing owner remains",
+        "No runtime mutation outside docs/governance"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 0,
+      "labels": [
+        "wave:a",
+        "risk:governance",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-05-DELIVERY",
+      "title": "DOCS-FIRST + ADR + MODULE GOVERNANCE RECONCILIATION [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-05",
+      "source_anchor": "EPIC-05",
+      "goal": "Deliver EPIC-05 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-05-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 0,
+      "labels": [
+        "wave:a",
+        "risk:governance",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-06",
+      "title": "INFRASTRUCTURE TOPOLOGY DECISION / SECRET MASTER [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-06",
+      "goal": "Close Timeweb S3/Secret Master topology contract without staging or secret disclosure.",
+      "scope": [
+        "Align S3 adapter/env/compose contract",
+        "Verify secret names only",
+        "Keep production deploy separate"
+      ],
+      "acceptance_criteria": [
+        "Storage topology proof",
+        "No secret values printed",
+        "No staging/deploy mutation"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "risk:infra"
+      ]
+    },
+    {
+      "key": "TASK-06-IMPLEMENTATION",
+      "title": "INFRASTRUCTURE TOPOLOGY DECISION / SECRET MASTER [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-06",
+      "source_anchor": "EPIC-06",
+      "goal": "Close Timeweb S3/Secret Master topology contract without staging or secret disclosure.",
+      "scope": [
+        "Align S3 adapter/env/compose contract",
+        "Verify secret names only",
+        "Keep production deploy separate"
+      ],
+      "acceptance_criteria": [
+        "Storage topology proof",
+        "No secret values printed",
+        "No staging/deploy mutation"
+      ],
+      "required_checks": [
+        "Storage topology proof",
+        "No secret values printed",
+        "No staging/deploy mutation"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "risk:infra",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-06-DELIVERY",
+      "title": "INFRASTRUCTURE TOPOLOGY DECISION / SECRET MASTER [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-06",
+      "source_anchor": "EPIC-06",
+      "goal": "Deliver EPIC-06 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-06-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "risk:infra",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-07",
+      "title": "SITE SETTINGS [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-07",
+      "goal": "Apply fixed NAP/site settings and fail closed on starter fixture leakage.",
+      "scope": [
+        "Use approved legal/NAP facts",
+        "Prepare privacy/consent drafts for later owner approval",
+        "Remove public starter fallback"
+      ],
+      "acceptance_criteria": [
+        "Exact NAP parity",
+        "No fixture identity in public output",
+        "Legal text remains owner-gated before staging/indexing"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "risk:schema-data"
+      ]
+    },
+    {
+      "key": "TASK-07-IMPLEMENTATION",
+      "title": "SITE SETTINGS [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-07",
+      "source_anchor": "EPIC-07",
+      "goal": "Apply fixed NAP/site settings and fail closed on starter fixture leakage.",
+      "scope": [
+        "Use approved legal/NAP facts",
+        "Prepare privacy/consent drafts for later owner approval",
+        "Remove public starter fallback"
+      ],
+      "acceptance_criteria": [
+        "Exact NAP parity",
+        "No fixture identity in public output",
+        "Legal text remains owner-gated before staging/indexing"
+      ],
+      "required_checks": [
+        "Exact NAP parity",
+        "No fixture identity in public output",
+        "Legal text remains owner-gated before staging/indexing"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "risk:schema-data",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-07-DELIVERY",
+      "title": "SITE SETTINGS [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-07",
+      "source_anchor": "EPIC-07",
+      "goal": "Deliver EPIC-07 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-07-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "risk:schema-data",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-08",
+      "title": "GEO MODEL + DISTRICTS SEED [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-08",
+      "goal": "Complete Soyuz geo model and districts seed using existing schema.",
+      "scope": [
+        "Rostov districts/morphology/category seed",
+        "Owner-approved forms as data"
+      ],
+      "acceptance_criteria": [
+        "Seed validation",
+        "No code-guessed declension"
+      ],
+      "depends_on": [
+        "EPIC-01",
+        "EPIC-05",
+        "EPIC-07"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data"
+      ]
+    },
+    {
+      "key": "TASK-08-IMPLEMENTATION",
+      "title": "GEO MODEL + DISTRICTS SEED [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-08",
+      "source_anchor": "EPIC-08",
+      "goal": "Complete Soyuz geo model and districts seed using existing schema.",
+      "scope": [
+        "Rostov districts/morphology/category seed",
+        "Owner-approved forms as data"
+      ],
+      "acceptance_criteria": [
+        "Seed validation",
+        "No code-guessed declension"
+      ],
+      "required_checks": [
+        "Seed validation",
+        "No code-guessed declension"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-08-DELIVERY",
+      "title": "GEO MODEL + DISTRICTS SEED [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-08",
+      "source_anchor": "EPIC-08",
+      "goal": "Deliver EPIC-08 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-08-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-09",
+      "title": "DEVELOPMENTS + DEVELOPERS [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-09",
+      "goal": "Accept existing developments/developers capability with exact-head regression evidence.",
+      "scope": [
+        "Verify existing collections/migrations/contracts remain valid for Soyuz"
+      ],
+      "acceptance_criteria": [
+        "Capability regression proof",
+        "No duplicate schema owner"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-09-IMPLEMENTATION",
+      "title": "DEVELOPMENTS + DEVELOPERS [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-09",
+      "source_anchor": "EPIC-09",
+      "goal": "Accept existing developments/developers capability with exact-head regression evidence.",
+      "scope": [
+        "Verify existing collections/migrations/contracts remain valid for Soyuz"
+      ],
+      "acceptance_criteria": [
+        "Capability regression proof",
+        "No duplicate schema owner"
+      ],
+      "required_checks": [
+        "Capability regression proof",
+        "No duplicate schema owner"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-09-DELIVERY",
+      "title": "DEVELOPMENTS + DEVELOPERS [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-09",
+      "source_anchor": "EPIC-09",
+      "goal": "Deliver EPIC-09 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-09-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-10",
+      "title": "PROPERTY TAXONOMY + GEO RELATIONS + FEED MAPPING [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-10",
+      "goal": "Accept existing property taxonomy, geo relations and feed mapping capability with exact-head regression evidence.",
+      "scope": [
+        "Verify taxonomy/relations/source preservation contracts"
+      ],
+      "acceptance_criteria": [
+        "Capability regression proof",
+        "No R1 XML-feed activation"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-10-IMPLEMENTATION",
+      "title": "PROPERTY TAXONOMY + GEO RELATIONS + FEED MAPPING [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-10",
+      "source_anchor": "EPIC-10",
+      "goal": "Accept existing property taxonomy, geo relations and feed mapping capability with exact-head regression evidence.",
+      "scope": [
+        "Verify taxonomy/relations/source preservation contracts"
+      ],
+      "acceptance_criteria": [
+        "Capability regression proof",
+        "No R1 XML-feed activation"
+      ],
+      "required_checks": [
+        "Capability regression proof",
+        "No R1 XML-feed activation"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-10-DELIVERY",
+      "title": "PROPERTY TAXONOMY + GEO RELATIONS + FEED MAPPING [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-10",
+      "source_anchor": "EPIC-10",
+      "goal": "Deliver EPIC-10 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-10-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-11",
+      "title": "CONTRACTS / DISCRIMINATED DTO [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-11",
+      "goal": "Accept discriminated DTO/contracts capability with exact-head regression evidence.",
+      "scope": [
+        "Verify public DTO boundary and private field exclusions"
+      ],
+      "acceptance_criteria": [
+        "Contract regression proof",
+        "No public private provenance/PII leak"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-11-IMPLEMENTATION",
+      "title": "CONTRACTS / DISCRIMINATED DTO [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-11",
+      "source_anchor": "EPIC-11",
+      "goal": "Accept discriminated DTO/contracts capability with exact-head regression evidence.",
+      "scope": [
+        "Verify public DTO boundary and private field exclusions"
+      ],
+      "acceptance_criteria": [
+        "Contract regression proof",
+        "No public private provenance/PII leak"
+      ],
+      "required_checks": [
+        "Contract regression proof",
+        "No public private provenance/PII leak"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-11-DELIVERY",
+      "title": "CONTRACTS / DISCRIMINATED DTO [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-11",
+      "source_anchor": "EPIC-11",
+      "goal": "Deliver EPIC-11 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-11-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-12",
+      "title": "PUBLIC GATEWAY + BOUNDED COUNTS [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-12",
+      "goal": "Accept Public Gateway and bounded counts capability with exact-head regression evidence.",
+      "scope": [
+        "Verify public-only gateway and count bounds"
+      ],
+      "acceptance_criteria": [
+        "Gateway regression proof",
+        "No Payload Admin/public boundary bypass"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-12-IMPLEMENTATION",
+      "title": "PUBLIC GATEWAY + BOUNDED COUNTS [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-12",
+      "source_anchor": "EPIC-12",
+      "goal": "Accept Public Gateway and bounded counts capability with exact-head regression evidence.",
+      "scope": [
+        "Verify public-only gateway and count bounds"
+      ],
+      "acceptance_criteria": [
+        "Gateway regression proof",
+        "No Payload Admin/public boundary bypass"
+      ],
+      "required_checks": [
+        "Gateway regression proof",
+        "No Payload Admin/public boundary bypass"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-12-DELIVERY",
+      "title": "PUBLIC GATEWAY + BOUNDED COUNTS [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-12",
+      "source_anchor": "EPIC-12",
+      "goal": "Deliver EPIC-12 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-12-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-13",
+      "title": "SEO REGISTRY + CONTENT GATE + INDEXING ENGINE [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-13",
+      "goal": "Materialize measured/approved client SEO Registry and Content Gate profile.",
+      "scope": [
+        "R1 Registry rows",
+        "Content Gate status",
+        "Remove R2/journal leaks"
+      ],
+      "acceptance_criteria": [
+        "Registry validation",
+        "Journal/R2 URLs excluded",
+        "No placeholder satisfies Gate"
+      ],
+      "depends_on": [
+        "EPIC-01",
+        "EPIC-04",
+        "EPIC-05",
+        "EPIC-32"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data"
+      ]
+    },
+    {
+      "key": "TASK-13-IMPLEMENTATION",
+      "title": "SEO REGISTRY + CONTENT GATE + INDEXING ENGINE [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-13",
+      "source_anchor": "EPIC-13",
+      "goal": "Materialize measured/approved client SEO Registry and Content Gate profile.",
+      "scope": [
+        "R1 Registry rows",
+        "Content Gate status",
+        "Remove R2/journal leaks"
+      ],
+      "acceptance_criteria": [
+        "Registry validation",
+        "Journal/R2 URLs excluded",
+        "No placeholder satisfies Gate"
+      ],
+      "required_checks": [
+        "Registry validation",
+        "Journal/R2 URLs excluded",
+        "No placeholder satisfies Gate"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-13-DELIVERY",
+      "title": "SEO REGISTRY + CONTENT GATE + INDEXING ENGINE [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-13",
+      "source_anchor": "EPIC-13",
+      "goal": "Deliver EPIC-13 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-13-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-14",
+      "title": "ROUTE RESOLVER + NAMESPACE GUARD + TRAILING SLASH [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-14",
+      "goal": "Accept route resolver, namespace guard and trailing slash capability with exact-head regression evidence.",
+      "scope": [
+        "Verify reserved root and Rostov geo-first URL grammar"
+      ],
+      "acceptance_criteria": [
+        "Resolver/guard regression proof"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-14-IMPLEMENTATION",
+      "title": "ROUTE RESOLVER + NAMESPACE GUARD + TRAILING SLASH [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-14",
+      "source_anchor": "EPIC-14",
+      "goal": "Accept route resolver, namespace guard and trailing slash capability with exact-head regression evidence.",
+      "scope": [
+        "Verify reserved root and Rostov geo-first URL grammar"
+      ],
+      "acceptance_criteria": [
+        "Resolver/guard regression proof"
+      ],
+      "required_checks": [
+        "Resolver/guard regression proof"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-14-DELIVERY",
+      "title": "ROUTE RESOLVER + NAMESPACE GUARD + TRAILING SLASH [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-14",
+      "source_anchor": "EPIC-14",
+      "goal": "Deliver EPIC-14 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-14-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-15",
+      "title": "EXCEL IMPORT ЖК [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-15",
+      "goal": "Generate and validate client Excel ЖК workbook using existing import capability.",
+      "scope": [
+        "Workbook template with sheets/headers/enums",
+        "Dry-run/idempotency/error handling"
+      ],
+      "acceptance_criteria": [
+        "Workbook generated",
+        "Import dry-run proof",
+        "No binary data in Git"
+      ],
+      "depends_on": [
+        "EPIC-01",
+        "EPIC-10"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:ingest-jobs"
+      ]
+    },
+    {
+      "key": "TASK-15-IMPLEMENTATION",
+      "title": "EXCEL IMPORT ЖК [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-15",
+      "source_anchor": "EPIC-15",
+      "goal": "Generate and validate client Excel ЖК workbook using existing import capability.",
+      "scope": [
+        "Workbook template with sheets/headers/enums",
+        "Dry-run/idempotency/error handling"
+      ],
+      "acceptance_criteria": [
+        "Workbook generated",
+        "Import dry-run proof",
+        "No binary data in Git"
+      ],
+      "required_checks": [
+        "Workbook generated",
+        "Import dry-run proof",
+        "No binary data in Git"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:ingest-jobs",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-15-DELIVERY",
+      "title": "EXCEL IMPORT ЖК [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-15",
+      "source_anchor": "EPIC-15",
+      "goal": "Deliver EPIC-15 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-15-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:ingest-jobs",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-16",
+      "title": "UI INTAKE [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-16",
+      "goal": "Preserve Bastion-template R1 visual baseline while changing only brand/factual content.",
+      "scope": [
+        "Document baseline viewports",
+        "Prohibit redesign/modernization",
+        "Allow brand/name/factual substitutions only"
+      ],
+      "acceptance_criteria": [
+        "Visual baseline evidence",
+        "No redesign drift"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-16-IMPLEMENTATION",
+      "title": "UI INTAKE [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-16",
+      "source_anchor": "EPIC-16",
+      "goal": "Preserve Bastion-template R1 visual baseline while changing only brand/factual content.",
+      "scope": [
+        "Document baseline viewports",
+        "Prohibit redesign/modernization",
+        "Allow brand/name/factual substitutions only"
+      ],
+      "acceptance_criteria": [
+        "Visual baseline evidence",
+        "No redesign drift"
+      ],
+      "required_checks": [
+        "Visual baseline evidence",
+        "No redesign drift"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-16-DELIVERY",
+      "title": "UI INTAKE [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-16",
+      "source_anchor": "EPIC-16",
+      "goal": "Deliver EPIC-16 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-16-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-17",
+      "title": "NAVIGATION SHELL [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-17",
+      "goal": "Implement navigation shell on frozen route/data contracts.",
+      "scope": [
+        "Header/footer/navigation states",
+        "Preserve visual baseline"
+      ],
+      "acceptance_criteria": [
+        "Reachable route/browser proof",
+        "No journal/construction links in R1"
+      ],
+      "depends_on": [
+        "EPIC-13",
+        "EPIC-16"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-17-IMPLEMENTATION",
+      "title": "NAVIGATION SHELL [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-17",
+      "source_anchor": "EPIC-17",
+      "goal": "Implement navigation shell on frozen route/data contracts.",
+      "scope": [
+        "Header/footer/navigation states",
+        "Preserve visual baseline"
+      ],
+      "acceptance_criteria": [
+        "Reachable route/browser proof",
+        "No journal/construction links in R1"
+      ],
+      "required_checks": [
+        "Reachable route/browser proof",
+        "No journal/construction links in R1"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-17-DELIVERY",
+      "title": "NAVIGATION SHELL [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-17",
+      "source_anchor": "EPIC-17",
+      "goal": "Deliver EPIC-17 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-17-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-18",
+      "title": "ACTIVE ROUTE SKELETON [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-18",
+      "goal": "Implement active R1 route skeleton and disabled/future route behavior.",
+      "scope": [
+        "R1 routes only",
+        "404/noindex for excluded surfaces"
+      ],
+      "acceptance_criteria": [
+        "Route manifest proof",
+        "No R2/future leakage"
+      ],
+      "depends_on": [
+        "EPIC-13",
+        "EPIC-14",
+        "EPIC-17"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-18-IMPLEMENTATION",
+      "title": "ACTIVE ROUTE SKELETON [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-18",
+      "source_anchor": "EPIC-18",
+      "goal": "Implement active R1 route skeleton and disabled/future route behavior.",
+      "scope": [
+        "R1 routes only",
+        "404/noindex for excluded surfaces"
+      ],
+      "acceptance_criteria": [
+        "Route manifest proof",
+        "No R2/future leakage"
+      ],
+      "required_checks": [
+        "Route manifest proof",
+        "No R2/future leakage"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-18-DELIVERY",
+      "title": "ACTIVE ROUTE SKELETON [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-18",
+      "source_anchor": "EPIC-18",
+      "goal": "Deliver EPIC-18 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-18-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-19",
+      "title": "REDIRECT / LIFECYCLE REGISTRY [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-19",
+      "goal": "Create project redirect/lifecycle rows from real legacy manifest.",
+      "scope": [
+        "Explicit same-intent 301/410/archive rows",
+        "No redirect chains"
+      ],
+      "acceptance_criteria": [
+        "No-chain proof",
+        "No generic redirects"
+      ],
+      "depends_on": [
+        "EPIC-03",
+        "EPIC-14"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data"
+      ]
+    },
+    {
+      "key": "TASK-19-IMPLEMENTATION",
+      "title": "REDIRECT / LIFECYCLE REGISTRY [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-19",
+      "source_anchor": "EPIC-19",
+      "goal": "Create project redirect/lifecycle rows from real legacy manifest.",
+      "scope": [
+        "Explicit same-intent 301/410/archive rows",
+        "No redirect chains"
+      ],
+      "acceptance_criteria": [
+        "No-chain proof",
+        "No generic redirects"
+      ],
+      "required_checks": [
+        "No-chain proof",
+        "No generic redirects"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-19-DELIVERY",
+      "title": "REDIRECT / LIFECYCLE REGISTRY [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-19",
+      "source_anchor": "EPIC-19",
+      "goal": "Deliver EPIC-19 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-19-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:c",
+        "risk:schema-data",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-20",
+      "title": "HOME [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-20",
+      "goal": "Implement Home page using approved data and visual baseline.",
+      "scope": [
+        "Hero/sections/CTA",
+        "Hide unsourced optional sections"
+      ],
+      "acceptance_criteria": [
+        "Browser/UI/SEO proof",
+        "No fabricated facts/reviews"
+      ],
+      "depends_on": [
+        "EPIC-17",
+        "EPIC-18",
+        "EPIC-23"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-20-IMPLEMENTATION",
+      "title": "HOME [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-20",
+      "source_anchor": "EPIC-20",
+      "goal": "Implement Home page using approved data and visual baseline.",
+      "scope": [
+        "Hero/sections/CTA",
+        "Hide unsourced optional sections"
+      ],
+      "acceptance_criteria": [
+        "Browser/UI/SEO proof",
+        "No fabricated facts/reviews"
+      ],
+      "required_checks": [
+        "Browser/UI/SEO proof",
+        "No fabricated facts/reviews"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-20-DELIVERY",
+      "title": "HOME [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-20",
+      "source_anchor": "EPIC-20",
+      "goal": "Deliver EPIC-20 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-20-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-21",
+      "title": "NOVOSTROYKI ROOT + ROSTOV GEO HUB [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-21",
+      "goal": "Implement novostroyki root and Rostov geo-first catalog.",
+      "scope": [
+        "Reserved root behavior",
+        "Rostov catalog state",
+        "Content Gate aware lists"
+      ],
+      "acceptance_criteria": [
+        "Catalog route proof",
+        "No novostroyki-district R2 URLs"
+      ],
+      "depends_on": [
+        "EPIC-13",
+        "EPIC-18",
+        "EPIC-23"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-21-IMPLEMENTATION",
+      "title": "NOVOSTROYKI ROOT + ROSTOV GEO HUB [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-21",
+      "source_anchor": "EPIC-21",
+      "goal": "Implement novostroyki root and Rostov geo-first catalog.",
+      "scope": [
+        "Reserved root behavior",
+        "Rostov catalog state",
+        "Content Gate aware lists"
+      ],
+      "acceptance_criteria": [
+        "Catalog route proof",
+        "No novostroyki-district R2 URLs"
+      ],
+      "required_checks": [
+        "Catalog route proof",
+        "No novostroyki-district R2 URLs"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-21-DELIVERY",
+      "title": "NOVOSTROYKI ROOT + ROSTOV GEO HUB [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-21",
+      "source_anchor": "EPIC-21",
+      "goal": "Deliver EPIC-21 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-21-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-22",
+      "title": "DEVELOPMENT TEMPLATE — ЖК [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-22",
+      "goal": "Implement development template for ЖК.",
+      "scope": [
+        "Published ЖК detail state",
+        "Private provenance excluded",
+        "Media from Payload/S3 only"
+      ],
+      "acceptance_criteria": [
+        "Detail route proof",
+        "No checkedAt/source displayed",
+        "No hotlinking"
+      ],
+      "depends_on": [
+        "EPIC-21",
+        "EPIC-23",
+        "EPIC-27"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-22-IMPLEMENTATION",
+      "title": "DEVELOPMENT TEMPLATE — ЖК [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-22",
+      "source_anchor": "EPIC-22",
+      "goal": "Implement development template for ЖК.",
+      "scope": [
+        "Published ЖК detail state",
+        "Private provenance excluded",
+        "Media from Payload/S3 only"
+      ],
+      "acceptance_criteria": [
+        "Detail route proof",
+        "No checkedAt/source displayed",
+        "No hotlinking"
+      ],
+      "required_checks": [
+        "Detail route proof",
+        "No checkedAt/source displayed",
+        "No hotlinking"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-22-DELIVERY",
+      "title": "DEVELOPMENT TEMPLATE — ЖК [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-22",
+      "source_anchor": "EPIC-22",
+      "goal": "Deliver EPIC-22 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-22-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-23",
+      "title": "DEVELOPMENT DATA: TIER A + B/C CATALOG [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-23",
+      "goal": "Collect and verify 24 priority ЖК data/media package with per-record fallback.",
+      "scope": [
+        "Yandex Realty/Excel-first source package",
+        "Identity verification",
+        "At least five accepted photos per publish-eligible ЖК",
+        "Payload/S3 media path, no hotlinks"
+      ],
+      "acceptance_criteria": [
+        "24-record status matrix",
+        "Per-record provenance private",
+        "Blocked records remain unpublished"
+      ],
+      "depends_on": [
+        "EPIC-15"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:data"
+      ]
+    },
+    {
+      "key": "TASK-23-IMPLEMENTATION",
+      "title": "DEVELOPMENT DATA: TIER A + B/C CATALOG [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-23",
+      "source_anchor": "EPIC-23",
+      "goal": "Collect and verify 24 priority ЖК data/media package with per-record fallback.",
+      "scope": [
+        "Yandex Realty/Excel-first source package",
+        "Identity verification",
+        "At least five accepted photos per publish-eligible ЖК",
+        "Payload/S3 media path, no hotlinks"
+      ],
+      "acceptance_criteria": [
+        "24-record status matrix",
+        "Per-record provenance private",
+        "Blocked records remain unpublished"
+      ],
+      "required_checks": [
+        "24-record status matrix",
+        "Per-record provenance private",
+        "Blocked records remain unpublished"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:data",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-23-DELIVERY",
+      "title": "DEVELOPMENT DATA: TIER A + B/C CATALOG [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-23",
+      "source_anchor": "EPIC-23",
+      "goal": "Deliver EPIC-23 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-23-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:b",
+        "external:data",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-24",
+      "title": "DEVELOPERS PAGES [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-24",
+      "goal": "Implement developers pages from verified project data.",
+      "scope": [
+        "Developer list/detail where publishable",
+        "No fabricated ratings/reviews"
+      ],
+      "acceptance_criteria": [
+        "Developer route proof",
+        "Gate-aware states"
+      ],
+      "depends_on": [
+        "EPIC-21",
+        "EPIC-23"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-24-IMPLEMENTATION",
+      "title": "DEVELOPERS PAGES [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-24",
+      "source_anchor": "EPIC-24",
+      "goal": "Implement developers pages from verified project data.",
+      "scope": [
+        "Developer list/detail where publishable",
+        "No fabricated ratings/reviews"
+      ],
+      "acceptance_criteria": [
+        "Developer route proof",
+        "Gate-aware states"
+      ],
+      "required_checks": [
+        "Developer route proof",
+        "Gate-aware states"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-24-DELIVERY",
+      "title": "DEVELOPERS PAGES [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-24",
+      "source_anchor": "EPIC-24",
+      "goal": "Deliver EPIC-24 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-24-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-25",
+      "title": "APARTMENTS ROOT + GEO + VTORICHKA + FACET FRAMEWORK [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-25",
+      "goal": "Implement apartments root, Rostov catalog, vtorichka and facet framework.",
+      "scope": [
+        "Apartment catalog shell",
+        "Measured/approved facets only"
+      ],
+      "acceptance_criteria": [
+        "Facet route proof",
+        "Unmeasured facets disabled/noindex"
+      ],
+      "depends_on": [
+        "EPIC-13",
+        "EPIC-18",
+        "EPIC-27"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-25-IMPLEMENTATION",
+      "title": "APARTMENTS ROOT + GEO + VTORICHKA + FACET FRAMEWORK [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-25",
+      "source_anchor": "EPIC-25",
+      "goal": "Implement apartments root, Rostov catalog, vtorichka and facet framework.",
+      "scope": [
+        "Apartment catalog shell",
+        "Measured/approved facets only"
+      ],
+      "acceptance_criteria": [
+        "Facet route proof",
+        "Unmeasured facets disabled/noindex"
+      ],
+      "required_checks": [
+        "Facet route proof",
+        "Unmeasured facets disabled/noindex"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-25-DELIVERY",
+      "title": "APARTMENTS ROOT + GEO + VTORICHKA + FACET FRAMEWORK [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-25",
+      "source_anchor": "EPIC-25",
+      "goal": "Deliver EPIC-25 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-25-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-26",
+      "title": "DISTRICT PAGES — KVARTIRY [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-26",
+      "goal": "Implement district pages for kvartiry where evidence and morphology are approved.",
+      "scope": [
+        "District landing pages",
+        "Approved metadata/forms only"
+      ],
+      "acceptance_criteria": [
+        "District route proof",
+        "Missing evidence noindex/unpublished"
+      ],
+      "depends_on": [
+        "EPIC-08",
+        "EPIC-25"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-26-IMPLEMENTATION",
+      "title": "DISTRICT PAGES — KVARTIRY [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-26",
+      "source_anchor": "EPIC-26",
+      "goal": "Implement district pages for kvartiry where evidence and morphology are approved.",
+      "scope": [
+        "District landing pages",
+        "Approved metadata/forms only"
+      ],
+      "acceptance_criteria": [
+        "District route proof",
+        "Missing evidence noindex/unpublished"
+      ],
+      "required_checks": [
+        "District route proof",
+        "Missing evidence noindex/unpublished"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-26-DELIVERY",
+      "title": "DISTRICT PAGES — KVARTIRY [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-26",
+      "source_anchor": "EPIC-26",
+      "goal": "Deliver EPIC-26 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-26-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-27",
+      "title": "PROPERTY DETAILS BY CATEGORY [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-27",
+      "goal": "Accept property details by category capability with exact-head regression evidence.",
+      "scope": [
+        "Verify category-owned details remain safe for R1 active/prepared states"
+      ],
+      "acceptance_criteria": [
+        "Details regression proof"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-27-IMPLEMENTATION",
+      "title": "PROPERTY DETAILS BY CATEGORY [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-27",
+      "source_anchor": "EPIC-27",
+      "goal": "Accept property details by category capability with exact-head regression evidence.",
+      "scope": [
+        "Verify category-owned details remain safe for R1 active/prepared states"
+      ],
+      "acceptance_criteria": [
+        "Details regression proof"
+      ],
+      "required_checks": [
+        "Details regression proof"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-27-DELIVERY",
+      "title": "PROPERTY DETAILS BY CATEGORY [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-27",
+      "source_anchor": "EPIC-27",
+      "goal": "Deliver EPIC-27 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-27-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-28",
+      "title": "LEGACY APARTMENT MIGRATION [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-28",
+      "goal": "Implement secondary legacy apartment migration decisions per mapped entity.",
+      "scope": [
+        "Old-to-new identity map",
+        "301/410/no-chain rows for proven entities"
+      ],
+      "acceptance_criteria": [
+        "Migration manifest proof",
+        "Unresolved entities isolated"
+      ],
+      "depends_on": [
+        "EPIC-03",
+        "EPIC-19",
+        "EPIC-25"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "risk:schema-data"
+      ]
+    },
+    {
+      "key": "TASK-28-IMPLEMENTATION",
+      "title": "LEGACY APARTMENT MIGRATION [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-28",
+      "source_anchor": "EPIC-28",
+      "goal": "Implement secondary legacy apartment migration decisions per mapped entity.",
+      "scope": [
+        "Old-to-new identity map",
+        "301/410/no-chain rows for proven entities"
+      ],
+      "acceptance_criteria": [
+        "Migration manifest proof",
+        "Unresolved entities isolated"
+      ],
+      "required_checks": [
+        "Migration manifest proof",
+        "Unresolved entities isolated"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "risk:schema-data",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-28-DELIVERY",
+      "title": "LEGACY APARTMENT MIGRATION [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-28",
+      "source_anchor": "EPIC-28",
+      "goal": "Deliver EPIC-28 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-28-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "risk:schema-data",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-29",
+      "title": "SERVICE + TRUST + LEGAL PAGES [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-29",
+      "goal": "Implement service, trust and legal pages with owner-gated legal wording.",
+      "scope": [
+        "/uslugi/, mortgage surfaces, legal/privacy placeholders for noindex staging only"
+      ],
+      "acceptance_criteria": [
+        "Route proof",
+        "Owner approval gate preserved for privacy/consent before staging/indexing"
+      ],
+      "depends_on": [
+        "EPIC-07",
+        "EPIC-18"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui"
+      ]
+    },
+    {
+      "key": "TASK-29-IMPLEMENTATION",
+      "title": "SERVICE + TRUST + LEGAL PAGES [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-29",
+      "source_anchor": "EPIC-29",
+      "goal": "Implement service, trust and legal pages with owner-gated legal wording.",
+      "scope": [
+        "/uslugi/, mortgage surfaces, legal/privacy placeholders for noindex staging only"
+      ],
+      "acceptance_criteria": [
+        "Route proof",
+        "Owner approval gate preserved for privacy/consent before staging/indexing"
+      ],
+      "required_checks": [
+        "Route proof",
+        "Owner approval gate preserved for privacy/consent before staging/indexing"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-29-DELIVERY",
+      "title": "SERVICE + TRUST + LEGAL PAGES [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-29",
+      "source_anchor": "EPIC-29",
+      "goal": "Deliver EPIC-29 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-29-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "ui",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-30",
+      "title": "JOURNAL [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-30",
+      "goal": "Future journal activation excluded from R1.",
+      "scope": [
+        "Future journal activation excluded from R1."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "future-not-r1"
+      ]
+    },
+    {
+      "key": "EPIC-31",
+      "title": "LEADS: ЖК PRICE REQUEST + QUIZ [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-31",
+      "goal": "Implement ЖК price request and quiz lead flow without second lead backend.",
+      "scope": [
+        "Canonical development authority",
+        "PII-safe persistence/outbox/retry",
+        "MAX channel proof when secrets are available"
+      ],
+      "acceptance_criteria": [
+        "Lead flow proof without PII leak",
+        "No second auth/backend",
+        "Channel disabled if external proof unavailable"
+      ],
+      "depends_on": [
+        "EPIC-22",
+        "EPIC-23"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "risk:auth-pii-leads"
+      ]
+    },
+    {
+      "key": "TASK-31-IMPLEMENTATION",
+      "title": "LEADS: ЖК PRICE REQUEST + QUIZ [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-31",
+      "source_anchor": "EPIC-31",
+      "goal": "Implement ЖК price request and quiz lead flow without second lead backend.",
+      "scope": [
+        "Canonical development authority",
+        "PII-safe persistence/outbox/retry",
+        "MAX channel proof when secrets are available"
+      ],
+      "acceptance_criteria": [
+        "Lead flow proof without PII leak",
+        "No second auth/backend",
+        "Channel disabled if external proof unavailable"
+      ],
+      "required_checks": [
+        "Lead flow proof without PII leak",
+        "No second auth/backend",
+        "Channel disabled if external proof unavailable"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "risk:auth-pii-leads",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-31-DELIVERY",
+      "title": "LEADS: ЖК PRICE REQUEST + QUIZ [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-31",
+      "source_anchor": "EPIC-31",
+      "goal": "Deliver EPIC-31 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-31-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 2,
+      "labels": [
+        "wave:d",
+        "risk:auth-pii-leads",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-32",
+      "title": "SITEMAPS / ROBOTS / INDEXNOW [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-32",
+      "goal": "Accept sitemaps, robots and IndexNow capability with noindex-first policy.",
+      "scope": [
+        "Verify noindex safeguards and R1 sitemap exclusions"
+      ],
+      "acceptance_criteria": [
+        "Sitemap/robots regression proof",
+        "Journal/R2 URLs excluded"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-32-IMPLEMENTATION",
+      "title": "SITEMAPS / ROBOTS / INDEXNOW [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-32",
+      "source_anchor": "EPIC-32",
+      "goal": "Accept sitemaps, robots and IndexNow capability with noindex-first policy.",
+      "scope": [
+        "Verify noindex safeguards and R1 sitemap exclusions"
+      ],
+      "acceptance_criteria": [
+        "Sitemap/robots regression proof",
+        "Journal/R2 URLs excluded"
+      ],
+      "required_checks": [
+        "Sitemap/robots regression proof",
+        "Journal/R2 URLs excluded"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-32-DELIVERY",
+      "title": "SITEMAPS / ROBOTS / INDEXNOW [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-32",
+      "source_anchor": "EPIC-32",
+      "goal": "Deliver EPIC-32 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-32-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-33",
+      "title": "INTERNAL LINKING [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-33",
+      "goal": "Implement internal linking after retained page set exists.",
+      "scope": [
+        "Route graph",
+        "No link spam",
+        "No journal links in R1"
+      ],
+      "acceptance_criteria": [
+        "Orphan/link proof"
+      ],
+      "depends_on": [
+        "EPIC-20",
+        "EPIC-21",
+        "EPIC-22",
+        "EPIC-24",
+        "EPIC-25",
+        "EPIC-26",
+        "EPIC-29"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:d",
+        "seo"
+      ]
+    },
+    {
+      "key": "TASK-33-IMPLEMENTATION",
+      "title": "INTERNAL LINKING [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-33",
+      "source_anchor": "EPIC-33",
+      "goal": "Implement internal linking after retained page set exists.",
+      "scope": [
+        "Route graph",
+        "No link spam",
+        "No journal links in R1"
+      ],
+      "acceptance_criteria": [
+        "Orphan/link proof"
+      ],
+      "required_checks": [
+        "Orphan/link proof"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:d",
+        "seo",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-33-DELIVERY",
+      "title": "INTERNAL LINKING [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-33",
+      "source_anchor": "EPIC-33",
+      "goal": "Deliver EPIC-33 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-33-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:d",
+        "seo",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-34",
+      "title": "FEED ONBOARDING [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-34",
+      "goal": "Future feed onboarding excluded until real owner-approved feed exists.",
+      "scope": [
+        "Future feed onboarding excluded until real owner-approved feed exists."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "future-not-r1"
+      ]
+    },
+    {
+      "key": "EPIC-35",
+      "title": "CACHE [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-35",
+      "goal": "Accept cache capability with exact-head regression evidence.",
+      "scope": [
+        "Verify invalidation/tags/jobs integration boundaries"
+      ],
+      "acceptance_criteria": [
+        "Cache regression proof"
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability"
+      ]
+    },
+    {
+      "key": "TASK-35-IMPLEMENTATION",
+      "title": "CACHE [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-35",
+      "source_anchor": "EPIC-35",
+      "goal": "Accept cache capability with exact-head regression evidence.",
+      "scope": [
+        "Verify invalidation/tags/jobs integration boundaries"
+      ],
+      "acceptance_criteria": [
+        "Cache regression proof"
+      ],
+      "required_checks": [
+        "Cache regression proof"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-35-DELIVERY",
+      "title": "CACHE [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-35",
+      "source_anchor": "EPIC-35",
+      "goal": "Deliver EPIC-35 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-35-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 1,
+      "labels": [
+        "wave:a",
+        "imported-capability",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-36",
+      "title": "ANALYTICS [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-36",
+      "goal": "Implement Yandex Metrica non-PII consent-gated analytics contract.",
+      "scope": [
+        "Event schema",
+        "Consent gating",
+        "No PII events"
+      ],
+      "acceptance_criteria": [
+        "Analytics disabled/enabled proof",
+        "Non-PII audit"
+      ],
+      "depends_on": [
+        "EPIC-18"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:d",
+        "analytics"
+      ]
+    },
+    {
+      "key": "TASK-36-IMPLEMENTATION",
+      "title": "ANALYTICS [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-36",
+      "source_anchor": "EPIC-36",
+      "goal": "Implement Yandex Metrica non-PII consent-gated analytics contract.",
+      "scope": [
+        "Event schema",
+        "Consent gating",
+        "No PII events"
+      ],
+      "acceptance_criteria": [
+        "Analytics disabled/enabled proof",
+        "Non-PII audit"
+      ],
+      "required_checks": [
+        "Analytics disabled/enabled proof",
+        "Non-PII audit"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:d",
+        "analytics",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-36-DELIVERY",
+      "title": "ANALYTICS [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-36",
+      "source_anchor": "EPIC-36",
+      "goal": "Deliver EPIC-36 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-36-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:d",
+        "analytics",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-37",
+      "title": "PERFORMANCE [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-37",
+      "goal": "Run performance acceptance on representative pages and real-size data.",
+      "scope": [
+        "Representative R1 pages",
+        "Real-size data sample"
+      ],
+      "acceptance_criteria": [
+        "Performance evidence",
+        "P0/P1 regressions filed to owning epic"
+      ],
+      "depends_on": [
+        "EPIC-20",
+        "EPIC-21",
+        "EPIC-22",
+        "EPIC-25",
+        "EPIC-35"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "quality"
+      ]
+    },
+    {
+      "key": "TASK-37-IMPLEMENTATION",
+      "title": "PERFORMANCE [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-37",
+      "source_anchor": "EPIC-37",
+      "goal": "Run performance acceptance on representative pages and real-size data.",
+      "scope": [
+        "Representative R1 pages",
+        "Real-size data sample"
+      ],
+      "acceptance_criteria": [
+        "Performance evidence",
+        "P0/P1 regressions filed to owning epic"
+      ],
+      "required_checks": [
+        "Performance evidence",
+        "P0/P1 regressions filed to owning epic"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "quality",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-37-DELIVERY",
+      "title": "PERFORMANCE [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-37",
+      "source_anchor": "EPIC-37",
+      "goal": "Deliver EPIC-37 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-37-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "quality",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-38",
+      "title": "UI / ACCESSIBILITY QA [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-38",
+      "goal": "Run Soyuz browser and accessibility matrix.",
+      "scope": [
+        "Key routes/states",
+        "Keyboard/focus/semantic/responsive checks"
+      ],
+      "acceptance_criteria": [
+        "Browser/a11y matrix",
+        "P0/P1=0 or blockers filed"
+      ],
+      "depends_on": [
+        "EPIC-20",
+        "EPIC-21",
+        "EPIC-22",
+        "EPIC-25",
+        "EPIC-29"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "quality"
+      ]
+    },
+    {
+      "key": "TASK-38-IMPLEMENTATION",
+      "title": "UI / ACCESSIBILITY QA [PROJECT] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-38",
+      "source_anchor": "EPIC-38",
+      "goal": "Run Soyuz browser and accessibility matrix.",
+      "scope": [
+        "Key routes/states",
+        "Keyboard/focus/semantic/responsive checks"
+      ],
+      "acceptance_criteria": [
+        "Browser/a11y matrix",
+        "P0/P1=0 or blockers filed"
+      ],
+      "required_checks": [
+        "Browser/a11y matrix",
+        "P0/P1=0 or blockers filed"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "quality",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-38-DELIVERY",
+      "title": "UI / ACCESSIBILITY QA [PROJECT] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-38",
+      "source_anchor": "EPIC-38",
+      "goal": "Deliver EPIC-38 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-38-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "quality",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-39",
+      "title": "SECURITY / ARCHITECTURE AUDIT [PLATFORM]",
+      "type": "epic",
+      "source_anchor": "EPIC-39",
+      "goal": "Run security and architecture audit on exact implementation head without production action.",
+      "scope": [
+        "Public gateway boundaries",
+        "PII/secrets/auth/data ownership",
+        "Architecture drift"
+      ],
+      "acceptance_criteria": [
+        "Audit report",
+        "P0/P1=0 or blockers filed"
+      ],
+      "depends_on": [
+        "EPIC-31",
+        "EPIC-38"
+      ],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "risk:security"
+      ]
+    },
+    {
+      "key": "TASK-39-IMPLEMENTATION",
+      "title": "SECURITY / ARCHITECTURE AUDIT [PLATFORM] — implementation",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "implementation",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-39",
+      "source_anchor": "EPIC-39",
+      "goal": "Run security and architecture audit on exact implementation head without production action.",
+      "scope": [
+        "Public gateway boundaries",
+        "PII/secrets/auth/data ownership",
+        "Architecture drift"
+      ],
+      "acceptance_criteria": [
+        "Audit report",
+        "P0/P1=0 or blockers filed"
+      ],
+      "required_checks": [
+        "Audit report",
+        "P0/P1=0 or blockers filed"
+      ],
+      "depends_on": [],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit",
+        "test",
+        "commit",
+        "push"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure",
+        "scope expansion beyond approved epic"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "risk:security",
+        "role:implementation"
+      ]
+    },
+    {
+      "key": "TASK-39-DELIVERY",
+      "title": "SECURITY / ARCHITECTURE AUDIT [PLATFORM] — PR delivery",
+      "type": "task",
+      "role": "implementation",
+      "work_kind": "delivery",
+      "repository_key": "souz-rostov-next",
+      "parent_key": "EPIC-39",
+      "source_anchor": "EPIC-39",
+      "goal": "Deliver EPIC-39 according to PR_ONLY without merge or production.",
+      "scope": [
+        "Verify implementation evidence",
+        "Create/update a SourceCraft Pull Request from exact epic branch",
+        "Do not merge without separate gate/owner workflow"
+      ],
+      "acceptance_criteria": [
+        "Pull Request exists or is updated at exact epic head SHA",
+        "PR_ONLY boundary preserved"
+      ],
+      "required_checks": [
+        "PR source/target/head SHA verified",
+        "No merge/production/staging action performed"
+      ],
+      "depends_on": [
+        "TASK-39-IMPLEMENTATION"
+      ],
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/05_RELEASE_CHECKLIST.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "commit",
+        "push",
+        "create_pr"
+      ],
+      "stop_conditions": [
+        "merge",
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 3,
+      "labels": [
+        "wave:e",
+        "risk:security",
+        "delivery:pr-only"
+      ]
+    },
+    {
+      "key": "EPIC-40",
+      "title": "STAGING [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-40",
+      "goal": "Staging requires separate explicit owner command and immutable candidate.",
+      "scope": [
+        "Staging requires separate explicit owner command and immutable candidate."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "owner-gate:staging"
+      ]
+    },
+    {
+      "key": "EPIC-41",
+      "title": "SEO CRAWL OLD / NEW [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-41",
+      "goal": "Old/new crawl requires staging/live crawl context and owner-gated staging.",
+      "scope": [
+        "Old/new crawl requires staging/live crawl context and owner-gated staging."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "owner-gate:staging"
+      ]
+    },
+    {
+      "key": "EPIC-42",
+      "title": "MIGRATION REHEARSAL [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-42",
+      "goal": "Migration rehearsal requires explicit staging/migration command and safe backup/restore context.",
+      "scope": [
+        "Migration rehearsal requires explicit staging/migration command and safe backup/restore context."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "owner-gate:staging"
+      ]
+    },
+    {
+      "key": "EPIC-43",
+      "title": "RELEASE CANDIDATE [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-43",
+      "goal": "Release candidate requires explicit immutable artifact/staging command.",
+      "scope": [
+        "Release candidate requires explicit immutable artifact/staging command."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "owner-gate:staging"
+      ]
+    },
+    {
+      "key": "EPIC-44",
+      "title": "PRODUCTION CUTOVER [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-44",
+      "goal": "Production cutover excluded from Developer; requires separate explicit owner command.",
+      "scope": [
+        "Production cutover excluded from Developer; requires separate explicit owner command."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "production-excluded"
+      ]
+    },
+    {
+      "key": "EPIC-45",
+      "title": "POST-LAUNCH MONITORING + 30-DAY SEMANTIC SNAPSHOT [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-45",
+      "goal": "Post-launch monitoring excluded until production cutover.",
+      "scope": [
+        "Post-launch monitoring excluded until production cutover."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "production-excluded"
+      ]
+    },
+    {
+      "key": "EPIC-46",
+      "title": "R2: TIER B EXPANSION + DEVELOPER FEEDS [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-46",
+      "goal": "Future Tier B expansion/developer feeds excluded from R1.",
+      "scope": [
+        "Future Tier B expansion/developer feeds excluded from R1."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "future-not-r1"
+      ]
+    },
+    {
+      "key": "EPIC-47",
+      "title": "R2: NOVOSTROYKI × DISTRICTS + NOVOSTROYKI FACETS [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-47",
+      "goal": "Future novostroyki district/facet activation excluded from R1.",
+      "scope": [
+        "Future novostroyki district/facet activation excluded from R1."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "future-not-r1"
+      ]
+    },
+    {
+      "key": "EPIC-48",
+      "title": "R2: PRICE ANALYTICS `/analitika/` [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-48",
+      "goal": "Future price analytics excluded from R1.",
+      "scope": [
+        "Future price analytics excluded from R1."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "future-not-r1"
+      ]
+    },
+    {
+      "key": "EPIC-49",
+      "title": "R3: ENABLE HOUSES PREPARED_OFF → ACTIVE [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-49",
+      "goal": "R3 houses activation excluded from R1.",
+      "scope": [
+        "R3 houses activation excluded from R1."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "future-not-r1"
+      ]
+    },
+    {
+      "key": "EPIC-50",
+      "title": "R3: MULTI_GEO BATAYSK ACTIVATION [PROJECT]",
+      "type": "epic",
+      "source_anchor": "EPIC-50",
+      "goal": "R3 MULTI_GEO Bataysk activation excluded from R1.",
+      "scope": [
+        "R3 MULTI_GEO Bataysk activation excluded from R1."
+      ],
+      "acceptance_criteria": [
+        "No ready implementation task is created by this inventory."
+      ],
+      "depends_on": [],
+      "delivery_mode": "PR_ONLY",
+      "required_context": [
+        "docs/AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md",
+        "docs/04_BACKLOG.md",
+        "docs/03_ARCHITECTURE.md"
+      ],
+      "allowed_actions": [
+        "read",
+        "plan"
+      ],
+      "stop_conditions": [
+        "production",
+        "DNS",
+        "indexing",
+        "destructive migration",
+        "secret disclosure"
+      ],
+      "priority": 4,
+      "labels": [
+        "future-not-r1"
+      ]
+    }
+  ]
+}

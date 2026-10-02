@@ -50,7 +50,12 @@ export async function readPublishedDistrictRouteRegistry(
 		do {
 			const result = await payload.find({
 				collection: "districts",
-				where: { city: { equals: Number(city.id) } },
+				where: {
+					and: [
+						{ city: { equals: Number(city.id) } },
+						{ status: { equals: "published" } },
+					],
+				},
 				depth: 0,
 				limit: publicGatewayPolicy.maxLimit,
 				page,

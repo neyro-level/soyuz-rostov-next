@@ -1,53 +1,82 @@
-# PRD - AMS Realty Baza Starter
+# PRD — Союз застройщиков Ростов
 
-Статус: `ACTIVE`.
+Статус: `ACTIVE CLIENT PRODUCT / MASTER PLAN REVIEW`.
 
 ## Продукт
 
-AMS Realty Baza Starter - коммерческая базовая платформа AMS для сайтов
-агентств недвижимости: публичный сайт и каталог, Payload Admin, импорт
-нескольких XML/YRL-фидов, сохранение лидов и подключаемая доставка заявок.
+`souz-home.ru` — публичный сайт и каталог агентства недвижимости «Союз застройщиков» для Ростова-на-Дону на базе AMS Realty Platform/Payload foundation.
+
+R1 создаёт коммерческий контур для:
+
+- новостроек и страниц жилых комплексов;
+- продажи квартир, включая вторичку и подтверждённые районные страницы;
+- страниц застройщиков;
+- ипотечных, seller-acquisition, company, contact, legal and trust surfaces;
+- приёма лидов через Payload-owned intake/outbox;
+- управляемого импорта ЖК и объектов;
+- SEO/indexing через code-owned URL grammar, Registry and Content Gate.
 
 ## Пользователи
 
-- посетитель подбирает объект и отправляет заявку;
-- агентство управляет объектами, страницами и лидами через Payload Admin;
-- владелец продукта с AI разрабатывает, выпускает и обслуживает экземпляр.
+- покупатель выбирает квартиру/ЖК/застройщика и отправляет заявку;
+- продавец оставляет заявку на продажу объекта;
+- агентство управляет контентом, объектами, ЖК, застройщиками и лидами через Payload Admin;
+- владелец продукта с AI разрабатывает и выпускает проект через SourceCraft/Timeweb contour.
 
-## Базовый объём
+## R1 scope
 
-- 15-50 публичных страниц;
-- обычно 300-1 000 объектов, до примерно 2 000 active inventory records;
-- несколько feed sources;
-- 1-2 администратора;
-- формы заявок и подключаемые каналы доставки;
-- отдельные PostgreSQL, media storage, домен и секреты на клиентском clone.
+```text
+primaryGeo = rostov-na-donu
+geoMode = SINGLE_GEO
+ACTIVE categories = kvartiry + novostroyki
+ACTIVE markets = secondary + newbuild
+Bataysk/Aksay = data entities / PREPARED_OFF public geo surfaces
+indexing = noindex until explicit owner promotion
+```
 
-## Ценность первой версии
+Global entity URLs remain stable; local catalog URLs are geo-first. Payload CMS is the only application schema/auth/Admin owner. Public UI reads through Public Gateway and storage-neutral DTO.
 
-Единый проверяемый foundation, который сохраняет визуальные паттерны Atlas, но
-не переносит его технический долг. UI зависит от presentation contracts, а
-Payload реализует эти contracts через Public Gateway и DTO.
+## Existing platform baseline
 
-## Реализованный scope
+The imported repository already contains reusable capability for:
 
-- Geo-first catalog: single-geo и multi-geo профили.
-- Каноническая URL-грамматика для geo hubs, категорий, карточек объектов,
-  застройщиков и development pages.
-- Нормализованные geo/taxonomy entities, developments/developers, properties,
-  leads, feed sources и import runs.
-- Public Gateway/DTO boundary между Payload и публичным UI.
-- SEO Registry, Content Gate, canonical/robots/discovery правила.
-- Clone preset/intake, starter-owned manifest и явный upgrade boundary.
+- normalized geo/property/development/developer schema and migrations;
+- contracts/DTO and Public Gateway;
+- profile/status matrices, URL grammar, resolver and Content Gate;
+- lifecycle/redirect, sitemap/robots/IndexNow and cache/jobs;
+- feed/Excel import and lead outbox/delivery;
+- reusable catalog, entity and marketing UI.
 
-Reusable target-контракт каталога: `platform/GEO_CATALOG_CONTRACT.md`.
+The client program must not rebuild these layers. It closes Soyuz-specific evidence, configuration, data, content, UI and delivery gaps recorded in `AMS_SOUZ_HOME_FINAL_MASTER_PLAN_V4_1_1.md`.
 
-## Не входит без отдельного trigger
+## Required client outcomes
 
-Личный кабинет, Redis, broker, PostGIS, поисковый движок, второй backend/ORM,
-отдельный jobs runner, multi-currency, production release, новый immutable tag и
-клиентская инфраструктура. Bounded feed-image mirror и модуль новостроек
-существуют только в границах текущего runtime и `PROJECT.md`.
+- real legacy URL migration decisions;
+- measured/approved semantic and SEO Registry evidence;
+- owner-approved NAP/legal identity plus approved privacy/consent wording before staging/indexing;
+- verified Rostov district, developer, ЖК and property data;
+- 24 owner-prioritized ЖК collected Excel-first from the approved Yandex Realty partner source, with at least five accepted photos per publish-eligible ЖК;
+- private provenance/rights/checkedAt evidence without public attribution or public check dates;
+- Timeweb S3 as the single production media topology, with no Git binaries or hotlinking;
+- exact preservation of the current Bastion-template R1 appearance and representative browser acceptance; redesign is post-R1;
+- MAX lead delivery with canonical Development authority and Yandex Metrica non-PII analytics after consent;
+- latest-compatible-stable direct stack proof before feature execution and release;
+- immutable SourceCraft image, noindex staging proof, rollback and explicit production gate.
 
-Продуктовые границы определяет `02_PRODUCT_STRUCTURE.md`, технические -
-`03_ARCHITECTURE.md`, текущую работу - `04_BACKLOG.md`.
+## Non-goals without explicit owner activation
+
+- public MULTI_GEO;
+- public houses, land, commercial, cottage-village or rent categories;
+- construction service and journal in R1;
+- novostroyki district/facet pages (R2);
+- price analytics (R2);
+- personal account, Redis, broker, PostGIS, second search engine/backend/ORM/auth;
+- production deploy, DNS cutover or public indexing from an implementation task.
+
+## Current readiness
+
+Master plan: `4.1.1-ARCH-v5 APPROVED`.
+
+The exact-version four-pass audit passed with `READY_WITH_LIMITS`, then the owner supplied the exact approval phrase. External source/compatibility and later staging/production gates retain deterministic fallbacks and stop rules. Missing factual/legal inputs may be represented only by noindex staging placeholders and cannot satisfy Content Gate, release or indexing readiness. Task Manager/Beads import was not performed in this audit run.
+
+Product structure: `02_PRODUCT_STRUCTURE.md`. Architecture: `03_ARCHITECTURE.md`. Current work: `04_BACKLOG.md`.

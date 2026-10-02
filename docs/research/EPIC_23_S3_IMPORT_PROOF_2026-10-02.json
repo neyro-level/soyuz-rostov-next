@@ -1,0 +1,28 @@
+{
+  "schema": "EPIC_23_S3_IMPORT_PROOF_V1",
+  "task": "szh-task-23c-s3-import-proof",
+  "date": "2026-10-02",
+  "s3_storage_smoke": {
+    "status": "PASS",
+    "operation": "put/head/get/delete",
+    "key_redacted": "media/proof/szh-task-23c/2026-10-02/<deleted-proof-object>.txt",
+    "object_deleted": true
+  },
+  "payload_s3_activation": {
+    "status": "PREPARED_IN_CODE",
+    "dependency": "@payloadcms/storage-s3@3.90.2",
+    "plugin": "src/project/timeweb-s3.plugin.ts",
+    "payload_config": "plugins: [timewebS3Plugin]",
+    "media_storage": "timeweb-s3"
+  },
+  "payload_media_import": {
+    "status": "BLOCKED_LOCAL_DB_OR_STAGING_RUNTIME_REQUIRED",
+    "reason": "Local PostgreSQL is present on 127.0.0.1:65432 but credentials are not available non-interactively; production DB was not mutated as a workaround."
+  },
+  "security": {
+    "secrets_printed": false,
+    "production_db_mutated": false,
+    "dns_indexing_deploy": false,
+    "destructive_migration": false
+  }
+}

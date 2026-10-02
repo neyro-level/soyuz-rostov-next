@@ -282,8 +282,11 @@ function toDevelopmentGateFacts(
 export async function getGeoBySlug(
 	payload: Payload,
 	slug: string,
+	profile: SiteProfile = siteProfile,
 ): Promise<CityDTO | null> {
-	const city = await findGeoRecord(payload, slugSchema.parse(slug));
+	const parsedSlug = slugSchema.parse(slug);
+	if (!isRoutableGeo(parsedSlug, profile)) return null;
+	const city = await findGeoRecord(payload, parsedSlug);
 	return city ? toCityDTO(city) : null;
 }
 
@@ -982,9 +985,10 @@ export async function listGeoDevelopers(
 export async function getNearby(
 	payload: Payload,
 	geo: string,
+	profile: SiteProfile = siteProfile,
 ): Promise<readonly PageLinkDTO[]> {
 	const parsedGeo = slugSchema.parse(geo);
-	if (!isRoutableGeo(parsedGeo)) return [];
+	if (!isRoutableGeo(parsedGeo, profile)) return [];
 	const city = await findGeoRecord(payload, parsedGeo);
 	if (!city) return [];
 	const nearby = await findNearbyCities(payload, city);
@@ -1134,7 +1138,12 @@ async function findPublishedDistricts(
 ): Promise<District[]> {
 	const result = await payload.find({
 		collection: "districts",
-		where: { city: { equals: cityId } },
+		where: {
+			and: [
+				{ city: { equals: cityId } },
+				{ status: { equals: "published" } },
+			],
+		},
 		depth: 0,
 		limit: 48,
 		page: 1,
@@ -1153,7 +1162,13 @@ async function findDistrict(
 ): Promise<District | null> {
 	const result = await payload.find({
 		collection: "districts",
-		where: { and: [{ city: { equals: cityId } }, { slug: { equals: slug } }] },
+		where: {
+			and: [
+				{ city: { equals: cityId } },
+				{ slug: { equals: slug } },
+				{ status: { equals: "published" } },
+			],
+		},
 		depth: 0,
 		limit: 1,
 		page: 1,
@@ -1643,8 +1658,11 @@ function activeSurfaces(profile: SiteProfile): CatalogSurfaceSlug[] {
 	);
 }
 
-function isRoutableGeo(slug: string): boolean {
-	return Object.hasOwn(siteProfile.geos, slug);
+function isRoutableGeo(
+	slug: string,
+	profile: SiteProfile = siteProfile,
+): boolean {
+	return Object.hasOwn(profile.geos, slug);
 }
 
 function surfaceLabel(surface: CatalogSurfaceSlug): string {

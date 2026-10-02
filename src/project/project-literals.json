@@ -1,8 +1,22 @@
 {
 	"projectIdentity": {
-		"brands": ["AMS Realty Baza Starter"],
-		"domains": ["start-baza.ams24.ru"],
-		"cities": ["Демо-город"]
+		"brands": [
+			"Союз застройщиков"
+		],
+		"domains": [
+			"souz-home.ru"
+		],
+		"cities": [
+			"Ростов-на-Дону",
+			"Ростова-на-Дону",
+			"Ростове-на-Дону",
+			"Батайск",
+			"Батайска",
+			"Батайске",
+			"Аксай",
+			"Аксая",
+			"Аксае"
+		]
 	},
 	"hrefLiteralMode": "enforce"
 }

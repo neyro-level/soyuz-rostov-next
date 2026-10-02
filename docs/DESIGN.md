@@ -1,9 +1,8 @@
 # Project Design System
 
-Статус: `Active / REALTY_BASE / Project Design System`.
+Статус: `Active foundation / R1 visual direction owner-approved`.
 
-Этот документ описывает project-owned visual system starter instance. Он не
-заменяет каноническую UI-конституцию. Канонический UI Core зафиксирован в
+Этот документ описывает импортированный Project Design System foundation для клиента «Союз застройщиков». Он не является доказательством завершённого Soyuz design intake и не заменяет каноническую UI-конституцию. Канонический UI Core зафиксирован в
 `../AMS_UI_CORE_v5.0_FINAL.md` и SHA-locked через
 `../config/ams-constitution.lock.json`.
 
@@ -15,9 +14,11 @@ Dark theme: DISABLED.
 
 ## Характер
 
-Цель — visual parity with Atlas при архитектурной очистке. Это не редизайн. Изменение визуального решения требует явного owner approval.
+Owner-facing R1 goal — preserve the current imported **Bastion-template** appearance exactly while replacing brand/name and required factual content. This is not a redesign. Layout, visual hierarchy, typography, component styling and responsive behavior stay unchanged except for factual-length fixes.
 
-Anti-goals: новый visual language без owner approval; вторая primitive foundation; raw hex/rgb в компонентах; wildcard image hosts; хранение десятков мегабайт скриншотов в каждом clone.
+Internal implementation provenance remains the Atlas baseline recorded below. The owner-facing name «Бастион» does not rewrite historical source/commit provenance. Any visual modernization or redesign is a separate post-R1 owner-approved program.
+
+Anti-goals: visual modernization during R1; new visual language; a second primitive foundation; donor-provenance rewriting; raw hex/rgb in components; wildcard image hosts; storing bulk screenshots or development-photo binaries in Git.
 
 ## Source of truth
 
@@ -105,16 +106,23 @@ sizes remain when collapsing them would cross that limit or alter composition.
 - Feed images Variant B (unoptimized + allowlist), see Media.
 - Atlas donor `home-page.css` удалён из live package source; starter public home
   composes domain-owned Tailwind/shadcn views.
-- Visual deviations vs Atlas donor: simpler starter shell/cards are report-only
-  unless owner approves a redesign.
+- Visual deviations vs the imported donor remain report-only. EPIC-16 is constrained by the owner-approved R1 decision: REUSE by default, VARIANT only for factual functional needs, CREATE only for a missing required state; no redesign.
 
 ## Representative pages and viewports
 
-Pages: `/`, `/primorsk/kvartiry/`, `/novostroyki/zhk-severnyy-bereg/`, `/uslugi/`.
+Current Soyuz candidate pages:
+
+- `/`;
+- `/rostov-na-donu/`;
+- `/rostov-na-donu/kvartiry/`;
+- `/rostov-na-donu/novostroyki/`;
+- one real `/novostroyki/zhk-{slug}/` after source-backed data exists;
+- `/prodat/` or another owner-retained service page.
+
+This representative set is fixed for R1 browser proof; one real ЖК page is selected after the priority Excel/media import. No Primorsk/demo route is accepted as Soyuz proof.
+
 Viewports: `390×844`, `768×1024`, `1280×900`, `1440×1000`.
-Browser proof for future UI changes must cover the representative pages and
-viewports above. Bulk PNG artifacts stay outside the starter clone unless a
-specific owner-approved task requires checked-in visual fixtures.
+Browser proof must cover the approved representative pages and viewports. Bulk PNG artifacts stay outside the client repository unless a specific owner-approved task requires checked-in visual fixtures.
 
 ### Canonical UI Core v5 acceptance matrix
 
@@ -132,7 +140,7 @@ present stale price rows as current offers.
 
 ## Visual baseline provenance
 
-Local Atlas donor: SourceCraft `integrator-p/atlas-realty-starter`, exact `main@4fc5d8a2cfcd29b1431ce9541db72ba0280a4cbe`, `SITE_ENGINE=fixture`. Inventory: `docs/research/ATLAS_BASELINE.md`. Capture PNGs live in donor/external storage, not in this starter clone.
+Internal visual provenance: local Atlas donor, SourceCraft `integrator-p/atlas-realty-starter`, exact `main@4fc5d8a2cfcd29b1431ce9541db72ba0280a4cbe`, `SITE_ENGINE=fixture`. Inventory: `docs/research/ATLAS_BASELINE.md`. The owner refers to the current template appearance as «Бастион»; this is the R1 acceptance name, not a replacement provenance claim. Capture PNGs live in donor/external storage, not in this client clone.
 
 ## Allowed specialized UI dependencies
 
